@@ -1,3 +1,4 @@
+console.log("hello");
 //DinnerModel Object constructor
 var DinnerModel = function() {
 
@@ -10,13 +11,14 @@ var DinnerModel = function() {
 
 	this.setNumberOfGuests = function(num) {
 		//TODO Lab 1
-    var guest = numberOfGuests;
+    //var numberOfGuests = num;
+    print("hej");
 
 	}
 
 	this.getNumberOfGuests = function() {
 		//TODO Lab 1
-    return guests;
+    return numberOfGuests;
 	}
 
 	//Returns the dish that is on the menu for selected type
@@ -34,6 +36,8 @@ var DinnerModel = function() {
 	//Returns all the dishes on the menu.
 	this.getFullMenu = function() {
 		//TODO Lab 1
+    return menu;
+
 	}
 
 	//Returns all ingredients for all the dishes on the menu.
