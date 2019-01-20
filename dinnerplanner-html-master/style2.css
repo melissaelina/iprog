@@ -20,7 +20,7 @@ header {
 /* Create two columns/boxes that floats next to each other */
 nav {
   float: left;
-  width: 30%;
+  width: 15%;
   height: 300px; /* only for demonstration, should be removed */
   background: #ccc;
   padding: 20px;
@@ -35,7 +35,7 @@ nav ul {
 article {
   float: left;
   padding: 20px;
-  width: 70%;
+  width: 85%;
   background-color: #f1f1f1;
   height: 300px; /* only for demonstration, should be removed */
 }
@@ -196,6 +196,19 @@ h8{
   clear: both;
   display: table;
 }
-#Top-middle-section { 
+#Top-middle-section {
   background-color: yellow;
+}
+#b1{
+  background-color: grey; /* grey */
+  border: none;
+  color: white;
+  padding: 5px 15px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 14px;
+  display: block;
+  margin: 0 auto;
+
 }

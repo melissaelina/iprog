@@ -119,6 +119,19 @@ p {
   color: white;
 
 }
+#b1{
+  background-color: grey; /* grey */
+  border: none;
+  color: white;
+  padding: 5px 15px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 14px;
+  display: block;
+  margin: 0 auto;
+
+}
 hr{
   width: 90%
 }
