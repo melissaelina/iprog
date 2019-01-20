@@ -62,12 +62,13 @@ img {
   border-style: groove;
   border-width: thick;
   border-color: gray;
-  padding: 5px;
+  padding: 1px;
   float: center;
 }
+
 .vl {
-  border-left: 4px solid black;
-  height: 100px;
+  border-left: 2px solid black;
+  height: 150px;
   position: absolute;
   left: 70%;
   margin-left: -3px;
@@ -77,5 +78,43 @@ img {
 p {
   font-family: courier;
   color: red;
-  /*text-align: right;*/
+  text-align: right;
+}
+p4 {
+  font-family: courier;
+  color: red;
+  text-align: left;
+}
+
+/* Three image containers (use 25% for four, and 50% for two, etc) */
+.column {
+  float: left;
+  width: 20%;
+  padding: 1px;
+}
+
+
+/* Clear floats after image containers */
+.row::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+/*
+#column-one{
+  padding-left: 10em;
+}
+#column-three{
+  padding-right: 10em;
+}*/
+#column-two{
+    text-align:center;
+}
+#column-one{
+    text-align:right;
+}
+
+#middle {
+  padding-top: 2em;
+  padding-bottom: 1em;
 }
