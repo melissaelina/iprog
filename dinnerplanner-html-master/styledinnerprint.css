@@ -30,7 +30,7 @@ header {
 /* Three image containers (use 25% for four, and 50% for two, etc) */
 .column {
   float: left;
-  width: 50%;
+  width: 30%;
   padding: 5px;
 }
 
@@ -39,4 +39,57 @@ header {
   content: "";
   clear: both;
   display: table;
+}
+
+img {
+  border-style: groove;
+  border-width: thick;
+  border-color: gray;
+  padding: 5px;
+  float: center;
+}
+
+im1 {
+
+  padding-left: 4em;
+
+}
+im2 {
+
+  padding-left: 4em;
+
+}
+
+p1 {
+
+  font-family: times;
+}
+p2 {
+
+  font-family: times;
+}
+p3 {
+
+  font-family: times;
+}
+p4 {
+
+  font-family: times;
+}
+
+h5 {
+
+  font-family: courier;
+  font-size: 30px;
+}
+
+h3 {
+
+  font-family: courier;
+  font-size: 20px;
+}
+h4 {
+
+  font-family: courier;
+  font-size: 20px;
 }
