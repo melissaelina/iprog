@@ -43,12 +43,13 @@ p {
 }
 
 
-
+/*small orange button*/
 #b2{
   background-color: orange; /* orange */
   color: white;
 
 }
+/*grey medium button "Confirm"*/
 #b1{
   background-color: grey; /* grey */
   border: none;
@@ -61,6 +62,41 @@ p {
   display: block;
   margin: 0 auto;
 
+}
+
+/*Medium orange button, Print full recipe*/
+#b3{
+  background-color: orange; /* orange */
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  display: block;
+  margin: 0 auto;
+}
+
+#b4 {
+  background-color: orange; /* orange */
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  border-radius: 20%;
+}
+
+/*giving images borders*/
+img {
+  border-style: groove;
+  border-width: thick;
+  border-color: gray;
+  padding: 1px;
+  float: center;
 }
 
 /*medium headers, FInd dish, My dinner, etc.*/
@@ -134,4 +170,59 @@ section:after {
 /*box on page dish details*/
 #leftbox{
   background-color: LightSteelBlue;
+}
+
+/*vertical line*/
+.vl {
+  border-left: 2px solid black;
+  height: 150px;
+  position: absolute;
+  left: 70%;
+  margin-left: -3px;
+  top: 10;
+}
+
+/*small red text, used in overview page*/
+p1 {
+  font-family: courier;
+  color: red;
+  text-align: right;
+  display: block;
+  margin-top: 1em;
+  margin-bottom: 1em;
+  margin-left: 0;
+  margin-right: 0;
+}
+
+/*small red text, used in overview page for total value*/
+p4 {
+  font-family: courier;
+  color: red;
+  text-align: left;
+  display: block;
+  margin-top: 1em;
+  margin-bottom: 1em;
+  margin-left: 0;
+  margin-right: 0;
+}
+
+/*aligns columns, used in overview*/
+#column-center{
+    text-align:center;
+}
+/*aligns columns, used in overview*/
+#column-right{
+    text-align:right;
+}
+
+/*padding for row, used in overview*/
+#middle {
+  padding-top: 2em;
+  padding-bottom: 1em;
+}
+
+.column {
+  float: left;
+  width: 20%;
+  padding: 1px;
 }

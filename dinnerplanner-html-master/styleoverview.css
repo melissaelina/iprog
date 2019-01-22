@@ -45,7 +45,8 @@ h2 {
   font-size: 25px;
 }
 
-#button2{
+/*Medium orange button, Print full recipe*/
+#b3{
   background-color: orange; /* orange */
   border: none;
   color: white;
@@ -75,15 +76,26 @@ img {
   top: 10;
 }
 
-p {
+p1 {
   font-family: courier;
   color: red;
   text-align: right;
+  display: block;
+  margin-top: 1em;
+  margin-bottom: 1em;
+  margin-left: 0;
+  margin-right: 0;
 }
+
 p4 {
   font-family: courier;
   color: red;
   text-align: left;
+  display: block;
+  margin-top: 1em;
+  margin-bottom: 1em;
+  margin-left: 0;
+  margin-right: 0;
 }
 
 /* Three image containers (use 25% for four, and 50% for two, etc) */
@@ -115,13 +127,17 @@ p4 {
 #column-three{
   padding-right: 10em;
 }*/
-#column-two{
+
+/*aligns columns, used in overview*/
+#column-center{
     text-align:center;
 }
-#column-one{
+/*aligns columns, used in overview*/
+#column-right{
     text-align:right;
 }
 
+/*padding for row, used in overview*/
 #middle {
   padding-top: 2em;
   padding-bottom: 1em;
