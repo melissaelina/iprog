@@ -7,7 +7,7 @@ $(function() {
 
 	// OBS class names starts with capital letter, see js files under js -> view folder
 	// view files according to prototype provided
-	// var welcomeView = new WelcomeView($("#welcomeView"), model);
+	//var welcomeView = new WelcomeView($("#welcomeView"), model);
 	var sidebarView = new SidebarView($("#sidebarView"), model);
 	// var dishItemView = new DishItemView($("#dishItemView"), model);
 	var dishSearchView = new DishSearchView($("#dishSearchView"), model);
