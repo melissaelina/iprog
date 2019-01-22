@@ -24,8 +24,9 @@ header {
    text-align: center;
 }
 
+/*
 /* Responsive layout - makes the two columns/boxes stack on top of each other instead of next to each other, on small screens */
-@media (max-width: 600px) {
+/*@media (max-width: 600px) {
   nav, article {
     width: 100%;
     height: auto;
@@ -42,6 +43,21 @@ header {
     width: 100%;
   }
 }
+*/
+/* Media query for mobile*/
+
+/*
+@media only screen and (max-width: 480px)  {
+
+  article {
+
+    display:block;
+
+    width:100%;
+
+  }
+
+}*/
 
 h2 {
 
@@ -280,4 +296,57 @@ Three image containers (use 25% for four, and 50% for two, etc) */
 im1 {
 
   padding-left: 4em;
+}
+
+/* Mobile Styles */
+@media only screen and (max-width: 600px) {
+  body {
+    background-color: #F09A9D; /* Red */
+  }
+}
+
+/* Tablet Styles */
+@media only screen and (min-width: 601px) and (max-width: 960px) {
+  body {
+    background-color: #F5CF8E; /* Yellow */
+  }
+}
+
+/* Desktop Styles */
+@media only screen and (min-width: 961px) {
+  body {
+    background-color: #B2D6FF; /* Blue */
+  }
+}
+
+/* Tablet Styles */
+@media only screen and (min-width: 601px) and (max-width: 960px) {
+  /* Tablet Styles */
+  @media only screen and (min-width: 601px) and (max-width: 960px) {
+    #column30,
+    #column-one,
+    .column {
+      width: 50%;
+    }
+  } {
+    width: 50%;
+  }
+}
+
+
+
+@media only screen and (max-width: 600px) {
+  /* Tablet Styles */
+  @media only screen and (max-width: 600px) {
+    #column30,
+    #column-one,
+    #columndetails,
+    .column,
+    .section,
+    .nav {
+      width: 100%;
+    }
+  } {
+    width: 100%;
+  }
 }
