@@ -161,7 +161,7 @@ h6 {
 nav {
   float: left;
   width: 15%;
-  height: 100em;  /*only for demonstration, should be removed */
+  /*height: 100em;  only for demonstration, should be removed */
   background: #ccc;
   padding: 20px;
 }
@@ -221,7 +221,7 @@ section:after {
   border-left: 2px solid black;
   height: 150px;
   position: absolute;
-  left: 70%;
+  left: 75%;
   margin-left: -3px;
   top: 10;
 }
@@ -242,7 +242,8 @@ p1 {
 p4 {
   font-family: courier;
   color: red;
-  text-align: left;
+  position: absolute;
+  bottom: 1;
   display: block;
   margin-top: 1em;
   margin-bottom: 1em;
@@ -298,6 +299,10 @@ im1 {
   padding-left: 4em;
 }
 
+#totalsum{
+   padding-bottom:5em;
+}
+
 /* Mobile Styles */
 @media only screen and (max-width: 600px) {
   body {
@@ -341,10 +346,52 @@ im1 {
     #column30,
     #column-one,
     #columndetails,
-    .column,
-    .section,
-    .nav {
+    .column {
       width: 100%;
+    }
+  } {
+    width: 100%;
+  }
+}
+@media only screen and (max-width: 960px) {
+  /* Tablet Styles */
+  @media only screen and (max-width: 960px) {
+
+    #nav,
+    #columndetails,
+    #column-right,
+    #column-center,
+    #column-left,
+    #totalsum {
+      width: 100%;
+    }
+  } {
+    width: 100%;
+  }
+}
+
+@media only screen and (max-width: 960px) {
+  /* Tablet Styles */
+  @media only screen and (max-width: 960px) {
+
+    #column-right,
+    #column-center,
+    #column-left,
+    #totalsum {
+      text-align: right;
+    }
+  } {
+    width: 100%;
+  }
+}
+
+@media only screen and (max-width: 960px) {
+  /* Tablet Styles */
+  @media only screen and (max-width: 960px) {
+
+    #totalsum {
+      padding left: 5em;
+      padding bottom: 10em;
     }
   } {
     width: 100%;
