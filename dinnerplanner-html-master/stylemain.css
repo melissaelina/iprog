@@ -12,6 +12,7 @@ header {
   font-family: courier;
 }
 
+
   /*   footer style*/
 .footer {
    position: fixed;
@@ -48,9 +49,20 @@ h2 {
   font-family: courier;
 }
 
-p {
+/* Container class style */
+.container {
+  width: 400px;
+  position: relative;
+  margin: auto;
+  padding: 100px;
+}
 
+/* Paragraph style */
+p {
+  text-align: center;
+  padding: 50px;
   font-family: times;
+  color: black
 }
 
 
