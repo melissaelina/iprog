@@ -1,0 +1,3 @@
+var DishItemView = function() {
+  
+}

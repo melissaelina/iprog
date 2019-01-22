@@ -1,4 +1,3 @@
-console.log("hello");
 /** ExampleView Object constructor
  *
  * This object represents the code for one specific view (in this case the Example view).
@@ -34,7 +33,7 @@ var ExampleView = function (container, model) {
 	 * in some other view gives the same ID to another element.
 	 *
 	 */
-	var numberOfGuests = container.find("#numberOfGuests");
+	var numberOfGuests = (container.find("#numberOfGuests").length > 0) ? container.find("#numberOfGuests") : console.log('ID #numberOfGuests empty');
 
 	/**
 	 * When we want references to some view elements to be available from outside of view, we
@@ -46,16 +45,30 @@ var ExampleView = function (container, model) {
 	 * this button and do something with it (see Lab 2).
 	 *
 	 */
-  console.log(5 + 6);
 	this.plusButton = container.find("#plusGuest");
 	this.minusButton = container.find("#minusGuest");
+  this.searchBox = container.find("#searchbarDishes");
 
 	/**
 	 * Here we use @var {jQuery object} numberOfGuests that is a reference to <span>
 	 * in our view to dynamically set it's value to "Hello World".
 	 */
-  console.log("hej");
-  numberOfGuests.html("Hello World");
-  //console.log(numberOfGuests;
+	numberOfGuests.html(0);
+
+  this.minusButton.click((e) => {
+    var result = model.setNumberOfGuests(numberOfGuests.html(),"minus");
+    numberOfGuests.html(result);
+  });
+  this.plusButton.click((e) => {
+    var result = model.setNumberOfGuests(numberOfGuests.html(),"plus");
+    numberOfGuests.html(result);
+  });
+  this.searchBox.keyup(() => {
+    var keyword = this.searchBox.val();
+    if(keyword.length > 1){
+      console.log(model.getAllDishes('starter', keyword));
+    }
+  });
+
 
 }
