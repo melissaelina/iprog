@@ -78,6 +78,7 @@ p {
   margin: 0 auto;
 }
 
+/*Go back and edit dinner*/
 #b4 {
   background-color: orange; /* orange */
   border: none;
@@ -118,6 +119,17 @@ h4 {
   font-size: 12px;
 }
 
+h5 {
+
+  font-family: courier;
+  font-size: 30px;
+}
+
+h6 {
+
+  font-family: courier;
+  font-size: 20px;
+}
 
 nav {
   float: left;
@@ -206,6 +218,12 @@ p4 {
   margin-right: 0;
 }
 
+/*used in dinner print*/
+p2 {
+
+  font-family: times;
+}
+
 /*aligns columns, used in overview*/
 #column-center{
     text-align:center;
@@ -225,4 +243,25 @@ p4 {
   float: left;
   width: 20%;
   padding: 1px;
+}
+
+/* column with 30% division
+Three image containers (use 25% for four, and 50% for two, etc) */
+#column30 {
+  float: left;
+  width: 30%;
+  padding: 5px;
+}
+
+/*Used in dinnerprint*/
+#column-one {
+  float: left;
+  width: 25%;
+  padding: 5px;
+}
+
+/*Left hand padding 4em*/
+im1 {
+
+  padding-left: 4em;
 }
