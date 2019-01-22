@@ -32,6 +32,17 @@ header {
   }
 }
 
+@media screen and (max-width: 600px) {
+  .column {
+    width: 100%;
+  }
+}
+@media screen and (max-width: 600px) {
+  #columndetails {
+    width: 100%;
+  }
+}
+
 h2 {
 
   font-family: courier;
@@ -186,6 +197,7 @@ section:after {
 
 #leftbox{
   background-color: LightSteelBlue;
+  padding: 0.5em;
 }
 
 /*vertical line*/
