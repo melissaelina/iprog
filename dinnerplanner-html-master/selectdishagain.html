@@ -8,6 +8,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Select dish again</title>
   <link rel="stylesheet" href="stylemain.css">
+  <script src="https://code.jquery.com/jquery.js"></script>
 
   <!-- Bootstrap CSS -->
   <!--<link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css">
@@ -18,45 +19,55 @@
   <div class="header">
     <h1>Dinner Planner</h1>
   </div>
+  <br>
+  <br>
+  <br>
 
   <section>
-    <nav>
-
+    <nav id="sidebarView"> <!-- js -->
       <h2>My dinner</h2>
       <ul>
-        <li><a href="#">London</a></li>
-        <li><a href="#">Paris</a></li>
-        <li><a href="#">Tokyo</a></li>
+        <label>
+          People: <span id="numberOfGuests"></span>
+        </label>
+        <div>
+          <!-- bootstrap script -->
+          <!--<button id="minusGuest" class="btn"><span class="glyphicon glyphicon-minus"></span></button>
+                <button id="plusGuest" class="btn"><span class="glyphicon glyphicon-plus"></span></button>
+              -->
+          <!-- pure css script -->
+          <button id="minusGuest" class="btn">-</button>
+          <button id="plusGuest" class="btn">+</span></button>
+        </div>
       </ul>
-
       <button class="button" id="b1">Confirm Dinner</button>
     </nav>
 
     <article>
-      <div id="Top-middle-section">
-        <h3>Add another one</h3>
-        <form>
-          <b1>
-            <!-- <button class="button">Enter key words</button> -->
-
-            <input type="text" id="enterk" value="Enter key words"><br>
-            <b1 />
-            <div class="dropdown">
-              <button class="dropbtn">All</button>
-              <div class="dropdown-content">
-                <a href="#">Main Course</a>
-                <a href="#">Side dish</a>
-                <a href="#">Desert</a>
-                <a href="#">Apetizer</a>
-              </div>
-            </div>
-            <input type="search" value="search">
-        </form>
-
-        <p>This is text in the middle.</p>
+      <div id="dishSearchView"> <!-- js -->
+        <section>
+          <h2>Add another dish</h2>
+          <input id="searchbarDishes" placeholder="Enter key words">
+          <select>
+            <!-- SAME HERE -->
+            <option value=""></option>
+          </select>
+          <button id="">search</button>
+        </section>
       </div>
+
       <hr>
       <div class="row">
+        <nav id="dishItemView"> <!-- js -->
+          <!-- finish -->
+          <!-- GET JS SRC  -->
+          <li>
+            <img>
+            <p>PIZZA</p>
+          </li>
+        </nav>
+        <!--
+
         <div class="column">
           <div>
             <im1>
@@ -99,7 +110,7 @@
             </im5>
             <p>Some text</p>
           </div>
-        </div>
+        </div> -->
       </div>
 
 
