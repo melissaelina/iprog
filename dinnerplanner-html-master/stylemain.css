@@ -12,17 +12,16 @@ header {
   font-family: courier;
 }
 
-
-  /*   footer style*/
+/*   footer style*/
 .footer {
-   position: fixed;
-   left: 0;
-   bottom: 0;
-   width: 100%;
-   height: 5%;
-   background-color: silver;
-   color: white;
-   text-align: center;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 5%;
+  background-color: silver;
+  color: white;
+  text-align: center;
 }
 
 /* Responsive layout - makes the two columns/boxes stack on top of each other instead of next to each other, on small screens */
@@ -38,6 +37,7 @@ header {
     width: 100%;
   }
 }
+
 @media screen and (max-width: 600px) {
   #columndetails {
     width: 100%;
@@ -45,7 +45,6 @@ header {
 }
 
 h2 {
-
   font-family: courier;
 }
 
@@ -65,16 +64,17 @@ p {
   color: black
 }
 
-
 /*small orange button*/
-#b2{
-  background-color: orange; /* orange */
+#b2 {
+  background-color: orange;
+  /* orange */
   color: white;
-
 }
+
 /*grey medium button "Confirm"*/
-#b1{
-  background-color: grey; /* grey */
+#b1 {
+  background-color: grey;
+  /* grey */
   border: none;
   color: white;
   padding: 5px 15px;
@@ -84,12 +84,12 @@ p {
   font-size: 14px;
   display: block;
   margin: 0 auto;
-
 }
 
 /*Medium orange button, Print full recipe*/
-#b3{
-  background-color: orange; /* orange */
+#b3 {
+  background-color: orange;
+  /* orange */
   border: none;
   color: white;
   padding: 15px 32px;
@@ -103,7 +103,8 @@ p {
 
 /*Go back and edit dinner*/
 #b4 {
-  background-color: orange; /* orange */
+  background-color: orange;
+  /* orange */
   border: none;
   color: white;
   padding: 15px 32px;
@@ -125,31 +126,27 @@ img {
 
 /*medium headers, FInd dish, My dinner, etc.*/
 h2 {
-
   font-family: courier;
 }
 
 /*medium-small headers*/
 h3 {
-
   font-family: courier;
   font-size: 15px;
 }
+
 /*small headers*/
 h4 {
-
   font-family: courier;
   font-size: 12px;
 }
 
 h5 {
-
   font-family: courier;
   font-size: 30px;
 }
 
 h6 {
-
   font-family: courier;
   font-size: 20px;
 }
@@ -157,7 +154,8 @@ h6 {
 nav {
   float: left;
   width: 15%;
-  height: 100em;  /*only for demonstration, should be removed */
+  height: 100em;
+  /*only for demonstration, should be removed */
   background: #ccc;
   padding: 20px;
 }
@@ -182,6 +180,7 @@ section:after {
   display: table;
   clear: both;
 }
+
 /*Row style for all rows*/
 .row::after {
   content: "";
@@ -195,19 +194,15 @@ section:after {
   width: 50%;
   padding: 1px;
 }
-
-
 }
 
 /*The below tag needs to stay otherwise leftbox color disappears for some reason*/
-#hrdetails{
+#hrdetails {
   width: 90%
 }
 
-
 /*box on page dish details*/
-
-#leftbox{
+#leftbox {
   background-color: LightSteelBlue;
   padding: 0.5em;
 }
@@ -248,17 +243,17 @@ p4 {
 
 /*used in dinner print*/
 p2 {
-
   font-family: times;
 }
 
 /*aligns columns, used in overview*/
-#column-center{
-    text-align:center;
+#column-center {
+  text-align: center;
 }
+
 /*aligns columns, used in overview*/
-#column-right{
-    text-align:right;
+#column-right {
+  text-align: right;
 }
 
 /*padding for row, used in overview*/
@@ -290,6 +285,5 @@ Three image containers (use 25% for four, and 50% for two, etc) */
 
 /*Left hand padding 4em*/
 im1 {
-
   padding-left: 4em;
 }
