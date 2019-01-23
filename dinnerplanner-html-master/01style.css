@@ -23,9 +23,7 @@ footer {
   color: white;
 }
 
-h1 {
-
-}
+h1 {}
 
 h2 {
   font-size: 20px;
@@ -37,11 +35,20 @@ section {
   display: flex;
 }
 
-/* Style the navigation menu */
+/* Style the side navigation menu */
 aside {
   -webkit-flex: 1;
   -ms-flex: 1;
   flex: 1;
+  background: #ccc;
+  padding: 20px;
+}
+
+/* Style the upper navigation menu as in dinnerStatusView */
+nav {
+  float: left;
+  width: 100%;
+  height: 10%;
   background: #ccc;
   padding: 20px;
 }
@@ -63,10 +70,16 @@ article {
 }
 
 /* Style home page text paragraphg */
-#homepageparagraph{
+#homepageparagraph {
   padding-left: 15%;
   padding-right: 15%;
   padding-bottom: 10%;
+}
+
+/* Positioning of button in dinnerStatusView.js */
+#buttonplacement {
+  margin-left: auto;
+  padding: 2%;
 }
 
 /* Create two unequal columns that sits next to each other */
@@ -91,15 +104,16 @@ article {
   padding: 10px;
 }
 
-/* Plus/minus button */
-.btn {
-
+/* Style the top navigation bar */
+.navbar {
+  display: flex;
 }
+
+/* Plus/minus button */
+.btn {}
 
 /* Buttons with text */
-.button {
-
-}
+.button {}
 
 /* Responsive layout - makes the menu and the content (inside the section) sit on top of each other instead of next to each other */
 @media (max-width: 600px) {

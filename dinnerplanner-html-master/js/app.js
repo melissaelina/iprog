@@ -12,7 +12,7 @@ $(function() {
 	//var dishItemView = new DishItemView($("#dishItemView"), model);
 	var dishSearchView = new DishSearchView($("#dishSearchView"), model);
 	//var dishDetailsView = new DishDetailsView($("#printListOut"), model);
-	//var dinnerStatusView = new DinnerStatusView($("#globalPage"), model);
+	var dinnerStatusView = new DinnerStatusView($("#globalPage"), model);
 
 	/**
 	 * IMPORTANT: app.js is the only place where you are allowed to

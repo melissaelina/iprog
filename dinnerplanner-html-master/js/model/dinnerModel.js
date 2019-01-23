@@ -23,13 +23,7 @@ var DinnerModel = function() {
 
 	//Returns the dish that is on the menu for selected type
 	this.getSelectedDish = function(type) {
-		for (var k = 0; k < menu.length; k++) {
-			if (menu[k].type === type) {
-				return menu[k];
-			} else {
-					return false;
-			}
-		}
+
 	}
 
 	//Returns all the dishes on the menu.
@@ -39,43 +33,23 @@ var DinnerModel = function() {
 
 	//Returns all ingredients for all the dishes on the menu.
 	this.getAllIngredients = function() {
-		var ingredients = [];			// empty ingredients array
-		for (var k = 0; k < menu.length; k++) {
-			for (var j = 0; j < menu[k].ingredients.length; j++) {		//for dishes, foreach ingredients get name
-				ingredients.push(menu[k].ingredients[j])
-			}
-		}
-		return ingredients;
+
 	}
 
 	//Returns the total price of the menu (all the ingredients multiplied by number of guests).
 	this.getTotalMenuPrice = function() {
-		var price = 0;
-		for (var k = 0; k < menu.length; k++) {
-			for (var j = 0; j < menu[k].ingredients.length; j++) {
-				price += menu[k].ingredients[j].price;
-			}
-		}
-		return price * guests;
+
 	}
 
 	//Adds the passed dish to the menu. If the dish of that type already exists on the menu
 	//it is removed from the menu and the new one added.
 	this.addDishToMenu = function(id) {
-		var dish = this.getDish(id);
-		for (var k = 0; k < menu.length; k++) {
-			if (menu[k].groupType === dish.groupType)
-			menu.splice(k, 1);
-		}
-		menu.push(dish);
+
 	}
 
 	//Removes dish from menu
 	this.removeDishFromMenu = function(id) {
-		for (var k = 0; k < menu.length; k++) {
-			if (menu[k].id == id)
-			menu.splice(k, 1);
-		}
+
 	}
 
 	//function that returns all dishes of specific type (i.e. "starter", "main dish" or "dessert")
@@ -86,12 +60,7 @@ var DinnerModel = function() {
 		var found = true;
 		if(filter){
 			found = false;
-/*			dish.ingredients.forEach(function(ingredient) {
-				if(ingredient.name.indexOf(filter)!=-1) {
-					found = true;
-				}
-			});*/
-			if(dish.name.indexOf(filter) != -1)
+			if(dish.name.toLowerCase().indexOf(filter) != -1) // all dish names in lower case
 			{
 				found = true;
 			}

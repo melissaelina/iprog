@@ -6,11 +6,8 @@ var DishSearchView = function(container, model) {
   this.searchButton = container.find("#searchButton");
   this.pickupDish = container.find(".pickupDishes");
 
-  this.searchButton.click(() => {
-    var keyword = this.searchBox.val();
-    keyword = keyword.toLowerCase().replace(/\b[a-z]/g, function(letter) {
-        return letter.toUpperCase(); // for all input to have capital letter
-    });
+  this.searchButton.click(() => {     // add listener on pressing enter
+    var keyword = this.searchBox.val().toLowerCase(); // lowercase to match dishes names
     var type = false;
     for(var i = 0; i < this.dishesBoxType.length; i++){
       if(this.dishesBoxType[i].selected === true) type = this.dishesBoxType[i].value;
@@ -33,7 +30,7 @@ var DishSearchView = function(container, model) {
       }
     }
   });
-  this.dishesBoxList.click((e) => {
+    this.dishesBoxList.click((e) => {
     if(e.target.nodeName === "IMG"){
       var dish = model.getDish(e.target.id);
       console.log(dish);
