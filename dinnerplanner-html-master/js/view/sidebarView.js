@@ -8,7 +8,7 @@ var SidebarView = function (container, model) {
   this.searchBox = container.find("#searchbarDishes");
 
 
-	numberOfGuests.html(0);
+	if(numberOfGuests)	numberOfGuests.html(0);
 
   this.minusButton.click((e) => {
     var result = model.setNumberOfGuests(numberOfGuests.html(),"minus");

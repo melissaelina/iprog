@@ -9,12 +9,10 @@ $(function() {
 	// view files according to prototype provided
 	//var welcomeView = new WelcomeView($("#welcomeView"), model);
 	var sidebarView = new SidebarView($("#sidebarView"), model);
-	// var dishItemView = new DishItemView($("#dishItemView"), model);
+	//var dishItemView = new DishItemView($("#dishItemView"), model);
 	var dishSearchView = new DishSearchView($("#dishSearchView"), model);
-	// var dishDetailsView = new DishDetailsView($("#dishDetailsView"), model);
-	// var dinnerStatusView = new DinnerStatusView($("#dinnerStatusView"), model);
-
-	//console.log(model);
+	//var dishDetailsView = new DishDetailsView($("#printListOut"), model);
+	//var dinnerStatusView = new DinnerStatusView($("#globalPage"), model);
 
 	/**
 	 * IMPORTANT: app.js is the only place where you are allowed to

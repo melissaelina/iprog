@@ -23,7 +23,7 @@ var DinnerModel = function() {
 
 	//Returns the dish that is on the menu for selected type
 	this.getSelectedDish = function(type) {
-		for (var k = 0; k < menu.length; k++) {				// WHAT UP HERE
+		for (var k = 0; k < menu.length; k++) {
 			if (menu[k].type === type) {
 				return menu[k];
 			} else {
@@ -51,7 +51,7 @@ var DinnerModel = function() {
 	//Returns the total price of the menu (all the ingredients multiplied by number of guests).
 	this.getTotalMenuPrice = function() {
 		var price = 0;
-		for (var k = 0; k < menu.length; k++) {				// WRONG INDENT?
+		for (var k = 0; k < menu.length; k++) {
 			for (var j = 0; j < menu[k].ingredients.length; j++) {
 				price += menu[k].ingredients[j].price;
 			}
@@ -82,11 +82,11 @@ var DinnerModel = function() {
 	//you can use the filter argument to filter out the dish by name or ingredient (use for search)
 	//if you don't pass any filter all the dishes will be returned
 	this.getAllDishes = function (type,filter) {
-	  return dishes.filter(function(dish) {
+	  return $(dishes).filter(function(index,dish) {
 		var found = true;
 		if(filter){
 			found = false;
-			dish.ingredients.forEach(function(ingredient) {
+			$.each(dish.ingredients,function(index,ingredient) {
 				if(ingredient.name.indexOf(filter)!=-1) {
 					found = true;
 				}
@@ -98,15 +98,6 @@ var DinnerModel = function() {
 		}
 	  	return dish.type == type && found;
 	  });
-	}
-
-	//function that returns a dish of specific ID
-	this.getDish = function (id) {
-	  for(key in dishes){
-			if(dishes[key].id == id) {
-				return dishes[key];
-			}
-		}
 	}
 
 

@@ -10,7 +10,6 @@
   <link rel="stylesheet" href="stylemain.css">
   <script src="https://code.jquery.com/jquery.js"></script>
 
-
   <!-- Bootstrap CSS -->
   <!--<link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css">
 -->
@@ -43,76 +42,28 @@
       <button class="button" id="b1">Confirm Dinner</button>
     </nav>
 
-    <article>
-      <div id="dishSearchView"> <!-- js -->
+    <article id="dishDetailsView">
+      <div> <!-- js -->
         <section>
-          <h2>Find a dish</h2>
+          <h2>JS NAME OF DISH</h2>
           <input id="searchbarDishes" placeholder="Enter key words">
-          <select>
+          <select id="typeDishes">
             <!-- SAME HERE -->
-            <option value=""></option>
+            <option value="starter">starter</option>
+            <option value="main dish">main dish</option>
+            <option value="dessert">dessert</option>
           </select>
-          <button id="">search</button>
+          <button id="searchButton">search</button>
         </section>
       </div>
       <hr>
       <div class="row">
-        <nav id="dishItemView"> <!-- js -->
+        <nav id="dishItemView" style="width:100%;"> <!-- js -->
           <!-- finish -->
-          <!-- GET JS SRC  -->
-          <li>
-            <img>
-            <p>PIZZA</p>
-          </li>
+          <!-- ALL THE DISHES ARE GOING HERE CALLED BY JS  -->
         </nav>
-        <!--
 
-        <div class="column">
-          <div>
-            <im1>
-              <img src="images/icecream.jpg" alt="Ice Cream" style="width:100%">
-            </im1>
-            <p>Some text</p>
-          </div>
-        </div>
-        <div class="column">
-          <div>
-            <im2>
-              <img src="images/meatballs.jpg" alt="meatballs" style="width:100%">
-            </im2>
-            <p>Some text</p>
-          </div>
-        </div>
-
-        <div class="column">
-          <div>
-            <im3>
-              <img src="images/sourdough.jpg" alt="sourdough" style="width:100%">
-            </im3>
-            <p>Some text</p>
-          </div>
-        </div>
-
-        <div class="column">
-          <div>
-            <im4>
-              <img src="images/toast.jpg" alt="Toast" style="width:100%">
-            </im4>
-            <p>Some text</p>
-          </div>
-        </div>
-
-        <div class="column">
-          <div>
-            <im5>
-              <img src="images/bakedbrie.jpg" alt="Brie" style="width:100%">
-            </im5>
-            <p>Some text</p>
-          </div>
-        </div> -->
       </div>
-
-
 
     </article>
 
@@ -126,9 +77,7 @@
   <!-- The application JavaScript code -->
   <script src="js/app.js"></script>
   <script src="js/model/dinnerModel.js"></script>
-  <!-- <script src="js/view/exampleView.js"></script> -->
   <script src="js/view/sidebarView.js"></script>
-  <script src="js/view/dishItemView.js"></script>
   <script src="js/view/dishSearchView.js"></script>
 
 </body>
