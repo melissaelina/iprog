@@ -8,6 +8,9 @@ var DishSearchView = function(container, model) {
 
   this.searchButton.click(() => {
     var keyword = this.searchBox.val();
+    keyword = keyword.toLowerCase().replace(/\b[a-z]/g, function(letter) {
+        return letter.toUpperCase(); // for all input to have capital letter
+    });
     var type = false;
     for(var i = 0; i < this.dishesBoxType.length; i++){
       if(this.dishesBoxType[i].selected === true) type = this.dishesBoxType[i].value;
