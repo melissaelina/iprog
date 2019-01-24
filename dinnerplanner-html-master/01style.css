@@ -23,10 +23,17 @@ footer {
   color: white;
 }
 
-h1 {}
+h1 {
+  font-family: courier;
+}
 
 h2 {
   font-size: 20px;
+  font-family: courier;
+}
+
+p{
+  font-family: times;
 }
 
 /* Container for flexboxes */
@@ -60,6 +67,15 @@ article {
   flex: 3;
   background-color: white;
   padding: 10px;
+}
+
+/*giving images borders*/
+img {
+  border-style: groove;
+  border-width: thick;
+  border-color: gray;
+
+  float: center;
 }
 
 /* Style home page text paragraph and button positioning */
@@ -110,10 +126,30 @@ article {
 }
 
 /* Plus/minus button */
-.btn {}
+.btn {
+  background-color: MediumOrchid;
+  border: 2px solid black;
+  color: white;
+  padding: 10px 15px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  font-family: courier;
+}
 
 /* Buttons with text */
-.button {}
+.button {
+  background-color: purple;
+  border: 2px solid black;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  font-family: courier;
+}
 
 /* Responsive layout - makes the menu and the content (inside the section) sit on top of each other instead of next to each other */
 @media (max-width: 600px) {
