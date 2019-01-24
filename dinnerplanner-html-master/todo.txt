@@ -2,6 +2,8 @@
 
 --- dinnerModel.js ---
 - fix getNumberOfGuests function
+- fix all functions (so that the imagined functionalities of the prototype will work)
+  How to test: change data directly in the dinnerModel (dishes) and the change should show up on all screens
 
 --- dishSearchView.js ---
 x make searchBox case UNsensitive
