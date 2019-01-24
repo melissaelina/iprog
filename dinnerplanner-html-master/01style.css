@@ -152,6 +152,15 @@ img {
   font-family: courier;
 }
 
+.vl {
+  border-left: 2px solid black;
+  height: 150px;
+  position: absolute;
+  left: 70%;
+  margin-left: -3px;
+  top: 10;
+}
+
 /* Responsive layout - makes the menu and the content (inside the section) sit on top of each other instead of next to each other */
 @media (max-width: 600px) {
   section {
