@@ -18,6 +18,9 @@ var SidebarView = function (container, model) {
     var result = model.setNumberOfGuests(numberOfGuests.html(),"plus");
     numberOfGuests.html(result);
   });
+	var totalguests = (container.find("getNumberOfGuests").length)
+	console.log(totalguests);
+
   this.searchBox.keyup(() => {
     var keyword = this.searchBox.val();
     if(keyword.length > 1){

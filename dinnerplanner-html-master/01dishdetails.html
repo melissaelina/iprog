@@ -19,57 +19,56 @@
     <!-- JS SIDEBARVIEW -->
     <aside class="side" id="sidebarView">
       <h2>My dinner</h2>
-        <label>
-          People: <span id="numberOfGuests"></span>
-        </label>
-        <div>
-          <!-- bootstrap script -->
-          <!--<button id="minusGuest" class="btn"><span class="glyphicon glyphicon-minus"></span></button>
+      <label>
+        People: <span id="numberOfGuests"></span>
+      </label>
+      <div>
+        <!-- bootstrap script -->
+        <!--<button id="minusGuest" class="btn"><span class="glyphicon glyphicon-minus"></span></button>
                 <button id="plusGuest" class="btn"><span class="glyphicon glyphicon-plus"></span></button> -->
-          <!-- css script -->
-          <button id="minusGuest" class="btn">-</button>
-          <button id="plusGuest" class="btn">+</button>
-        </div>
-        <p>Dish name: <span id=""></span></p> <!-- FILL IN "" -->
-        <p>Cost: <span id=""></span></p> <!-- FILL IN "" -->
+        <!-- css script -->
+        <button id="minusGuest" class="btn">-</button>
+        <button id="plusGuest" class="btn">+</button>
+      </div>
+      <p>Dish name: <span id=""></span></p> <!-- FILL IN "" -->
+      <p>Cost: <span id=""></span></p> <!-- FILL IN "" -->
       <button class="button">Confirm Dinner</button>
     </aside>
     <!-- JS DISHDETAILSVIEW -->
-    <div class="main" >
+    <div class="main">
       <section id="dishDetailsView">
-
-        <section>
-          <article>
-            <h2>Name of dish JS</h2>
-            image
-            <p>text about dish</p>
-            <button class="button">back to menu</button>
-            <h2>Preparations</h2>
-          </article>
-          <aside>
-            <hr>
-            ingredients
-            <br><br>
-            <hr>
-            <button class="button">Add to menu</button>
-          </aside>
-        </section>
+        <article>
+          <h2>Name of dish JS</h2>
+          image
+          <p>text about dish</p>
+          <button class="button">back to menu</button>
+        </article>
+        <article style="background: Thistle;">
+          <hr>
+          ingredients
+          <br><br>
+          <hr>
+          <button class="button">Add to menu</button>
+        </article>
       </section>
+      <article>
+        <h2>Preparations</h2>
+      </article>
     </div>
   </section>
   <!-- <footer></footer> -->
 
-<!-- jQuery -->
-<script src="https://code.jquery.com/jquery.js"></script>
-<!-- Bootstrap JavaScript, needed if you want for instance tabs, models, popovers etc. -->
-<script src="http://netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
+  <!-- jQuery -->
+  <script src="https://code.jquery.com/jquery.js"></script>
+  <!-- Bootstrap JavaScript, needed if you want for instance tabs, models, popovers etc. -->
+  <script src="http://netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
 
-<!-- The application JavaScript code -->
-<script src="js/app.js"></script>
-<script src="js/model/dinnerModel.js"></script>
-<script src="js/view/sidebarView.js"></script>
-<script src="js/view/dishSearchView.js"></script>
-<script src="js/view/dishDetailsView.js"></script>
+  <!-- The application JavaScript code -->
+  <script src="js/app.js"></script>
+  <script src="js/model/dinnerModel.js"></script>
+  <script src="js/view/sidebarView.js"></script>
+  <script src="js/view/dishSearchView.js"></script>
+  <script src="js/view/dishDetailsView.js"></script>
 </body>
 
 </html>
