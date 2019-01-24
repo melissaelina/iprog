@@ -10,9 +10,13 @@ x make searchBox case UNsensitive
 --- dinnerStatusView.js ---
 - use getNumberOfGuests function to display people??? or is it overwriting dishSearchView???
 
+--- 01 selectdish.html ---
+- fix cost and dish name labels
+
 --- 01overview.html ---
 - nav and article are overlapping
 
 --- 01style.css ---
 - implement styling to replicate prototype
 - check if we can delete body {} style function
+- labels function not working properly. Goal is to get some air around labels. Remove breaks and fix labelpadding

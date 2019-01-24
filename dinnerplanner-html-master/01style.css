@@ -3,12 +3,12 @@
 }
 
 body {
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: Courier, Times, serif;
 }
 
 /* Style the header */
 header {
-  background-color: #666;
+  background-color: #9f9f9f;
   padding: 30px;
   text-align: center;
   font-size: 35px;
@@ -23,12 +23,6 @@ footer {
   color: white;
 }
 
-h1 {}
-
-h2 {
-  font-size: 20px;
-}
-
 /* Container for flexboxes */
 section {
   display: -webkit-flex;
@@ -40,7 +34,7 @@ aside {
   -webkit-flex: 1;
   -ms-flex: 1;
   flex: 1;
-  background: #ccc;
+  background: Thistle;
   padding: 20px;
 }
 
@@ -60,6 +54,21 @@ article {
   flex: 3;
   background-color: white;
   padding: 10px;
+}
+
+/*giving images borders*/
+img {
+  border-style: groove;
+  border-width: thick;
+  border-color: gray;
+  /*padding: 1px;*/
+  float: center;
+}
+
+/* Labels, such as output, style */
+label {
+  padding-top: 5%;
+  padding-bottom: 5%;
 }
 
 /* Style home page text paragraph and button positioning */
@@ -110,10 +119,37 @@ article {
 }
 
 /* Plus/minus button */
-.btn {}
+.btn {
+  background-color: MediumOrchid;
+  border: 2px solid black;
+  color: white;
+  padding: 10px 15px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+}
 
 /* Buttons with text */
-.button {}
+.button {
+  background-color: purple;
+  border: 2px solid black;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+}
+
+.vl {
+  border-left: 2px solid black;
+  height: 150px;
+  position: absolute;
+  left: 70%;
+  margin-left: -3px;
+  top: 10;
+}
 
 /* Responsive layout - makes the menu and the content (inside the section) sit on top of each other instead of next to each other */
 @media (max-width: 600px) {
