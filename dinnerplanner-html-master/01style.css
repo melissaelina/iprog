@@ -47,8 +47,9 @@ aside {
   -webkit-flex: 1;
   -ms-flex: 1;
   flex: 1;
-  background: #ccc;
+  background: Thistle;
   padding: 20px;
+  font-family: courier;
 }
 
 /* Style the upper navigation menu as in dinnerStatusView */
@@ -74,7 +75,7 @@ img {
   border-style: groove;
   border-width: thick;
   border-color: gray;
-
+  /*padding: 1px;*/
   float: center;
 }
 
