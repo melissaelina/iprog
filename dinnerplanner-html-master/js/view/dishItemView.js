@@ -44,9 +44,7 @@ var DishItemView = function (container, model)  {
   /*for i(in model.getFullMenu()){
     var name = model.getFullMenu()[i].name;
     var image = model.getFullMenu()[i].image;
-
     console.log(name);
     console.log(image);
-
   }*/
 }
