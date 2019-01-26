@@ -3,7 +3,8 @@ var DinnerModel = function() {
 
 	/* Implements the data structures that will hold number of guest (a number) and
 	selected dishes for the dinner menu (an empty array) */
-	var guests = 3, menu = [];			// variables decleared and values assigned
+	var guests = 0, menu = [];			// variables decleared and values assigned
+
 
 	this.setNumberOfGuests = function(value, type) {
 		var a = false;
@@ -16,6 +17,13 @@ var DinnerModel = function() {
 		}
 		return a;
 	}
+
+/*
+	this.setNumberOfGuests = function(num) {
+		guests = num;
+	}
+	*/
+
 
 	this.getNumberOfGuests = function() {
 		return guests;
@@ -38,7 +46,13 @@ var DinnerModel = function() {
 
 	//Returns the total price of the menu (all the ingredients multiplied by number of guests).
 	this.getTotalMenuPrice = function() {
-
+		var totalprice = 0;
+		for(i in dishes) {
+			for(j in dishes[i].ingredients) {
+				totalprice += dishes[i].ingredients[j].price * dishes[i].ingredients[j].quantity;
+			}
+		}
+		return totalprice * guests;
 	}
 
 	//Adds the passed dish to the menu. If the dish of that type already exists on the menu

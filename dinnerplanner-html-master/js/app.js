@@ -8,7 +8,13 @@ $(function() {
 	//var dishItemView = new DishItemView($("#dishItemView"), model);
 	var dishSearchView = new DishSearchView($("#dishSearchView"), model);
 	var dishDetailsView = new DishDetailsView($("#printListOut"), model);
-	var dinnerStatusView = new DinnerStatusView($("#globalPage"), model);
+	//var dinnerStatusView = new DinnerStatusView($("#globalPage"), model);
+
+	// Controllers
+	var sidebarController = new SidebarController(model, sidebarView, this);
+
+
+
 
 	/**
 	 * IMPORTANT: app.js is the only place where you are allowed to

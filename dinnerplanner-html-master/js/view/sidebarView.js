@@ -9,9 +9,9 @@ var SidebarView = function (container, model) {
 	this.confirmButton = container.find("#confirmButton");
 	this.showDishInfo = container.find("#showDishInfo");
 
-
 	if(numberOfGuests)	numberOfGuests.html(0);
 
+// MOVE THIS TO CONTROLLER
   this.minusButton.click((e) => {
     var result = model.setNumberOfGuests(numberOfGuests.html(),"minus");
     numberOfGuests.html(result);
@@ -25,12 +25,25 @@ var SidebarView = function (container, model) {
 	var totalguests = (container.find("getNumberOfGuests").length)
 	console.log(totalguests);
 
+	var dishprice = container.find("#price");
+	dishprice.html(model.getTotalMenuPrice());
+
+
   /*this.searchBox.keyup(() => {
     var keyword = this.searchBox.val();
     if(keyword.length > 1){
       console.log(model.getAllDishes('starter', keyword));
     }
   });*/
-
-
 }
+
+
+// TESTING START
+/*
+var SidebarView = function(container, model) {
+this.numberOfGuests = container.find("#numberOfGuests");
+this.plusButton = container.find("#plusGuest");
+this.minusButton = container.find("#minusGuest");
+}
+ */
+// TESTING STOP

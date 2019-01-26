@@ -1,4 +1,4 @@
-var DishDetailsView = function(container, model) {
+/*var DishDetailsView = function(container, model) {
   this.dishesBoxList = container.find("#printListOut");
 
   var numberOfGuests = (container.find("#numberOfGuests").length > 0) ? container.find("#numberOfGuests") : console.log('ID #numberOfGuests empty');
@@ -29,4 +29,20 @@ var DishDetailsView = function(container, model) {
     }
   }
 
+}
+*/
+
+
+var DishDetailsView = function(container, model) {
+  myHTML = "";
+  for(i in model.getFullMenu()){
+    var name = model.getFullMenu()[i].name;
+    var image = model.getFullMenu()[i].image;
+
+    console.log(name);
+    console.log(image);
+
+    myHTML += image + name;
+  }
+  container.html(myHTML);
 }
