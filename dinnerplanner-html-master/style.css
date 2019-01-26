@@ -4,6 +4,7 @@
 
 body {
   font-family: Courier, Times, serif;
+  margin: 0;
 }
 
 /* Style the header */
@@ -13,6 +14,11 @@ header {
   text-align: center;
   font-size: 35px;
   color: white;
+}
+
+h1, h2, h3 {
+  margin: 0;
+  padding: 1%;
 }
 
 /* Style the footer */
@@ -40,11 +46,11 @@ aside {
 
 /* Style the upper navigation menu as in dinnerStatusView */
 nav {
-  float: left;
+  /*float: left;*/
   width: 100%;
   height: 10%;
   background: #ccc;
-  padding: 20px;
+  padding: 5px;
 }
 
 /* Style the content */
@@ -88,7 +94,7 @@ label {
 /* Positioning of button in dinnerStatusView.js */
 #buttonplacement {
   margin-left: auto;
-  padding: 2%;
+  padding: 1%;
 }
 
 /* Create two unequal columns that sits next to each other */
@@ -123,10 +129,8 @@ label {
   background-color: MediumOrchid;
   border: 2px solid black;
   color: white;
-  padding: 10px 15px;
+  padding: 5px 10px;
   text-align: center;
-  text-decoration: none;
-  display: inline-block;
   font-size: 16px;
 }
 
@@ -135,10 +139,8 @@ label {
   background-color: purple;
   border: 2px solid black;
   color: white;
-  padding: 15px 32px;
+  padding: 5px 10px;
   text-align: center;
-  text-decoration: none;
-  display: inline-block;
   font-size: 16px;
 }
 

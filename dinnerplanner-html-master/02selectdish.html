@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Dinner planner</title>
-  <link rel="stylesheet" href="01style.css">
+  <link rel="stylesheet" href="style.css">
   <!-- Bootstrap CSS
   <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css"> -->
 </head>
@@ -31,6 +31,11 @@
           <button id="plusGuest" class="btn">+</button>
         </div>
         <hr>
+
+        <div id="showDishInfo">
+
+        </div>
+
         <label>
           Dish name: <span id=""></span>  <!-- FILL IN "" -->
         </label><br>
@@ -38,7 +43,7 @@
           Cost: <span id=""></span> <!-- FILL IN "" -->
         </label>
         <hr>
-      <button class="button">Confirm Dinner</button>
+      <button id=confirmButton class="button">Confirm Dinner</button>
     </aside>
     <div class="main" >
       <article id="dishSearchView">
@@ -51,13 +56,11 @@
               <option value="main dish">main dish</option>
               <option value="dessert">dessert</option>
             </select>
-            <button id="searchButton" class="btn">search</button>
+            <button id="searchButton" class="button">search</button>
         </div>
         <hr>
-        <div>
-          <nav id="dishItemView">
+        <div id="dishItemView">
             <!-- DISHES ARE CALLED HERE BY dishSearchView.js  -->
-          </nav>
         </div>
       </article>
     </div>

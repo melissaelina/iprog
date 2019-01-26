@@ -1,24 +1,36 @@
 %%%%%% TODO LIST %%%%%%
 
---- dinnerModel.js ---
-- fix getNumberOfGuests function
-- fix all functions (so that the imagined functionalities of the prototype will work)
-  How to test: change data directly in the dinnerModel (dishes) and the change should show up on all screens
+--- 02selectdish.html ---
+- fix cost and dish name labels
+
+--- 03dishdetails.html ---
+
+--- 04overview.html ---
+- display dish thumbnails from dishItemView.js
+
+--- 05dinnerprintout.html ---
+- display dish details and thumbnails from dishDetailsView.js???
+
+--- sidebarView.js ---
+- what is searchbox doing here? is it for the confirm dinner button?
+- display price and name of dish
 
 --- dishSearchView.js ---
 x make searchBox case UNsensitive
 - add listener to searchButton for pressing enter on keyboard
 
+--- dinnerModel.js ---
+- fix getNumberOfGuests function
+- fix all functions (so that the imagined functionalities of the prototype will work)
+  How to test: change data directly in the dinnerModel (dishes) and the change should show up on all screens
+
 --- dinnerStatusView.js ---
 - use getNumberOfGuests function to display people??? or is it overwriting dishSearchView???
 
---- 01 selectdish.html ---
-- fix cost and dish name labels
-
---- 01overview.html ---
-- nav and article are overlapping
-
---- 01style.css ---
+--- style.css ---
 - implement styling to replicate prototype
 - check if we can delete body {} style function
 - labels function not working properly. Goal is to get some air around labels. Remove breaks and fix labelpadding
+
+--- OTHER ---
+- add a view for the header

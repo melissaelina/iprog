@@ -17,8 +17,7 @@ var DinnerModel = function() {
 		return a;
 	}
 
-	this.getNumberOfGuests = function(guests) {
-		guests = a;
+	this.getNumberOfGuests = function() {
 		return guests;
 	}
 
