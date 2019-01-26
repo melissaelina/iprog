@@ -29,7 +29,6 @@ x make searchBox case UNsensitive
 
 --- style.css ---
 - implement styling to replicate prototype
-- check if we can delete body {} style function
 - labels function not working properly. Goal is to get some air around labels. Remove breaks and fix labelpadding
 
 --- OTHER ---
