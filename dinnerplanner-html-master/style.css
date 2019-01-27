@@ -29,22 +29,6 @@ footer {
   color: white;
 }
 
-<<<<<<< HEAD:dinnerplanner-html-master/01style.css
-h1 {
-  font-family: courier;
-}
-
-h2 {
-  font-size: 20px;
-  font-family: courier;
-}
-
-p{
-  font-family: times;
-}
-
-=======
->>>>>>> 276cfe41c35e37f997ae90c5326530fb742aadd1:dinnerplanner-html-master/style.css
 /* Container for flexboxes */
 section {
   display: -webkit-flex;
@@ -88,15 +72,12 @@ img {
   float: center;
 }
 
-<<<<<<< HEAD:dinnerplanner-html-master/01style.css
-=======
 /* Labels, such as output, style */
 label {
   padding-top: 5%;
   padding-bottom: 5%;
 }
 
->>>>>>> 276cfe41c35e37f997ae90c5326530fb742aadd1:dinnerplanner-html-master/style.css
 /* Style home page text paragraph and button positioning */
 #homepagesection {
   padding: 15%;
@@ -149,18 +130,9 @@ label {
   background-color: MediumOrchid;
   border: 2px solid black;
   color: white;
-<<<<<<< HEAD:dinnerplanner-html-master/01style.css
-  padding: 10px 15px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 16px;
-  font-family: courier;
-=======
   padding: 5px 10px;
   text-align: center;
   font-size: 16px;
->>>>>>> 276cfe41c35e37f997ae90c5326530fb742aadd1:dinnerplanner-html-master/style.css
 }
 
 /* Buttons with text */
@@ -168,18 +140,9 @@ label {
   background-color: purple;
   border: 2px solid black;
   color: white;
-<<<<<<< HEAD:dinnerplanner-html-master/01style.css
-  padding: 15px 32px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 16px;
-  font-family: courier;
-=======
   padding: 5px 10px;
   text-align: center;
   font-size: 16px;
->>>>>>> 276cfe41c35e37f997ae90c5326530fb742aadd1:dinnerplanner-html-master/style.css
 }
 
 .vl {
