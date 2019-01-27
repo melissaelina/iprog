@@ -1,6 +1,4 @@
 var WelcomeView = function() {
-  var menu =
+
+  this.createnew = container.find("#createnew");    // create new dinner button
 }
-
-
-// lab 2

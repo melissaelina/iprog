@@ -38,5 +38,4 @@ var DishSearchView = function(container, model) {
       //this.dishesBoxList.find(".column").remove();
     }
   });
-
 }
