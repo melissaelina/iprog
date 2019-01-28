@@ -1,7 +1,16 @@
 var DinnerStatusView = function(container, model) {
-
+/*
   container.append('<nav class="navbar" id="dinnerStatusView"></nav>'+
   '<article id="dishItemView" class="main"></article><div id="total"></div>');
+*/
+  container.append(`
+    <nav class="navbar" id="dinnerStatusView">
+    </nav>
+    <article id="dishItemView" class="main">
+    </article>
+    <div id="total">
+    </div>
+    `);
 
   this.dishesBoxList = container.find("#dishItemView");
   this.dishesTotal = container.find("#total");
