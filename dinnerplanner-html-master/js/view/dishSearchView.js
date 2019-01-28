@@ -23,7 +23,7 @@ var DishSearchView = function(container, model) {
             '<im1>'+
             '<img id="'+searchFor[i].id+'" class="pickupDishes" src="images/'+searchFor[i].image+'" alt="Ice Cream" style="cursor:pointer;width:100%">'+
             '</im1>'+
-            '<p>'+searchFor[i].name+'</p>'+
+            '<button class="bname">'+searchFor[i].name+'</button>'+
             '</div>'+
             '</div>');
         }

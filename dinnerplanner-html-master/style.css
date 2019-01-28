@@ -145,6 +145,16 @@ label {
   font-size: 16px;
 }
 
+/* Buttons for pictures */
+.bname{
+  background-color: grey;
+  border: 2px solid black;
+  color: white;
+  padding: 5px 10px;
+  text-align: center;
+  font-size: 16px;
+}
+
 .vl {
   border-left: 2px solid black;
   height: 150px;
