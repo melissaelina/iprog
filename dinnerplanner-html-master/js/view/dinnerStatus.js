@@ -1,4 +1,4 @@
-var TopBarBox = function (container, model) {
+var DinnerStatus = function (container, model) {
 	container.append(`
 		<h2>My dinner: <span id="numberOfGuests"></span> people
 		</h2>

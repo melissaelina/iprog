@@ -1,4 +1,4 @@
-var DinnerPrintout = function(container, model) {
+var DinnerPrintoutView = function(container, model) {
   container.append(`
     <nav class="navbar" id="dinnerStatusView-2">
     </nav>

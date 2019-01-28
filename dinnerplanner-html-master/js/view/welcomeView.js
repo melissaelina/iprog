@@ -1,4 +1,4 @@
-var HomeView = function(container, model) {
+var WelcomeView = function(container, model) {
 
   this.createnew = container.find("#createnew");    // create new dinner button
 

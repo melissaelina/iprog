@@ -1,6 +1,6 @@
 var SidebarController = function(container, model) {
 
-  var numberOfGuests = (container.find("#numberOfGuests").length > 0) ? container.find("#numberOfGuests") : console.log('#numberOfGuests doesn\'t existing');
+  var numberOfGuests = (container.find("#numberOfGuests").length > 0) ? container.find("#numberOfGuests") : console.log('#numberOfGuests doesn\'t exist');
 	if(numberOfGuests)	numberOfGuests.html(model.getNumberOfGuests());
 
 	this.plusButton = container.find("#plusGuest");

@@ -1,4 +1,4 @@
-var DinnerStatusView = function(container, model) {
+var DinnerOverview = function(container, model) {
 
   container.append(`
     <div class="parent">

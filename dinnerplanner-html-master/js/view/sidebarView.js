@@ -1,4 +1,4 @@
-var SidebarBox = function (container, model) {
+var SidebarView = function (container, model) {
 	container.append(`
 		<h2>My dinner</h2>
 		<label>People: <span id="numberOfGuests"></span>

@@ -3,12 +3,13 @@
 --- ALL VIEWS ---
 X. update to template literals (`html code ${objects.stuff} `)
 X. fix reactivity on all views
+1. #dinnerStatusView,#dinnerStatusView-2 not working!
 
 --- dishSearchView.js ---
 4. add listener to searchButton for pressing enter on keyboard
 
 --- ALL FILES ---
-1. fix names on all files
+X. fix names on all files
 2. control all classes and id's, are they being used in CSS or elsewhere?
    those marked CONFIRMED are in use
 

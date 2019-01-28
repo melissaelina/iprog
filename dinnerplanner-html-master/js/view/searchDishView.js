@@ -1,4 +1,4 @@
-var SelectDishesView = function(container, model) {
+var SearchDishView = function(container, model) {
   container.append(`
     <div class="parent">
       <div class="side">

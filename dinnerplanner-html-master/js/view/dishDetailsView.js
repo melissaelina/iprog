@@ -18,7 +18,6 @@ var DishDetailsView = function(container, model) {
     this.dishesDetails.html('');
     for (var i = 0; i < searchFor.length; i++) {
       var ingredients = model.getAllIngredients(searchFor[i].ingredients);
-
       this.dishesDetails.append(`
         <article class="dishparent">
           <div class="dishImgcolumn">
