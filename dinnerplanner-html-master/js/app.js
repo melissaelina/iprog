@@ -3,15 +3,18 @@ $(function() {
 	var model = new DinnerModel();
 
 	// Views
-	//var welcomeView = new WelcomeView($("#welcomeView"), model);
-	var sidebarView = new SidebarView($("#sidebarView"), model);
-	//var dishItemView = new DishItemView($("#dishItemView"), model);
-	var dishSearchView = new DishSearchView($("#dishSearchView"), model);
-	var dishDetailsView = new DishDetailsView($("#printListOut"), model);
-	//var dinnerStatusView = new DinnerStatusView($("#globalPage"), model);
+	var welcomeView = new HomeView($("#welcomeView"), model);
+	var selectDish = new SelectDishesView($("#selectDish"), model);
+	var dishDetails = new DishDetailsView($("#dishDetails"), model);
+	var overview = new DinnerStatusView($("#statusView"), model);
+	var printout = new DinnerPrintout($("#dinnerPrintout"), model);
+	//COMPONENTS
+	var sidebarView = new SidebarBox($("#sidebarView,#sidebarView-2"), model);
+	var topbarView = new TopBarBox($("#dinnerStatusView,#dinnerStatusView-2"), model);
 
 	// Controllers
-	var sidebarController = new SidebarController(model, sidebarView, this);
+	var sidebar1Controller = new SidebarController($("#sidebarView,#sidebarView-2"), model);
+	var controller = new GlobalController($("#dishSearchView,#statusView,#dinnerPrintout"), model);
 
 
 

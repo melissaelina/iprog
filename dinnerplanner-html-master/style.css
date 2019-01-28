@@ -153,6 +153,11 @@ label {
   top: 10;
 }
 
+.centered {
+  display: flex;
+  justify-content: center;
+}
+
 /* Responsive layout - makes the menu and the content (inside the section) sit on top of each other instead of next to each other */
 @media (max-width: 600px) {
   section {
@@ -160,3 +165,6 @@ label {
     flex-direction: column;
   }
 }
+/* NEWLY ADDED */
+.hide {display: none;}
+.show {display: block;}

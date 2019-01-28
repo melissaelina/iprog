@@ -1,16 +1,14 @@
-/*
-@param {Object} container - references the HTML parent element that contains the view.
-@param {Object} model - the reference to the Dinner Model
-*/
+var GlobalController = function(container, model) {
 
-var DishSearchView = function(container, model) {
-  this.searchBox = container.find("#searchbarDishes");
+  var numberOfGuests = (container.find("#numberOfGuests").length > 0) ? container.find("#numberOfGuests") : console.log('#numberOfGuests doesn\'t existing');
+	if(numberOfGuests)	numberOfGuests.html(model.getNumberOfGuests());
+
+  /*this.searchBox = container.find("#searchbarDishes");
   this.dishesBoxList = container.find("#dishItemView");
   this.dishesBoxType = container.find("#typeDishes option");
   this.searchButton = container.find("#searchButton");
-  this.pickupDish = container.find(".pickupDishes");
-
-  this.searchButton.click(() => { // add listener on pressing enter
+  this.pickupDish = container.find(".pickupDishes");*/
+  /*this.searchButton.click(() => { // add listener on pressing enter
     var keyword = this.searchBox.val().toLowerCase(); // lowercase to match dishes names
     var type = false;
     for (var i = 0; i < this.dishesBoxType.length; i++) {
@@ -41,5 +39,5 @@ var DishSearchView = function(container, model) {
       //this.dishesBoxList.find(".column").hide();
       //this.dishesBoxList.find(".column").remove();
     }
-  });
+  });*/
 }
