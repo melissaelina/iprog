@@ -13,7 +13,7 @@ $(function() {
 	var dinnerStatus = new DinnerStatus($("#dinnerStatusView,#dinnerStatusView-2"), model);
 	// Controllers
 	var sidebar1Controller = new SidebarController($("#sidebarView,#sidebarView-2"), model);
-	var controller = new GlobalController($("#dishSearchView,#statusView,#dinnerPrintout"), model);
+	var controller = new GlobalController($("#searchDishView,#dinnerOverview,#dinnerPrintoutView"), model);
 
 
 

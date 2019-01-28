@@ -24,7 +24,7 @@ var SearchDishView = function(container, model) {
         </div>
         </div>
     </div>
-    `);         // section updated to using template literals
+    `);
 
 this.dishesBoxList = container.find('#dishItemView');
 var searchFor = model.getAllDishes('all');

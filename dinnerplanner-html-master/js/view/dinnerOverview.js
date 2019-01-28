@@ -16,6 +16,7 @@ var DinnerOverview = function(container, model) {
   this.dishesBoxList = container.find("#dishItemView");
   this.dishesTotal = container.find("#total");
   var nbPersons = model.getNumberOfGuests();
+  console.log(nbPersons);
   var searchFor = model.getAllDishes('all');
   if(typeof searchFor === 'object' && searchFor.length > 0){
     this.dishesBoxList.html('');

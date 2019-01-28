@@ -3,7 +3,7 @@ var DinnerModel = function() {
 
 	/* Implements the data structures that will hold number of guest (a number) and
 	selected dishes for the dinner menu (an empty array) */
-	var guests = 0, menu = [];			// variables decleared and values assigned
+	var guests = 3, menu = [];			// variables decleared and values assigned
 
 
 	this.setNumberOfGuests = function(value, type) {
