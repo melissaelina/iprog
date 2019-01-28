@@ -3,7 +3,7 @@ var DinnerModel = function() {
 
 	/* Implements the data structures that will hold number of guest (a number) and
 	selected dishes for the dinner menu (an empty array) */
-	var guests = 10, menu = [];			// variables decleared and values assigned
+	var guests = 0, menu = [];			// variables decleared and values assigned
 
 
 	this.setNumberOfGuests = function(value, type) {
@@ -59,7 +59,7 @@ var DinnerModel = function() {
 	//Adds the passed dish to the menu. If the dish of that type already exists on the menu
 	//it is removed from the menu and the new one added.
 	this.addDishToMenu = function(id) {
-		
+
 	}
 
 	//Removes dish from menu

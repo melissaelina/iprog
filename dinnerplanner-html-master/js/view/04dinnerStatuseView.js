@@ -1,11 +1,15 @@
 var DinnerStatusView = function(container, model) {
 
   container.append(`
-    <nav class="navbar" id="dinnerStatusView">
-    </nav>
-    <article id="dishItemView" class="main">
-    </article>
-    <div id="total">
+    <div class="parent">
+      <nav class="navbar" id="dinnerStatusView">
+      </nav>
+      <div class="main">
+        <article id="dishItemView" class="flex-container">
+        </article>
+        <div id="total">
+        </div>
+      </div>
     </div>
     `);
 
@@ -21,7 +25,12 @@ var DinnerStatusView = function(container, model) {
         price += searchFor[i].ingredients[a].price;
       }
       var finalPrice = price * model.getNumberOfGuests();
-      this.dishesBoxList.append('<img id="'+searchFor[i].id+'" class="pickupDishes" src="images/'+searchFor[i].image+'">'+finalPrice.toFixed(2)+' SEK');
+      this.dishesBoxList.append(`
+        <div class="column">
+          <img id="${searchFor[i].id}" class="pickupDishes" src="images/${searchFor[i].image}">
+          <p>${finalPrice.toFixed(2)} SEK</p>
+        </div>
+      `);
     }
   }
   this.dishesTotal.html(model.getTotalMenuPrice().toFixed(2)+' SEK');

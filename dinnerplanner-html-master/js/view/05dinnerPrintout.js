@@ -2,8 +2,10 @@ var DinnerPrintout = function(container, model) {
   container.append(`
     <nav class="navbar" id="dinnerStatusView-2">
     </nav>
-    <article id="dishDetails" class="main-2">
-    </article>
+    <div>
+      <article id="dishDetails" class="main-2">
+      </article>
+    </div>
     `);
 
 
@@ -13,10 +15,14 @@ var DinnerPrintout = function(container, model) {
     this.dishesBoxList.html('');
     for(var i = 0; i < searchFor.length; i++){
       this.dishesBoxList.append(`
-        <section>
-        <img src="images/${searchFor[i].image}" alt="${searchFor[i].name}">
-        <p>${searchFor[i].description}</p>
-        </section>
+        <div class="prepsparent">
+          <div class="left">
+            <img src="images/${searchFor[i].image}" alt="${searchFor[i].name}">
+          </div>
+          <div class="right">
+            <p>${searchFor[i].description}</p>
+          </div>
+        </div>
         `);
     }
   }

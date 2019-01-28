@@ -1,9 +1,13 @@
 var DishDetailsView = function(container, model) {
   container.append(`
-    <aside class="side" id="sidebarView-2">
-    </aside>
-    <div class="main">
-      <section id="dishDetailsView">
+    <div class="parent">
+      <div class="side">
+        <aside id="sidebarView-2">
+        </aside>
+      </div>
+      <div class="main">
+        <section id="dishDetailsView" class="flex-container">
+      </div>
     </div>
     `);
 
@@ -16,23 +20,28 @@ var DishDetailsView = function(container, model) {
       var ingredients = model.getAllIngredients(searchFor[i].ingredients);
 
       this.dishesDetails.append(`
-        <article>
-          <h2>${searchFor[i].name}</h2>
-          <img src="images/${searchFor[i].image}" alt="${searchFor[i].name}">
-          <p>${searchFor[i].description}</p>
-          <button class="button">back to menu</button>
-        </article>
-        <article id="ingredientsliststyling">
-          <hr>
-          Ingredients for ${nbPersons}
-          <ul id="ingredient-${i}"></ul>
-          <div id="total-${i}"></div>
-          <br><br>
-          <hr>
-          <button class="button">Add to menu</button>
-        </article>
-        <article>
-        <h2>Preparations</h2>
+        <article class="dishparent">
+          <div class="dishImgcolumn">
+            <h2>${searchFor[i].name}</h2>
+            <img src="images/${searchFor[i].image}" alt="${searchFor[i].name}">
+            <button class="button">back to menu</button>
+          </div>
+          <div class="dishPrepcolumn">
+            <article id="ingredientsliststyling">
+              <hr>
+              Ingredients for ${nbPersons}
+              <ul id="ingredient-${i}"></ul>
+              <div id="total-${i}"></div>
+              <br><br>
+              <hr>
+              <button class="button">Add to menu</button>
+            </article>
+          </div>
+          <div>
+            <h2>Preparations</h2>
+            <p id="preparationstext">${searchFor[i].description}</p>
+            <hr>
+          </div>
         </article>
     `);
       var ingredientsPrice = 0;

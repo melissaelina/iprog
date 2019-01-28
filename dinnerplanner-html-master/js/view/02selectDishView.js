@@ -35,14 +35,15 @@ if (typeof searchFor === 'object' && searchFor.length > 0) {
     for (var a = 0; a < searchFor[i].ingredients.length; a++) {
       price += searchFor[i].ingredients[a].price;
     }
-    this.dishesBoxList.append(
-      '<div class="column">' +
-      '<div>' +
-      '<img id="' + searchFor[i].id + '" class="pickupDishes" src="images/' + searchFor[i].image + '" alt="Lasagne" style="width:45%">' +
-      '<p style="padding-right: 4em">' + searchFor[i].name + '</p>' +
-      '</div>' +
-      '<p style="padding-right: 4em">' + price.toFixed(2) + ' SEK</p>' +
-      '</div>');
+    this.dishesBoxList.append(`
+      <div class="column">
+        <div>
+          <img id="${searchFor[i].id}" class="pickupDishes" src="images/${searchFor[i].image}" alt="Lasagne" style="width:45%">
+          <p style="padding-right: 4em">${searchFor[i].name}</p>
+        </div>
+        <p style="padding-right: 4em">${price.toFixed(2)} SEK</p>
+      </div>
+      `);
   }
 }
 }
