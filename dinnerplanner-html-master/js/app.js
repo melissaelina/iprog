@@ -3,12 +3,20 @@ $(function() {
 	var model = new DinnerModel();
 
 	// Views
-	//var welcomeView = new WelcomeView($("#welcomeView"), model);
-	var sidebarView = new SidebarView($("#sidebarView"), model);
-	//var dishItemView = new DishItemView($("#dishItemView"), model);
-	var dishSearchView = new DishSearchView($("#dishSearchView"), model);
-	var dishDetailsView = new DishDetailsView($("#printListOut"), model);
-	var dinnerStatusView = new DinnerStatusView($("#globalPage"), model);
+	var welcomeView = new WelcomeView($("#welcomeView"), model);
+	var searchDishView = new SearchDishView($("#searchDishView"), model);
+	var dishDetailsView = new DishDetailsView($("#dishDetailsView"), model);
+	var dinnerOverview = new DinnerOverview($("#dinnerOverview"), model);
+	var dinnerPrintoutView = new DinnerPrintoutView($("#dinnerPrintoutView"), model);
+	// Components
+	var sidebarView = new SidebarView($("#sidebarView,#sidebarView-2"), model);
+	var dinnerStatus = new DinnerStatus($("#dinnerStatusView,#dinnerStatusView-2"), model);
+	// Controllers
+	var sidebar1Controller = new SidebarController($("#sidebarView,#sidebarView-2"), model);
+	var controller = new GlobalController($("#searchDishView,#dinnerOverview,#dinnerPrintoutView"), model);
+
+
+
 
 	/**
 	 * IMPORTANT: app.js is the only place where you are allowed to

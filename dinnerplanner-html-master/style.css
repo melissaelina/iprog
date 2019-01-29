@@ -29,13 +29,8 @@ footer {
   color: white;
 }
 
-/* Container for flexboxes */
-section {
-  display: -webkit-flex;
-  display: flex;
-}
 
-/* Style the side navigation menu */
+/* CONFIRMED (tho is it only the color thats being used?) Style the side navigation menu */
 aside {
   -webkit-flex: 1;
   -ms-flex: 1;
@@ -55,13 +50,13 @@ nav {
 }
 
 /* Style the content */
-article {
+/*article {
   -webkit-flex: 3;
   -ms-flex: 3;
   flex: 3;
   background-color: white;
   padding: 10px;
-}
+}*/
 
 /*giving images borders*/
 img {
@@ -85,11 +80,9 @@ label {
   text-align: center;
 }
 
-/* Style home page text paragraphg */
+/* CONFIRMED Style home page text paragraphg */
 #homepageparagraph {
-  padding-left: 15%;
-  padding-right: 15%;
-  padding-bottom: 10%;
+  padding: 15%;
 }
 
 /* Positioning of button in dinnerStatusView.js */
@@ -98,15 +91,26 @@ label {
   padding: 1%;
 }
 
-/* Create two unequal columns that sits next to each other */
-/* Sidebar/left column */
+/* CONFIRMED Styling of ingredientslist */
+#ingredientsliststyling {
+  background: Thistle;
+}
+
+/* CONFIRMED Styling of preparationstext, applied on view03 and view05 */
+#preparationstext {
+  padding: 1%;
+}
+
+/* CONFIRMED Sidebar column, applied on view02 */
 .side {
+  display: flex;
   flex: 30%;
+  float: left;
   background-color: #f1f1f1;
   padding: 20px;
 }
 
-/* Main column */
+/* CONFIRMED Main column, applied on view02 */
 .main {
   flex: 70%;
   background-color: white;
@@ -118,6 +122,12 @@ label {
   float: left;
   width: 20%;
   padding: 10px;
+}
+
+/* CONFIRMED Ractive image container, applied on view02 */
+.flex-container {
+  display: flex;
+  flex-wrap: wrap;
 }
 
 /* Style the top navigation bar */
@@ -164,10 +174,80 @@ label {
   top: 10;
 }
 
-/* Responsive layout - makes the menu and the content (inside the section) sit on top of each other instead of next to each other */
+/* CONFIRMED Centering content */
+.centered {
+  display: flex;
+  justify-content: center;
+}
+
+/* CONFIRMED Parent of main and side classes, applied on view02*/
+.parent {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+/* CONFIRMED Parent preparations view, applied on view05 */
+.prepsparent {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 10%;
+  align-items: center;
+}
+
+/* CONFIRMED Create two equal columns that sits next to each other */
+/* Left column */
+.left {
+  flex: 10%;
+  padding: 20px;
+}
+/* CONFIRMED right column */
+.right {
+  flex: 50%;
+  padding: 20px;
+}
+
+/* CONFIRMED Parent of dishImgcolumn and dishPrepcolumn classes, applied on view03 */
+.dishparent  {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 3%;
+}
+
+/* CONFIRMED Colunms for dish detail in view03 */
+.dishImgcolumn {
+  flex: 30%;
+  background-color: white;
+  padding: 20px;
+}
+.dishPrepcolumn {
+  flex: 70%;
+  background-color: white;
+  padding: 20px;
+}
+
+/* CONFIRMED Responsive layout - makes a two column-layout instead of four columns */
+@media (max-width: 800px) {
+  .column {
+    flex: 50%;
+    max-width: 50%;
+  }
+}
+
+/* CONFIRMED Responsive layout - makes the two columns stack on top of each other instead of next to each other */
 @media (max-width: 600px) {
-  section {
-    -webkit-flex-direction: column;
+  .column {
+    flex: 100%;
+    max-width: 100%;
+  }
+}
+
+/* CONFIRMED Responsive layout - view05 when the screen is less than 700px wide, make the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 700px) {
+  .prepsparent {
     flex-direction: column;
   }
 }
+
+/* CONFIRMED Which screens to view */
+.hide {display: none;}
+.show {display: block;}

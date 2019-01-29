@@ -5,6 +5,7 @@ var DinnerModel = function() {
 	selected dishes for the dinner menu (an empty array) */
 	var guests = 3, menu = [];			// variables decleared and values assigned
 
+
 	this.setNumberOfGuests = function(value, type) {
 		var a = false;
     if(value && type){
@@ -17,8 +18,9 @@ var DinnerModel = function() {
 		return a;
 	}
 
-	this.getNumberOfGuests = function() {
-		return guests;
+	this.getNumberOfGuests = function(value) {
+		var resultGuests = (value) ? value : guests;
+		return resultGuests;
 	}
 
 	//Returns the dish that is on the menu for selected type
@@ -32,13 +34,26 @@ var DinnerModel = function() {
 	}
 
 	//Returns all ingredients for all the dishes on the menu.
-	this.getAllIngredients = function() {
-
+	this.getAllIngredients = function(obj) {
+		var ingredients = false;
+		if(typeof obj === 'object'){
+			ingredients = [];
+			for(var a = 0; a < obj.length; a++){
+				ingredients.push(obj[a]);
+			}
+		}
+		return ingredients;
 	}
 
 	//Returns the total price of the menu (all the ingredients multiplied by number of guests).
 	this.getTotalMenuPrice = function() {
-
+		var totalprice = 0;
+		for(i in dishes) {
+			for(j in dishes[i].ingredients) {
+				totalprice += dishes[i].ingredients[j].price * dishes[i].ingredients[j].quantity;
+			}
+		}
+		return totalprice * guests;
 	}
 
 	//Adds the passed dish to the menu. If the dish of that type already exists on the menu
@@ -57,15 +72,18 @@ var DinnerModel = function() {
 	//if you don't pass any filter all the dishes will be returned
 	this.getAllDishes = function (type, filter) {
 	  return dishes.filter(function(dish) {
-		var found = true;
-		if(filter){
-			found = false;
-			if(dish.name.toLowerCase().indexOf(filter) != -1) // all dish names in lower case
-			{
-				found = true;
+			var found = true;
+			if(filter){
+				found = false;
+				if(dish.name.toLowerCase().indexOf(filter) != -1)
+				// all dish names in lower case
+				{
+					found = true;
+				}
+		  	return dish.type == type && found;
+			} else {
+				return dish.type;
 			}
-		}
-	  	return dish.type == type && found;
 	  });
 	}
 

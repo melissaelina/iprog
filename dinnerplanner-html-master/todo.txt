@@ -1,35 +1,20 @@
 %%%%%% TODO LIST %%%%%%
 
---- 02selectdish.html ---
-- fix cost and dish name labels
-
---- 03dishdetails.html ---
-
---- 04overview.html ---
-- display dish thumbnails from dishItemView.js
-
---- 05dinnerprintout.html ---
-- display dish details and thumbnails from dishDetailsView.js???
-
---- sidebarView.js ---
-- what is searchbox doing here? is it for the confirm dinner button?
-- display price and name of dish
+--- ALL VIEWS ---
+X. update to template literals (`html code ${objects.stuff} `)
+X. fix reactivity on all views
+X. #dinnerStatusView,#dinnerStatusView-2 not working!
 
 --- dishSearchView.js ---
-x make searchBox case UNsensitive
-- add listener to searchButton for pressing enter on keyboard
+4. add listener to searchButton for pressing enter on keyboard
+
+--- ALL FILES ---
+X. fix names on all files
+2. control all classes and id's, are they being used in CSS or elsewhere?
+   those marked CONFIRMED are in use
 
 --- dinnerModel.js ---
-- fix getNumberOfGuests function
-- fix all functions (so that the imagined functionalities of the prototype will work)
-  How to test: change data directly in the dinnerModel (dishes) and the change should show up on all screens
-
---- dinnerStatusView.js ---
-- use getNumberOfGuests function to display people??? or is it overwriting dishSearchView???
-
---- style.css ---
-- implement styling to replicate prototype
-- labels function not working properly. Goal is to get some air around labels. Remove breaks and fix labelpadding
+3. control all functions
 
 --- OTHER ---
-- add a view for the header
+5. add a view for the header

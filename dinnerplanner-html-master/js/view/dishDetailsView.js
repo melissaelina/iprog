@@ -1,32 +1,59 @@
 var DishDetailsView = function(container, model) {
-  this.dishesBoxList = container.find("#printListOut");
+  container.append(`
+    <div class="parent">
+      <div class="side">
+        <aside id="sidebarView-2">
+        </aside>
+      </div>
+      <div class="main">
+        <section id="dishDetailsView" class="flex-container">
+      </div>
+    </div>
+    `);
 
-  var numberOfGuests = (container.find("#numberOfGuests").length > 0) ? container.find("#numberOfGuests") : console.log('ID #numberOfGuests empty');
-  if(numberOfGuests)  numberOfGuests.html(3);
-  var searchFor = model.getAllDishes('starter', '');
-  if(typeof searchFor === 'object' && searchFor.length > 0){
-    container.html('');
-    for(var i = 0; i < 3; i++){
-      console.log(searchFor[i]);
-      container.append(
-        '<div class="row">'+'<div class="column">'+'<div>'+'<br><br><br>'+
-        '<im1>'+'<img src="images/'+searchFor[i].image+'" alt="'+searchFor[i].name+'" style="width:70%">'+'</im1>'+
-        '</div>'+'</div>'+
-        '<div class="column" id="column30">'+
-        '<div>'+
-        '<h5>'+searchFor[i].name+'</h5>'+
-        '<p2>'+searchFor[i].description+'</p2>'+
-        '</div>'+
-        '</div>'+
-        '<div class="column" id="column30">'+
-        '<div>'+
-        '<br>'+
-        '<h6>Preparation</h6>'+
-        '<p2>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Malesuada pellentesque elit eget gravida cum sociis natoque penatibus. <br> <br>Viverra aliquet eget sit amet'+
-        'tellus cras. Mattis aliquam faucibus purus in massa tempor nec feugiat. Erat imperdiet sed euismod nisi porta lorem mollis. Accumsan tortor posuere ac ut consequat semper viverra nam. Enim blandit volutpat maecenas volutpat. Eget duis at'+
-        'tellus at urna. Viverra ipsum nunc aliquet bibendum. Magna fringilla urna porttitor rhoncus. In aliquam sem fringilla ut morbi tincidunt augue interdum velit.</p2>'+
-        '</div>'+'</div>'+'</div>');
+  this.dishesDetails = container.find("#dishDetailsView");
+  var nbPersons = model.getNumberOfGuests();
+  var searchFor = model.getAllDishes('all');
+  if (typeof searchFor === 'object' && searchFor.length > 0) {
+    this.dishesDetails.html('');
+    for (var i = 0; i < searchFor.length; i++) {
+      var ingredients = model.getAllIngredients(searchFor[i].ingredients);
+      this.dishesDetails.append(`
+        <article class="dishparent">
+          <div class="dishImgcolumn">
+            <h2>${searchFor[i].name}</h2>
+            <img src="images/${searchFor[i].image}" alt="${searchFor[i].name}">
+            <button class="button">back to menu</button>
+          </div>
+          <div class="dishPrepcolumn">
+            <article id="ingredientsliststyling">
+              <hr>
+              Ingredients for ${nbPersons}
+              <ul id="ingredient-${i}"></ul>
+              <div id="total-${i}"></div>
+              <br><br>
+              <hr>
+              <button class="button">Add to menu</button>
+            </article>
+          </div>
+          <div>
+            <h2>Preparations</h2>
+            <p id="preparationstext">${searchFor[i].description}</p>
+            <hr>
+          </div>
+        </article>
+    `);
+      var ingredientsPrice = 0;
+      for (var b = 0; b < ingredients.length; b++) {
+        ingredientsPrice += ingredients[b].price;
+        container.find("#ingredient-" + i).append('<li>' +
+          ingredients[b].quantity * nbPersons + ' ' +
+          ingredients[b].unit + ' ' +
+          ingredients[b].name + ' SEK ' +
+          (ingredients[b].price * ingredients[b].quantity).toFixed(2) +
+          '</li>');
+      }
+      container.find("#total-" + i).html('SEK ' + (ingredientsPrice * nbPersons).toFixed(2));
     }
   }
-
 }
