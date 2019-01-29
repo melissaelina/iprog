@@ -46,12 +46,21 @@ var DishDetailsView = function(container, model) {
       var ingredientsPrice = 0;
       for (var b = 0; b < ingredients.length; b++) {
         ingredientsPrice += ingredients[b].price;
-        container.find("#ingredient-" + i).append('<li>' +
+        container.find("#ingredient-" + i).append(`
+          <li>
+            ${(ingredients[b].quantity * nbPersons).toFixed(2)}
+            ${ingredients[b].unit}
+            ${ingredients[b].name} SEK
+            ${(ingredients[b].price * nbPersons).toFixed(2)}
+          </li>
+          `);
+/*
+          '<li>' +
           ingredients[b].quantity * nbPersons + ' ' +
           ingredients[b].unit + ' ' +
           ingredients[b].name + ' SEK ' +
           (ingredients[b].price * ingredients[b].quantity).toFixed(2) +
-          '</li>');
+          '</li>'); */
       }
       container.find("#total-" + i).html('SEK ' + (ingredientsPrice * nbPersons).toFixed(2));
     }

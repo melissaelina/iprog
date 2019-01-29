@@ -17,15 +17,16 @@ var DishSearchView = function(container, model) {
       var searchFor = model.getAllDishes(type, keyword);
       if(typeof searchFor === 'object' && searchFor.length > 0){
         for(var i = 0; i < searchFor.length; i++){
-          this.dishesBoxList.append(
-            '<div class="column">'+
-            '<div>'+
-            '<im1>'+
-            '<img id="'+searchFor[i].id+'" class="pickupDishes" src="images/'+searchFor[i].image+'" alt="Ice Cream" style="cursor:pointer;width:100%">'+
-            '</im1>'+
-            '<button class="bname">'+searchFor[i].name+'</button>'+
-            '</div>'+
-            '</div>');
+          this.dishesBoxList.append(`
+            <div class="column">
+              <div>
+                <im1>
+                <img id="${searchFor[i].id}" class="pickupDishes" src="images/${searchFor[i].image}" alt="Ice Cream" style="cursor:pointer;width:100%">
+                </im1>
+                <button class="bname">${searchFor[i].name}</button>
+              </div>
+            </div>
+            `);
         }
       }
     }

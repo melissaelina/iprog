@@ -10,8 +10,10 @@ $(function() {
 	var dinnerPrintoutView = new DinnerPrintoutView($("#dinnerPrintoutView"), model);
 	// Components
 	var sidebarView = new SidebarView($("#sidebarView,#sidebarView-2"), model);
+	var dinnerStatus = new DinnerStatus($("#dinnerStatusView"), model);
 	var dinnerStatus = new DinnerStatus($("#dinnerStatusView,#dinnerStatusView-2"), model);
 	// Controllers
+	var sidebar1Controller = new SidebarController($("#sidebarView"), model);
 	var sidebar1Controller = new SidebarController($("#sidebarView,#sidebarView-2"), model);
 	var controller = new GlobalController($("#searchDishView,#dinnerOverview,#dinnerPrintoutView"), model);
 

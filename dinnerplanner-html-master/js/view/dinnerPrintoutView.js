@@ -1,12 +1,12 @@
 var DinnerPrintoutView = function(container, model) {
-  container.append(`
-    <nav class="navbar" id="dinnerStatusView-2">
-    </nav>
-    <div>
-      <article id="dishDetails" class="main-2">
-      </article>
-    </div>
-    `);
+    container.append(`
+      <nav class="navbar" id="dinnerStatusView">
+      </nav>
+      <div>
+        <article id="dishDetails" class="main-2">
+        </article>
+      </div>
+      `);
 
 
   this.dishesBoxList = container.find("#dishDetails");
