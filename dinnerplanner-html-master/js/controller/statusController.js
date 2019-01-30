@@ -10,14 +10,14 @@ var StatusController = function(container, model) {
   if (k.style.display === "none") {//is shown
   k.style.display = "block";//hides it
   }else {
-  k.style.display = "none";
+  k.style.display = "block";
 
   }
   if (y.style.display === "none") {//is shown
   y.style.display = "block";//hides it
 }
   else {
-    y.style.display = "none";
+    y.style.display = "block";
 
 }
 //just nu är status controller connected till både overview och print trots

@@ -19,6 +19,6 @@ var SidebarView = function (container, model) {
 		</p>
 		<p>Cost: <span id="cost">${ingredientsPrice*nbPersons} SEK</span>
 		</p>
-		<button class="button">Confirm Dinner</button>
+		<button class="button" onclick= "ConfirmController()">Confirm Dinner</button>
 		`);
 }

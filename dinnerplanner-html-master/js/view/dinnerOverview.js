@@ -11,7 +11,7 @@ var DinnerOverview = function(container, model) {
         </div>
       </div>
     </div>
-    <button class="button" onclick= "HomeController()">Print full recipe</button>
+    <button class="button" onclick= "GoPrintController()">Print full recipe</button>
     `);
 
   this.dishesBoxList = container.find("#dishItemView");
