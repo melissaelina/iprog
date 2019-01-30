@@ -6,15 +6,17 @@ X. fix reactivity on all views
 X. #dinnerStatusView,#dinnerStatusView-2 not working!
 
 --- dishSearchView.js ---
-4. add listener to searchButton for pressing enter on keyboard
+-. add listener to searchButton for pressing enter on keyboard
 
 --- ALL FILES ---
 X. fix names on all files
-2. control all classes and id's, are they being used in CSS or elsewhere?
+-. control all classes and id's, are they being used in CSS or elsewhere?
    those marked CONFIRMED are in use
+1. fix a general state controller, this one will be responsible for showing and hiding views
 
 --- dinnerModel.js ---
-3. control all functions
+-. control all functions
+1. add addObserver() and notifyObservers()
 
 --- OTHER ---
-5. add a view for the header
+-. add a view for the header

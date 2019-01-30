@@ -15,7 +15,7 @@ $(function() {
 	// Controllers
 	//var sidebar1Controller = new SidebarController($("#sidebarView"), model);   // to use when cortrollers are in place
 	var sidebar1Controller = new SidebarController($("#sidebarView,#sidebarView-2"), model);		// remove when controller are in place
-	var controller = new GlobalController($("#searchDishView,#dinnerOverview,#dinnerPrintoutView"), model);
+	var generalStateController = new GeneralStateController($("#searchDishView,#dinnerOverview,#dinnerPrintoutView"), model);
 
 
 
