@@ -10,11 +10,11 @@ $(function() {
 	var dinnerPrintoutView = new DinnerPrintoutView($("#dinnerPrintoutView"), model);
 	// Components
 	var sidebarView = new SidebarView($("#sidebarView,#sidebarView-2"), model);
-	var dinnerStatus = new DinnerStatus($("#dinnerStatusView"), model);
-	var dinnerStatus = new DinnerStatus($("#dinnerStatusView,#dinnerStatusView-2"), model);
+	//var dinnerStatus = new DinnerStatus($("#dinnerStatusView"), model);		 // to use when cortrollers are in place
+	var dinnerStatus = new DinnerStatus($("#dinnerStatusView,#dinnerStatusView-2"), model);			// remove when controller are in place
 	// Controllers
-	var sidebar1Controller = new SidebarController($("#sidebarView"), model);
-	var sidebar1Controller = new SidebarController($("#sidebarView,#sidebarView-2"), model);
+	//var sidebar1Controller = new SidebarController($("#sidebarView"), model);   // to use when cortrollers are in place
+	var sidebar1Controller = new SidebarController($("#sidebarView,#sidebarView-2"), model);		// remove when controller are in place
 	var controller = new GlobalController($("#searchDishView,#dinnerOverview,#dinnerPrintoutView"), model);
 
 
