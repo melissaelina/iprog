@@ -64,9 +64,5 @@ var GeneralStateController = function(container, model) {
       this.dishesBoxList.find(".column").hide();
       //this.dishesBoxList.find(".column").remove();
     }
-<<<<<<< HEAD
   }); */
-=======
-  });*/
->>>>>>> mel-lab2
 }
