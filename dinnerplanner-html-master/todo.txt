@@ -5,8 +5,12 @@ X. update to template literals (`html code ${objects.stuff} `)
 X. fix reactivity on all views
 X. #dinnerStatusView,#dinnerStatusView-2 not working!
 
---- dishSearchView.js ---
+--- dishSearchView.js eller searchDishController.js??? ---
 -. add listener to searchButton for pressing enter on keyboard
+
+--- searchDishController.js ---
+-. not displaying only staters and other types why clicking button with empty search field/no keyword
+-. add all option as dishes type
 
 --- ALL FILES ---
 X. fix names on all files
@@ -20,3 +24,4 @@ X. fix names on all files
 
 --- OTHER ---
 -. add a view for the header
+-. delete dishSearchView.js???

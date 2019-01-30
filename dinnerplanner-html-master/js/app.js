@@ -13,9 +13,10 @@ $(function() {
 	//var dinnerStatus = new DinnerStatus($("#dinnerStatusView"), model);		 // to use when cortrollers are in place
 	var dinnerStatus = new DinnerStatus($("#dinnerStatusView,#dinnerStatusView-2"), model);			// remove when controller are in place
 	// Controllers
+	var generalStateController = new GeneralStateController($("#searchDishView,#dinnerOverview,#dinnerPrintoutView"), model);
 	//var sidebar1Controller = new SidebarController($("#sidebarView"), model);   // to use when cortrollers are in place
 	var sidebar1Controller = new SidebarController($("#sidebarView,#sidebarView-2"), model);		// remove when controller are in place
-	var generalStateController = new GeneralStateController($("#searchDishView,#dinnerOverview,#dinnerPrintoutView"), model);
+	var searchDishController = new SearchDishController($("#searchDishView"), model);
 
 
 

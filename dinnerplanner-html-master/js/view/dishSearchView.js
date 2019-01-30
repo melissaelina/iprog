@@ -1,6 +1,6 @@
 var DishSearchView = function(container, model) {
 
-  this.searchBox = container.find("#searchbarDishes");
+/*  this.searchBox = container.find("#searchbarDishes");
   this.dishesBoxList = container.find("#dishItemView");
   this.dishesBoxType = container.find("#typeDishes option");
   this.searchButton = container.find("#searchButton");
@@ -38,5 +38,5 @@ var DishSearchView = function(container, model) {
       //this.dishesBoxList.find(".column").hide();
       //this.dishesBoxList.find(".column").remove();
     }
-  });
+  });*/
 }

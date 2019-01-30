@@ -1,7 +1,6 @@
-var GeneralStateController = function(container, model) {
-/*
-  var numberOfGuests = (container.find("#numberOfGuests").length > 0) ? container.find("#numberOfGuests") : console.log('#'+container+' doesn\'t exist');
-	if(numberOfGuests)	numberOfGuests.html(model.getNumberOfGuests());
+var SearchDishController = function(container, model) {
+  var numberOfGuests = (container.find("#numberOfGuests").length > 0) ? container.find("#numberOfGuests") : console.log('#' + container + ' doesn\'t exist');
+  if (numberOfGuests) numberOfGuests.html(model.getNumberOfGuests());
 
   this.searchBox = container.find("#searchbarDishes");
   this.dishesBoxList = container.find("#dishItemView");
@@ -17,19 +16,27 @@ var GeneralStateController = function(container, model) {
     if (type !== false) {
       this.dishesBoxList.html('');
       var searchFor = model.getAllDishes(type, keyword);
+      //console.log(searchFor);
+      //console.log(keyword);
       if (typeof searchFor === 'object' && searchFor.length > 0) {
         for (var i = 0; i < searchFor.length; i++) {
+          var price = 0;
+          for (var a = 0; a < searchFor[i].ingredients.length; a++) {
+            price += searchFor[i].ingredients[a].price;
+          }
           this.dishesBoxList.append(`
-            <div class="column">
-              <div>
-                <im1>
-                  <img id="${searchFor[i].id}" class="pickupDishes" src="images/${searchFor[i].image}" alt="Ice Cream" style="cursor:pointer;width:100%">
-                </im1>
-                <p>${searchFor[i].name}</p>
-              </div>
-            </div>
-            `);
+                <div class="column">
+                  <div>
+                    <im1>
+                      <img id="${searchFor[i].id}" class="pickupDishes" src="images/${searchFor[i].image}" alt="Ice Cream" style="width:80%">
+                    </im1>
+                    <p style="padding-right: 4em">${searchFor[i].name}</p>
+                  </div>
+                  <p style="padding-right: 4em">${price.toFixed(2)} SEK</p>
+                </div>
+                `);
         }
+
       }
     }
   });
@@ -41,5 +48,5 @@ var GeneralStateController = function(container, model) {
       //this.dishesBoxList.find(".column").hide();
       //this.dishesBoxList.find(".column").remove();
     }
-  }); */
+  });
 }

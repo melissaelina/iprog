@@ -1,3 +1,5 @@
+
+
 var SearchDishView = function(container, model) {
   container.append(`
     <div class="parent">
@@ -11,6 +13,7 @@ var SearchDishView = function(container, model) {
           <h2>Find a dish</h2>
           <input id="searchbarDishes" placeholder="Enter key words">
           <select id="typeDishes">
+            <option value="all">all</option>
             <option value="starter">starter</option>
             <option value="main dish">main dish</option>
             <option value="dessert">dessert</option>
@@ -38,7 +41,7 @@ if (typeof searchFor === 'object' && searchFor.length > 0) {
     this.dishesBoxList.append(`
       <div class="column">
         <div>
-          <img id="${searchFor[i].id}" class="pickupDishes" src="images/${searchFor[i].image}" alt="Lasagne" style="width:45%">
+          <img id="${searchFor[i].id}" class="pickupDishes" src="images/${searchFor[i].image}" alt="Lasagne" style="width:80%">
           <p style="padding-right: 4em">${searchFor[i].name}</p>
         </div>
         <p style="padding-right: 4em">${price.toFixed(2)} SEK</p>

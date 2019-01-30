@@ -54,13 +54,6 @@ var DishDetailsView = function(container, model) {
             ${(ingredients[b].price * nbPersons).toFixed(2)}
           </li>
           `);
-/*
-          '<li>' +
-          ingredients[b].quantity * nbPersons + ' ' +
-          ingredients[b].unit + ' ' +
-          ingredients[b].name + ' SEK ' +
-          (ingredients[b].price * ingredients[b].quantity).toFixed(2) +
-          '</li>'); */
       }
       container.find("#total-" + i).html('SEK ' + (ingredientsPrice * nbPersons).toFixed(2));
     }
