@@ -46,4 +46,13 @@ if (typeof searchFor === 'object' && searchFor.length > 0) {
       `);
   }
 }
+this.dishesBoxList.click((e) => {
+    if (e.target.nodeName === "IMG") {
+      var dish = model.getDish(e.target.id);
+      console.log(dish);
+      //this.welcome.find(".show").hide();
+      this.dishesBoxList.find(".column").hide();
+      //this.dishesBoxList.find(".column").remove();
+    }
+  })
 }

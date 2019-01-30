@@ -3,6 +3,8 @@ var GeneralStateController = function(container, model) {
   var numberOfGuests = (container.find("#numberOfGuests").length > 0) ? container.find("#numberOfGuests") : console.log('#'+container+' doesn\'t exist');
 	if(numberOfGuests)	numberOfGuests.html(model.getNumberOfGuests());
 
+  this.createnew = container.find("#createnew");
+  this.welcome = container.find("welcomeView")
   this.searchBox = container.find("#searchbarDishes");
   this.dishesBoxList = container.find("#dishItemView");
   this.dishesBoxType = container.find("#typeDishes option");
@@ -33,13 +35,34 @@ var GeneralStateController = function(container, model) {
       }
     }
   });
+/*  this.createdinnerButton = container.find("#createnew");
+*/
+  this.createnew.click((e) => {
+    //if (e.target.nodeName === "IMG") {
+      //var dish = model.getDish(e.target.id);
+      if (e.target.nodeName === "IMG") {
+        var dish = model.getDish(e.target.id);
+        console.log(dish);
+        //this.welcome.find(".show").hide();
+        this.dishesBoxList.find(".column").hide();
+        //this.dishesBoxList.find(".column").remove();
+      }
+      else{
+        console.log("test printing");
+      }
 
-  this.dishesBoxList.click((e) => {
+      //this.dishesBoxList.find(".column").hide();
+      //this.dishesBoxList.find(".column").remove();
+    });
+
+//this.dishesBoxList.find(".column").hide();
+/*  this.dishesBoxList.click((e) => {
     if (e.target.nodeName === "IMG") {
       var dish = model.getDish(e.target.id);
       console.log(dish);
-      //this.dishesBoxList.find(".column").hide();
+      //this.welcome.find(".show").hide();
+      this.dishesBoxList.find(".column").hide();
       //this.dishesBoxList.find(".column").remove();
     }
-  });
+  });*/
 }

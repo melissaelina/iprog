@@ -31,7 +31,7 @@ var DishSearchView = function(container, model) {
       }
     }
   });
-    this.dishesBoxList.click((e) => {
+    //this.dishesBoxList.click((e) => {
     if(e.target.nodeName === "IMG"){
       var dish = model.getDish(e.target.id);
       console.log(dish);
