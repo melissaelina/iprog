@@ -23,7 +23,7 @@ var DishDetailsView = function(container, model) {
           <div class="dishImgcolumn">
             <h2>${searchFor[i].name}</h2>
             <img src="images/${searchFor[i].image}" alt="${searchFor[i].name}">
-            <button class="button">back to menu</button>
+            <button class="button" onclick= "DetailsController()">back to menu</button>
           </div>
           <div class="dishPrepcolumn">
             <article id="ingredientsliststyling">
