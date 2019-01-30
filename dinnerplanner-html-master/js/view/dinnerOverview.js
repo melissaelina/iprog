@@ -11,6 +11,7 @@ var DinnerOverview = function(container, model) {
         </div>
       </div>
     </div>
+    <button class="button" onclick= "HomeController()">Print full recipe</button>
     `);
 
   this.dishesBoxList = container.find("#dishItemView");
@@ -30,9 +31,13 @@ var DinnerOverview = function(container, model) {
           <img id="${searchFor[i].id}" class="pickupDishes" src="images/${searchFor[i].image}">
           <p>${finalPrice.toFixed(2)} SEK</p>
         </div>
+
       `);
     }
   }
   this.dishesTotal.html(model.getTotalMenuPrice().toFixed(2)+' SEK');
+
+
+
 
 }

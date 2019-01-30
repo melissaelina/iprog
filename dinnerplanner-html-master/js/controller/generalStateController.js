@@ -37,7 +37,7 @@ var GeneralStateController = function(container, model) {
   });
 /*  this.createdinnerButton = container.find("#createnew");
 */
-  this.createnew.click((e) => {
+/*  this.createnew.click((e) => {
     //if (e.target.nodeName === "IMG") {
       //var dish = model.getDish(e.target.id);
       if (e.target.nodeName === "IMG") {
@@ -53,7 +53,7 @@ var GeneralStateController = function(container, model) {
 
       //this.dishesBoxList.find(".column").hide();
       //this.dishesBoxList.find(".column").remove();
-    });
+    });*/
 
 //this.dishesBoxList.find(".column").hide();
 /*  this.dishesBoxList.click((e) => {
