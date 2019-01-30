@@ -8,6 +8,8 @@ var HomeController = function(container, model) {
   } else {
   x.style.display = "none";
   }
+  SearchController();
+  //call on controller to show search dish view
   //}
   //</script>
 
