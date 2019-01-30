@@ -3,27 +3,20 @@ var WelcomeView = function(container, model) {
   this.createnew = container.find("#createnew"); // create new dinner button
 
   container.append(`
-    <div id="testar">
+    <div id="homefull">
     <p id="homepageparagraph">
     Lorem ipsum dolordenifalekfn sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
     </p>
     <div class="centered">
       <button id="createnew" class="button">
-      <b onclick= "myFunction()">Create new dinner</b>
+      <b onclick= "HomeController()">Create new dinner</b>
       </button>
     </div>
     </div>
-    <script>
-function myFunction() {
-  var x = document.getElementById("testar");
-  if (x.style.display === "none") {
-    x.style.display = "block";
-  } else {
-    x.style.display = "none";
-  }
-}
-</script>
+
+
   `);
+  //for hide/show views: https://www.w3schools.com/howto/tryit.asp?filename=tryhow_js_toggle_hide_show
   /*this.createnew.click((e) => {
     //if (e.target.nodeName === "IMG") {
       //var dish = model.getDish(e.target.id);
