@@ -11,12 +11,12 @@ var DinnerOverview = function(container, model) {
         </div>
       </div>
     </div>
-    <button class="button" onclick= "GoPrintController()">Print full recipe</button>
+    <button class="button" onclick="GoPrintController()">Print full recipe</button>
     `);
 
   this.dishesBoxList = container.find("#dishItemView");
   this.dishesTotal = container.find("#total");
-  var nbPersons = model.getNumberOfGuests();
+  var nbPersons = model.getNumberOfGuests();      // accessing the getNumberOfGuests method from owner DinnerModel
   var searchFor = model.getAllDishes('all');
   if(typeof searchFor === 'object' && searchFor.length > 0){
     this.dishesBoxList.html('');
@@ -36,8 +36,4 @@ var DinnerOverview = function(container, model) {
     }
   }
   this.dishesTotal.html(model.getTotalMenuPrice().toFixed(2)+' SEK');
-
-
-
-
 }

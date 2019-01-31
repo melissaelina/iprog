@@ -1,5 +1,3 @@
-
-
 var SearchDishView = function(container, model) {
   container.append(`
     <div class="parent">

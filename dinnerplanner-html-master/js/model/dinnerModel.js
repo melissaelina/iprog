@@ -7,11 +7,11 @@ var DinnerModel = function() {
     menu = []; // variables decleared and values assigned
 
 
-  this.setNumberOfGuests = function(value, type) {
-    var a = false;
-    if (value && type) {
+  this.setNumberOfGuests = function(value, type) {      // first DinnerModel object method
+    var a = false;                                      // where "this" refers to the owner of the method
+    if (value && type) {                                // DinnerModel owns the setNumberOfGuests method
       if (type === "plus") {
-        a = parseInt(value) + 1;
+        a = parseInt(value) + 1;    // parseInt returns variable as integer
       } else {
         a = (value >= 1) ? parseInt(value) - 1 : 0;
       }
@@ -102,6 +102,7 @@ var DinnerModel = function() {
 	      });
     }
   }*/
+
 
   //function that returns a dish of specific ID
   this.getDish = function(id) {
