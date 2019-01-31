@@ -48,7 +48,7 @@ if (typeof searchFor === 'object' && searchFor.length > 0) {
   }
 }
 this.dishesBoxList.click((e) => {
-    if (e.target.nodeName === "IMG") {
+    if (e.target.nodeName === "IMG") {    // e, short for event
       var dish = model.getDish(e.target.id);
       console.log(dish);
       //this.welcome.find(".show").hide();
