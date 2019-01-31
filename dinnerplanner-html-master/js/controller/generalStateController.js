@@ -1,68 +1,51 @@
 var GeneralStateController = function(container, model) {
-/*
-  var numberOfGuests = (container.find("#numberOfGuests").length > 0) ? container.find("#numberOfGuests") : console.log('#'+container+' doesn\'t exist');
-	if(numberOfGuests)	numberOfGuests.html(model.getNumberOfGuests());
+  this.showWelcomeScreen = function(){
+    welcomeView.show();
+    searchDishView.hide();
+    dishDetailsView.hide();
+    dinnerOverview.hide();
+    dinnerPrintoutView.hide();
+    sidebarView.hide();
+    dinnerStatus.hide();
+  }
 
-  this.createnew = container.find("#createnew");
-  this.welcome = container.find("welcomeView")
-  this.searchBox = container.find("#searchbarDishes");
-  this.dishesBoxList = container.find("#dishItemView");
-  this.dishesBoxType = container.find("#typeDishes option");
-  this.searchButton = container.find("#searchButton");
-  this.pickupDish = container.find(".pickupDishes");
-  this.searchButton.click(() => { // add listener on pressing enter
-    var keyword = this.searchBox.val().toLowerCase(); // lowercase to match dishes names
-    var type = false;
-    for (var i = 0; i < this.dishesBoxType.length; i++) {
-      if (this.dishesBoxType[i].selected === true) type = this.dishesBoxType[i].value;
-    }
-    if (type !== false) {
-      this.dishesBoxList.html('');
-      var searchFor = model.getAllDishes(type, keyword);
-      if (typeof searchFor === 'object' && searchFor.length > 0) {
-        for (var i = 0; i < searchFor.length; i++) {
-          this.dishesBoxList.append(`
-            <div class="column">
-              <div>
-                <im1>
-                  <img id="${searchFor[i].id}" class="pickupDishes" src="images/${searchFor[i].image}" alt="Ice Cream" style="cursor:pointer;width:100%">
-                </im1>
-                <p>${searchFor[i].name}</p>
-              </div>
-            </div>
-            `);
-        }
-      }
-    }
-  });
-/*  this.createdinnerButton = container.find("#createnew");
-*/
-/*  this.createnew.click((e) => {
-    //if (e.target.nodeName === "IMG") {
-      //var dish = model.getDish(e.target.id);
-      if (e.target.nodeName === "IMG") {
-        var dish = model.getDish(e.target.id);
-        console.log(dish);
-        //this.welcome.find(".show").hide();
-        this.dishesBoxList.find(".column").hide();
-        //this.dishesBoxList.find(".column").remove();
-      }
-      else{
-        console.log("test printing");
-      }
+  this.showSearchDishScreen = function(){
+    welcomeView.hide();
+    searchDishView.show();
+    dishDetailsView.hide();
+    dinnerOverview.hide();
+    dinnerPrintoutView.hide();
+    sidebarView.show();
+    dinnerStatus.hide();
+  }
 
-      //this.dishesBoxList.find(".column").hide();
-      //this.dishesBoxList.find(".column").remove();
-    });*/
+  this.showDishDetailsScreen = function(){
+    welcomeView.hide();
+    searchDishView.hide();
+    dishDetailsView.show();
+    dinnerOverview.hide();
+    dinnerPrintoutView.hide();
+    sidebarView.show();
+    dinnerStatus.hide();
+  }
 
-//this.dishesBoxList.find(".column").hide();
-/*  this.dishesBoxList.click((e) => {
-    if (e.target.nodeName === "IMG") {
-      var dish = model.getDish(e.target.id);
-      console.log(dish);
-      //this.welcome.find(".show").hide();
-      this.dishesBoxList.find(".column").hide();
-      //this.dishesBoxList.find(".column").remove();
-    }
-  }); */
+  this.showDinnerOverviewScreen = function(){
+    welcomeView.hide();
+    searchDishView.hide();
+    dishDetailsView.hide();
+    dinnerOverview.show();
+    dinnerPrintoutView.hide();
+    sidebarView.show();
+    dinnerStatus.show();
+  }
+
+  this.showDinnerPrintoutScreen = function(){
+    welcomeView.hide();
+    searchDishView.hide();
+    dishDetailsView.hide();
+    dinnerOverview.hide();
+    dinnerPrintoutView.show();
+    sidebarView.hide();
+    dinnerStatus.show();
+  }
 }

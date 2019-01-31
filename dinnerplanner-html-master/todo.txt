@@ -10,7 +10,7 @@ X. #dinnerStatusView,#dinnerStatusView-2 not working!
 
 --- searchDishController.js ---
 -. not displaying only staters and other types why clicking button with empty search field/no keyword
--. add all option as dishes type
+-. fix all option as dishes type
 
 --- ALL FILES ---
 X. fix names on all files
@@ -21,6 +21,7 @@ X. fix names on all files
 --- dinnerModel.js ---
 -. control all functions
 1. add addObserver() and notifyObservers()
+-. fix all option
 
 --- OTHER ---
 -. add a view for the header
