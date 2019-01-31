@@ -11,7 +11,6 @@ var SearchDishView = function(container, model) {
           <h2>Find a dish</h2>
           <input id="searchbarDishes" placeholder="Enter key words">
           <select id="typeDishes">
-            <option value="all">all</option>
             <option value="starter">starter</option>
             <option value="main dish">main dish</option>
             <option value="dessert">dessert</option>

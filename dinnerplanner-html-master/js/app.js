@@ -15,12 +15,18 @@ $(function() {
 	var dinnerStatus = new DinnerStatus($("#dinnerStatusView,#dinnerStatusView-2"), model);			// remove when controller are in place
 
 	// Controllers
-	var generalStateController = new GeneralStateController($("#searchDishView,#dinnerOverview,#dinnerPrintoutView"), model);
-	//var sidebar1Controller = new SidebarController($("#sidebarView"), model);   // to use when cortrollers are in place
-	var sidebar1Controller = new SidebarController($("#sidebarView,#sidebarView-2"), model);		// remove when controller are in place
+	var generalStateController = new GeneralStateController($("#welcomeView,#searchDishView,#dishDetailsView,#dinnerOverview,#dinnerPrintoutView,#sidebarView,#sidebarView-2,#dinnerStatusView,#dinnerStatusView-2"), model);
+	//var sidebarController = new SidebarController($("#sidebarView"), model);   // to use when cortrollers are in place
+	var sidebarController = new SidebarController($("#sidebarView,#sidebarView-2"), model);		// remove when controller are in place
 	var searchDishController = new SearchDishController($("#searchDishView"), model);
-	var homeController = new HomeController($("welcomeView"))  // model not in use
-
-// ADD ALL CONTROLLERS TO APP
-
+	var homeController = new HomeController($("welcomeView"))  // fix
+	var searchController = new SearchController($(""))  // fix
+	var detailsController = new DetailsController($(""))  // fix
+	var statusController = new StatusController($("#dinnerStatusView,#dinnerStatusView-2", model))  // fix
+	var sidebarController = new SidebarController($(""))  // fix
+	var searchDishController = new SearchDishController($(""))  // fix
+	var overviewController = new OverviewController($(""))  // fix
+	var printController = new PrintController($(""))  // fix
+	var confirmController = new ConfirmController($(""))  // fix
+	var goprintController = new GoPrintController($(""))  // fix
 });

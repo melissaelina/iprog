@@ -1,4 +1,4 @@
-var SearchDishController = function(container, model) {
+var SearchDishController = function(container, model, generalStateController) {
   var numberOfGuests = (container.find("#numberOfGuests").length > 0) ? container.find("#numberOfGuests") : console.log('#' + container + ' doesn\'t exist');
   if (numberOfGuests) numberOfGuests.html(model.getNumberOfGuests());
 
@@ -41,10 +41,17 @@ var SearchDishController = function(container, model) {
     }
   });
 
+  /* SEARCH BUTTON */
+  var x = document.getElementById("searchDishView");
+  if (x.style.display === "block") {//block =nothing showed
+  x.style.display = "none";//none = shows content
+  } else {
+  x.style.display = "block";//block =nothing showed
+  }
+
   this.dishesBoxList.click((e) => {
     if (e.target.nodeName === "IMG") {
       var dish = model.getDish(e.target.id);
-      console.log(dish);
       //this.dishesBoxList.find(".column").hide();
       //this.dishesBoxList.find(".column").remove();
     }

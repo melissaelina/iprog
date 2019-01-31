@@ -1,5 +1,4 @@
 var DinnerOverview = function(container, model) {
-
   container.append(`
     <div class="parent">
       <nav class="navbar" id="dinnerStatusView">

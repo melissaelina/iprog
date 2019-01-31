@@ -1,5 +1,4 @@
 var OverviewController = function(container, model) {
-  console.log("testing");
 
   var k = document.getElementById("dinnerOverview");
 

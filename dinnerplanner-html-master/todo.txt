@@ -3,7 +3,7 @@
 --- ALL VIEWS ---
 X. update to template literals (`html code ${objects.stuff} `)
 X. fix reactivity on all views
-X. #dinnerStatusView,#dinnerStatusView-2 not working!
+-. #dinnerStatusView,#dinnerStatusView-2 not working!
 
 --- dishSearchView.js eller searchDishController.js??? ---
 -. add listener to searchButton for pressing enter on keyboard
