@@ -2,13 +2,13 @@ var ConfirmController = function(container, model) {
   //<script>
   //this.dishesBoxList = container.find('#dishItemView');
   //function myFunction() {
-  var x = document.getElementById("searchDishView");
+  /*var x = document.getElementById("searchDishView");
   if (x.style.display === "none") {
   x.style.display = "block";
   } else {
   x.style.display = "none";
   }
   //console.log("bklnöklfch");
-  OverviewController();
+  OverviewController();*/
 
   }

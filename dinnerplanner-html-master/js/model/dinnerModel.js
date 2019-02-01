@@ -29,6 +29,7 @@ var DinnerModel = function() {
       }
     }
     return a;
+    this.notifyObservers("changeInNbGuests");
   }
 
   this.getNumberOfGuests = function(value) {
@@ -84,7 +85,8 @@ var DinnerModel = function() {
   //you can use the filter argument to filter out the dish by name or ingredient (use for search)
   //if you don't pass any filter all the dishes will be returned
   this.getAllDishes = function(type, filter) {
-//    if (type === "starter", "main", "dessert") {
+    /* TESTING */
+    if (type === "starter", "main", "dessert") {
       return dishes.filter(function(dish) {
         var found = true;
         if (filter) {
@@ -98,23 +100,23 @@ var DinnerModel = function() {
           return dish.type;
         }
       });
-    } /*else if (type === "all") {
-	      return dishes.filter(function(dish) {
-	        var found = true;
-	        if (filter) {
-	          found = false;
-	          if (dish.name.toLowerCase().indexOf(filter) != -1) // all dish names in lower case
-	          {
-	            found = true;
-	          }
-	          return dish.type == type && found;
-	        } else {
-	          return dishes;
-	        }
-	      });
     }
-  }*/
-
+    else {
+      return dishes.filter(function(dish) {
+        var found = true;
+        if (filter) {
+          found = false;
+          if (dish.name.toLowerCase().indexOf(fiter) != -1)
+          {
+            found = true;
+          }
+          return dish == type && found;
+        } else {
+          return dish;
+        }
+      });
+    }
+  }
 
   //function that returns a dish of specific ID
   this.getDish = function(id) {

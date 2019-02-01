@@ -9,5 +9,15 @@ var OverviewController = function(container, model) {
 
   }
 
+
+  /* FROM GoPrintController */
+  var x = document.getElementById("dinnerOverview");
+  if (x.style.display === "none") {
+  x.style.display = "block";
+  } else {
+  x.style.display = "none";
+  }
+  PrintController();
+
   //PrintController(container, model); //skicka tillbaka till search sidan
 }

@@ -15,4 +15,18 @@ var SidebarController = function(container, model) {
     var result = model.setNumberOfGuests(numberOfGuests.html(),"plus");
     numberOfGuests.html(result);
   });
+
+
+  /* FROM confirmController */
+  var x = document.getElementById("searchDishView");
+  if (x.style.display === "none") {
+  x.style.display = "block";
+  } else {
+  x.style.display = "none";
+  }
+  //console.log("bklnöklfch");
+  OverviewController();
+
+
+
 }
