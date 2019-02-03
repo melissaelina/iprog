@@ -9,11 +9,10 @@ var WelcomeView = function(container, model) {
     </p>
     <div class="centered">
       <button id="createnew" class="button">
-      <b onclick= "HomeController()">Create new dinner</b>
+      <b onclick= "(new GeneralStateController()).showSearchDishScreen()">Create new dinner</b>
       </button>
     </div>
     </div>
-
 
   `);
   //for hide/show views: https://www.w3schools.com/howto/tryit.asp?filename=tryhow_js_toggle_hide_show
