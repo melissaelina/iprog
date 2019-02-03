@@ -19,16 +19,18 @@
   <article id="dinnerOverview" class="hide"></article>
   <article id="dinnerPrintoutView" class="hide"></article> -->
   <!-- TESTING WITHOUT CLASSES, WHIT GeneralStateController -->
+
   <article id="welcomeView"></article>
   <article id="searchDishView"></article>
   <article id="dishDetailsView"></article>
   <article id="dinnerOverview"></article>
   <article id="dinnerPrintoutView"></article>
-  <!-- jQuery -->
+
+   <!--jQuery -->
   <script src="https://code.jquery.com/jquery.js"></script>
   <!-- Bootstrap JavaScript, needed if you want for instance tabs, models, popovers etc. -->
   <script src="http://netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
-  
+
   <!-- The application JavaScript code -->
   <script src="js/app.js"></script>
   <script src="js/model/dinnerModel.js"></script>
@@ -50,6 +52,7 @@
   <script src="js/controller/printController.js"></script>
   <script src="js/controller/searchController.js"></script>
   <script src="js/controller/confirmController.js"></script>
+  <script>(new GeneralStateController()).showWelcomeScreen()</script>
   <!--<script src="js/controller/goprintController.js"></script> -->
 
 
