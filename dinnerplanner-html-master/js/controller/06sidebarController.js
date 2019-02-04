@@ -1,4 +1,4 @@
-var SidebarController = function(container, model) {
+/*var SidebarController = function(container, model) {      // refer to view instead of container
 
   var numberOfGuests = (container.find("#numberOfGuests").length > 0) ? container.find("#numberOfGuests") : console.log('#numberOfGuests doesn\'t exist');
 	if(numberOfGuests)	numberOfGuests.html(model.getNumberOfGuests());
@@ -18,7 +18,7 @@ var SidebarController = function(container, model) {
 
 
   /* FROM confirmController */
-  var x = document.getElementById("searchDishView");
+  /*var x = document.getElementById("searchDishView");
   if (x.style.display === "none") {
   x.style.display = "block";
   } else {
@@ -27,6 +27,19 @@ var SidebarController = function(container, model) {
   //console.log("bklnöklfch");
   OverviewController();
 
+}
 
-
+/* TESTING */
+var SidebarController = function(sidebarView, model, app) {
+  sidebarView.confirmButton.click(function() {
+    app.showDinnerOverviewScreen();
+  });
+  sidebarView.minusButton.click((e) => {
+    var result = model.setNumberOfGuests(numberOfGuests.html(),"minus");
+    numberOfGuests.html(result);
+  });
+  sidebarView.plusButton.click((e) => {
+    var result = model.setNumberOfGuests(numberOfGuests.html(),"plus");
+    numberOfGuests.html(result);
+  });
 }

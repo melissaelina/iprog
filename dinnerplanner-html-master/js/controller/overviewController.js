@@ -1,4 +1,4 @@
-var OverviewController = function(container, model) {
+var OverviewController = function(container, model, app) {
 
   var k = document.getElementById("dinnerOverview");
 

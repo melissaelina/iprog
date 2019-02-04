@@ -1,4 +1,4 @@
-var DetailsController = function(container, model) {
+var DetailsController = function(container, model, app) {
   //<script>
   //this.dishesBoxList = container.find('#dishItemView');
   //function myFunction() {

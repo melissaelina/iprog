@@ -1,5 +1,5 @@
-var GeneralStateController = function(container, model) {
-  this.showWelcomeScreen = function(){
+/*var GeneralStateController = function(container, model) {}*/
+  /*this.showWelcomeScreen = function(){
     $("#welcomeView").show();
     $("#searchDishView").hide();
     $("#dishDetailsView").hide();
@@ -14,9 +14,9 @@ var GeneralStateController = function(container, model) {
     dinnerPrintoutView.hide();
     sidebarView.hide();
     dinnerStatus.hide();*/
-  }
 
-  this.showSearchDishScreen = function(){
+
+  /*this.showSearchDishScreen = function(){
     $("#welcomeView").hide();
     $("#searchDishView").show();
     $("#dishDetailsView").hide();
@@ -32,7 +32,7 @@ var GeneralStateController = function(container, model) {
     dinnerPrintoutView.hide();
     sidebarView.show();
     dinnerStatus.hide();*/
-  }
+/*  }
 
   this.showDishDetailsScreen = function(){
     $("#welcomeView").hide();
@@ -51,7 +51,7 @@ var GeneralStateController = function(container, model) {
     dinnerPrintoutView.hide();
     sidebarView.show();
     dinnerStatus.hide();*/
-  }
+/*  }
 
   this.showDinnerOverviewScreen = function(){
     $("#welcomeView").hide();
@@ -68,7 +68,7 @@ var GeneralStateController = function(container, model) {
     dinnerPrintoutView.hide();
     sidebarView.show();
     dinnerStatus.show();*/
-  }
+/*  }
 
   this.showDinnerPrintoutScreen = function(){
     $("#welcomeView").hide();
@@ -85,5 +85,5 @@ var GeneralStateController = function(container, model) {
     dinnerPrintoutView.show();
     sidebarView.hide();
     dinnerStatus.show();*/
-  }
-}
+/*  }
+}*/

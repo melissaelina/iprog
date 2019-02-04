@@ -1,4 +1,4 @@
-var ConfirmController = function(container, model) {
+var ConfirmController = function(container, model, app) {
   //<script>
   //this.dishesBoxList = container.find('#dishItemView');
   //function myFunction() {

@@ -26,3 +26,4 @@ X. fix names on all files
 --- OTHER ---
 -. add a view for the header
 -. delete dishSearchView.js???
+-. all listeners in controllers

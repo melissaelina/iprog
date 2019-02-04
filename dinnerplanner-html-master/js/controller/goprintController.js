@@ -1,4 +1,4 @@
-var GoPrintController = function(container, model) {
+var GoPrintController = function(container, model, app) {
 /*
   var x = document.getElementById("dinnerOverview");
   if (x.style.display === "none") {

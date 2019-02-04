@@ -1,4 +1,4 @@
-var StatusController = function(container, model) {
+var StatusController = function(container, model, app) {
 
   var k = document.getElementById("dinnerOverview");
   var y = document.getElementById("dinnerPrintoutView");
