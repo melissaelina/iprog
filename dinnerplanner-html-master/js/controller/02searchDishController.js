@@ -111,7 +111,19 @@ var SearchDishController = function(view, model, app) {
       }
     }
   });
-  this.dishesBoxList.click(function() {
+  /*this.dishesBoxList.click(function() {
     app.showDishDetailsScreen();
-  });
+  });*/
+/* TESTING */
+  this.dishesBoxList.click((e) => {
+      if (e.target.nodeName === "IMG") {    // e, short for event
+        var dish = model.getDish(e.target.id);
+        console.log(dish.id);
+        console.log(dish);
+        app.showDishDetailsScreen(dish.id);
+        //this.welcome.find(".show").hide();
+        //this.dishesBoxList.find(".column").hide();
+        //this.dishesBoxList.find(".column").remove();
+      }
+    });
 }

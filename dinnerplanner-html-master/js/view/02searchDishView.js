@@ -47,6 +47,7 @@ if (typeof searchFor === 'object' && searchFor.length > 0) {
       `);
   }
 }
+
 this.dishesBoxList.click((e) => {
     if (e.target.nodeName === "IMG") {    // e, short for event
       var dish = model.getDish(e.target.id);
@@ -56,7 +57,7 @@ this.dishesBoxList.click((e) => {
       //this.dishesBoxList.find(".column").remove();
     }
   })
-}*/
+}
 
 
 /* TESTING */

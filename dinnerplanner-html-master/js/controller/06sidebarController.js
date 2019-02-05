@@ -30,7 +30,7 @@
 }
 
 /* TESTING */
-var SidebarController = function(sidebarView, model, app) {
+/*var SidebarController = function(sidebarView, model, app) {
   sidebarView.confirmButton.click(function() {
     app.showDinnerOverviewScreen();
   });
@@ -39,6 +39,27 @@ var SidebarController = function(sidebarView, model, app) {
     numberOfGuests.html(result);
   });
   sidebarView.plusButton.click((e) => {
+    var result = model.setNumberOfGuests(numberOfGuests.html(),"plus");
+    numberOfGuests.html(result);
+  });
+}*/
+
+/* TESTING */
+var SidebarController = function(sidebarView, model, app) {
+  var numberOfGuests = ($(app).find("#numberOfGuests").length > 0) ? $(app).find("#numberOfGuests") : console.log('#numberOfGuests doesn\'t exist');
+  if(numberOfGuests)	numberOfGuests.html(model.getNumberOfGuests());
+  this.numberOfGuests = $(app).find("#numberOfGuests");
+  this.plusButton = $(app).find("#plusGuest");
+  this.minusButton = $(app).find("#minusGuest");
+  this.confirmButton = $(app).find("#confirmButton");
+  this.confirmButton.click(function() {
+    app.showDinnerOverviewScreen();
+  });
+  this.minusButton.click((e) => {
+    var result = model.setNumberOfGuests(numberOfGuests.html(),"minus");
+    numberOfGuests.html(result);
+  });
+  this.plusButton.click((e) => {
     var result = model.setNumberOfGuests(numberOfGuests.html(),"plus");
     numberOfGuests.html(result);
   });

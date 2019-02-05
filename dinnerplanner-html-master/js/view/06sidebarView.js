@@ -27,10 +27,10 @@
 /* TESTING 02 */
 
 var SidebarView = function(sidebarView, model) {
-	this.numberOfGuests = sidebarView.find("#numberOfGuests");
-	this.plusButton = sidebarView.find("#plusGuest");
-	this.minusButton = sidebarView.find("#minusGuest");
-	this.confirmButton = sidebarView.find("#confirmButton");
+	//this.numberOfGuests = sidebarView.find("#numberOfGuests");
+	//this.plusButton = sidebarView.find("#plusGuest");
+	//this.minusButton = sidebarView.find("#minusGuest");
+	//this.confirmButton = sidebarView.find("#confirmButton");
 	var searchFor = model.getDish(2);
 	var nbPersons = model.getNumberOfGuests();
 	var ingredientsPrice = 0;
