@@ -145,6 +145,10 @@ label {
   font-size: 16px;
 }
 
+.btn:hover {
+  background-color: purple;
+}
+
 /* Buttons with text */
 .button {
   background-color: purple;
@@ -153,6 +157,10 @@ label {
   padding: 5px 10px;
   text-align: center;
   font-size: 16px;
+}
+
+.button:hover {
+  background-color: #4d004d;
 }
 
 /* Buttons for pictures */

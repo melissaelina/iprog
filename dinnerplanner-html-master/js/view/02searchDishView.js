@@ -1,0 +1,116 @@
+/*var SearchDishView = function(container, model) {
+  container.append(`
+    <div class="parent">
+      <div class="side">
+        <aside id="sidebarView">
+        </aside>
+      </div>
+      <div class="main">
+        <article id="dishSearchView">
+        <div>
+          <h2>Find a dish</h2>
+          <input id="searchbarDishes" placeholder="Enter key words">
+          <select id="typeDishes">
+            <option value="all">all</option>
+            <option value="starter">starter</option>
+            <option value="main dish">main dish</option>
+            <option value="dessert">dessert</option>
+          </select>
+          <button id="searchButton" class="button">search</button>
+        </div>
+        <hr>
+        <div id="dishItemView" class="flex-container">
+        </div>
+        </article>
+        </div>
+        </div>
+    </div>
+    `);
+
+this.dishesBoxList = container.find('#dishItemView');
+var searchFor = model.getAllDishes('all');
+if (typeof searchFor === 'object' && searchFor.length > 0) {
+  this.dishesBoxList.html('');
+  for (var i = 0; i < searchFor.length; i++) {
+    var price = 0;
+    for (var a = 0; a < searchFor[i].ingredients.length; a++) {
+      price += searchFor[i].ingredients[a].price;
+    }
+    this.dishesBoxList.append(`
+      <div class="column">
+        <div>
+          <img id="${searchFor[i].id}" class="pickupDishes" src="images/${searchFor[i].image}" alt="Lasagne" style="width:80%">
+          <p style="padding-right: 4em">${searchFor[i].name}</p>
+        </div>
+        <p style="padding-right: 4em">${price.toFixed(2)} SEK</p>
+      </div>
+      `);
+  }
+}
+
+this.dishesBoxList.click((e) => {
+    if (e.target.nodeName === "IMG") {    // e, short for event
+      var dish = model.getDish(e.target.id);
+      console.log(dish);
+      //this.welcome.find(".show").hide();
+      this.dishesBoxList.find(".column").hide();
+      //this.dishesBoxList.find(".column").remove();
+    }
+  })
+}
+
+
+/* TESTING */
+
+var SearchDishView = function(searchDishView, model) {
+  searchDishView.append(`
+    <div class="parent">
+      <div class="side">
+        <aside id="sidebarView">
+        </aside>
+      </div>
+      <div class="main">
+        <article id="dishSearchView">
+        <div>
+          <h2>Find a dish</h2>
+          <input id="searchbarDishes" placeholder="Enter key words">
+          <select id="typeDishes">
+            <option value="all">all</option>
+            <option value="starter">starter</option>
+            <option value="main dish">main dish</option>
+            <option value="dessert">dessert</option>
+          </select>
+          <button id="searchButton" class="button">search</button>
+        </div>
+        <hr>
+        <div id="dishItemView" class="flex-container">
+        </div>
+        </article>
+        </div>
+        </div>
+    </div>
+    `);
+
+    this.update = function(model) {}
+      this.dishesBoxList = searchDishView.find('#dishItemView');
+      var searchFor = model.getAllDishes('all');
+      if (typeof searchFor === 'object' && searchFor.length > 0) {
+        this.dishesBoxList.html('');
+        for (var i = 0; i < searchFor.length; i++) {
+          var price = 0;
+          for (var a = 0; a < searchFor[i].ingredients.length; a++) {
+            price += searchFor[i].ingredients[a].price;
+          }
+          this.dishesBoxList.append(`
+            <div class="column">
+              <div>
+                <img id="${searchFor[i].id}" class="pickupDishes" src="images/${searchFor[i].image}" alt="Lasagne" style="width:80%">
+                <p style="padding-right: 4em">${searchFor[i].name}</p>
+              </div>
+              <p style="padding-right: 4em">${price.toFixed(2)} SEK</p>
+            </div>
+            `);
+        }
+      }
+      model.addObservers(this.update);
+  }

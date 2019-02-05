@@ -85,8 +85,47 @@ var DinnerModel = function() {
   //you can use the filter argument to filter out the dish by name or ingredient (use for search)
   //if you don't pass any filter all the dishes will be returned
   this.getAllDishes = function(type, filter) {
+    return dishes.filter(function(dish) {
+      var found = true;
+      if (filter) {
+        found = false;
+        if (dish.name.toLowerCase().indexOf(filter) != -1) // all dish names in lower case
+        {
+          found = true;
+        }
+        return dish.type == type && found;
+      } else {
+        return dish.type;
+      }
+    });
+
+
+
     /* TESTING */
-    if (type === "starter", "main", "dessert") {
+    /* maybe try with:  see https://www.w3schools.com/js/js_switch.asp
+    switch (type) {
+      case "starter":
+      case "main":
+      case "dessert":
+        return dishes.filter(function(dish) {
+          var found = true;
+          if (filter) {
+            found = false;
+            if (dish.name.toLowerCase().indexOf(filter) != -1) // all dish names in lower case
+            {
+              found = true;
+            }
+            return dish.type == type && found;
+          } else {
+            return dish.type;
+          }
+        default:
+          ...
+
+    }*/
+
+/* TESTING LOOPS */
+  /*  if (type === "starter", "main", "dessert") {
       return dishes.filter(function(dish) {
         var found = true;
         if (filter) {
@@ -115,7 +154,8 @@ var DinnerModel = function() {
           return dish;
         }
       });
-    }
+    } */
+
   }
 
   //function that returns a dish of specific ID

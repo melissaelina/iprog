@@ -1,8 +1,8 @@
-var HomeController = function(container, model) {
+/*var WelcomeController = function(container, model, app) {
   //<script>
   //this.dishesBoxList = container.find('#dishItemView');
   //function myFunction() {
-  var x = document.getElementById("homefull");
+  var x = document.getElementById("welcomeView");
   if (x.style.display === "none") {
   x.style.display = "block";
   } else {
@@ -12,10 +12,7 @@ var HomeController = function(container, model) {
   //call on controller to show search dish view
   //}
   //</script>
-
-
-
-
+}
 
   /*this.createdinnerButton = container.find("#createnew");
 
@@ -25,5 +22,13 @@ var HomeController = function(container, model) {
       console.log("test printing");
       //this.dishesBoxList.find(".column").hide();
       //this.dishesBoxList.find(".column").remove();
-    }*/
-  }
+    }
+
+
+/* TESTING */
+var WelcomeController = function(view, model, app) {
+  this.createnew = $(app).find("#createnew"); // create new dinner button
+  this.createnew.click(function(e) {
+    app.showSearchDishScreen();
+  });
+}
