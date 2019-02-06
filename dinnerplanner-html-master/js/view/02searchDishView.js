@@ -91,17 +91,17 @@ var SearchDishView = function(searchDishView, model) {
     </div>
     `);
 
-    this.update = function(model) {}
-      this.dishesBoxList = searchDishView.find('#dishItemView');
-      var searchFor = model.getAllDishes('all');
-      if (typeof searchFor === 'object' && searchFor.length > 0) {
-        this.dishesBoxList.html('');
-        for (var i = 0; i < searchFor.length; i++) {
-          var price = 0;
-          for (var a = 0; a < searchFor[i].ingredients.length; a++) {
-            price += searchFor[i].ingredients[a].price;
-          }
-          this.dishesBoxList.append(`
+  this.update = function(model) {}
+  this.dishesBoxList = searchDishView.find('#dishItemView');
+  var searchFor = model.getAllDishes();
+  if (typeof searchFor === 'object' && searchFor.length > 0) {
+    this.dishesBoxList.html('');
+    for (var i = 0; i < searchFor.length; i++) {
+      var price = 0;
+      for (var a = 0; a < searchFor[i].ingredients.length; a++) {
+        price += searchFor[i].ingredients[a].price;
+      }
+      this.dishesBoxList.append(`
             <div class="column">
               <div>
                 <img id="${searchFor[i].id}" class="pickupDishes" src="images/${searchFor[i].image}" alt="Lasagne" style="width:80%">
@@ -110,7 +110,7 @@ var SearchDishView = function(searchDishView, model) {
               <p style="padding-right: 4em">${price.toFixed(2)} SEK</p>
             </div>
             `);
-        }
-      }
-      model.addObservers(this.update);
+    }
   }
+  model.addObservers(this.update);
+}

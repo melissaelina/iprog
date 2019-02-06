@@ -10,8 +10,8 @@ $(function() {
 	var dinnerPrintoutView = new DinnerPrintoutView($("#dinnerPrintoutView"), model);
 
 	// Additional view components
-	//var sidebarView = new SidebarView($("#sidebarView,#sidebarView-2"), model);
-	var sidebarView = new SidebarView($("#sidebarView"), model);	// to use when cortrollers are in place
+	var sidebarView = new SidebarView($("#sidebarView,#sidebarView-2"), model);
+	//var sidebarView = new SidebarView($("#sidebarView"), model);	// to use when cortrollers are in place
 	var dinnerStatus = new DinnerStatus($("#dinnerStatusView"), model);		 // to use when cortrollers are in place
 	//var dinnerStatusView = new DinnerStatus($("#dinnerStatusView,#dinnerStatusView-2"), model);			// remove when controller are in place
 
@@ -42,31 +42,32 @@ $(function() {
     $("#dinnerStatusView").hide();
 	}
 
-	this.showWelcomeScreen = function(){
+	this.takeMeHome = function(){		// show welcome screen
 		hideAllViews();
 		$("#welcomeView").show();
   }
 
-  this.showSearchDishScreen = function(){
+  this.toMenu = function(){		// show search dish screen
 		hideAllViews();
 		$("#searchDishView").show();
 		$("#sidebarView").show();
   }
 
-  this.showDishDetailsScreen = function(){
+  this.provideDishInfo = function(id){		// show dish details screen
 		hideAllViews();
 		$("#dishDetailsView").show();
 		$("#sidebarView").show();
+		dishDetailsView.provideDishDetails(id);
   }
 
-  this.showDinnerOverviewScreen = function(){
+  this.dinnerConfirmed = function(){		// show dinner overview screen
 		hideAllViews();
 		$("#dinnerOverview").hide();
 		$("#sidebarView").show();
 		$("#dinnerStatusView").hide();
   }
 
-  this.showDinnerPrintoutScreen = function(){
+  this.dinnerPrinted = function(){		// show dinner printout screen
 		hideAllViews();
 		$("#dinnerPrintoutView").hide();
 		$("#dinnerStatusView").hide();

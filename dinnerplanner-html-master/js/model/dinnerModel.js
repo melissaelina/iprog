@@ -73,19 +73,64 @@ var DinnerModel = function() {
   //Adds the passed dish to the menu. If the dish of that type already exists on the menu
   //it is removed from the menu and the new one added.
   this.addDishToMenu = function(id) {
-
-  }
+		var amount = 0;
+		console.log(id);
+		var duplicate = false;
+		if (!menu) {
+			menu[0] = this.getDish(id);
+		}
+    else {
+			menu.forEach(function(theDish)
+			{
+				if (theDish.id == id){
+					duplicate = true;
+				}
+				amount++;
+			});
+			if (duplicate){
+					this.removeDishFromMenu(id);
+					menu.push(this.getDish(id));
+			}
+      else {
+        menu[amount] = this.getDish(id);
+			}
+		}
+		this.notifyObservers();
+	}
 
   //Removes dish from menu
   this.removeDishFromMenu = function(id) {
-
+  var amount = 0;
+  var idExists = false;
+  if (menu.length == 1) {
+    if (menu[amount].id == id) {
+      menu.splice(amount, 1);
+    }
+    else {
+      alert("ERROR, no dish like this!");
+    }
   }
+  else {
+    menu.forEach(function(theDish) {
+      if (theDish.id == id) {
+        menu.splice(amount, 1);
+        idExists = true;
+      }
+      amount++;
+    });
+    if (idExists == false) {
+      alert("ERROR, no dish like this!");
+    }
+  }
+}
+
+
 
   //function that returns all dishes of specific type (i.e. "starter", "main dish" or "dessert")
   //you can use the filter argument to filter out the dish by name or ingredient (use for search)
   //if you don't pass any filter all the dishes will be returned
   this.getAllDishes = function(type, filter) {
-    return dishes.filter(function(dish) {
+    /*return dishes.filter(function(dish) {
       var found = true;
       if (filter) {
         found = false;
@@ -97,35 +142,12 @@ var DinnerModel = function() {
       } else {
         return dish.type;
       }
-    });
+    });*/
 
-
-
-    /* TESTING */
-    /* maybe try with:  see https://www.w3schools.com/js/js_switch.asp
-    switch (type) {
-      case "starter":
-      case "main":
-      case "dessert":
-        return dishes.filter(function(dish) {
-          var found = true;
-          if (filter) {
-            found = false;
-            if (dish.name.toLowerCase().indexOf(filter) != -1) // all dish names in lower case
-            {
-              found = true;
-            }
-            return dish.type == type && found;
-          } else {
-            return dish.type;
-          }
-        default:
-          ...
-
-    }*/
-
-/* TESTING LOOPS */
-  /*  if (type === "starter", "main", "dessert") {
+  if (!type && !filter) {
+    return dishes;
+  }
+    if (type === "starter" || type === "main" || type === "dessert") {
       return dishes.filter(function(dish) {
         var found = true;
         if (filter) {
@@ -138,24 +160,22 @@ var DinnerModel = function() {
         } else {
           return dish.type;
         }
+        if (!filter) {
+          return dish.type;
+        }
       });
     }
     else {
       return dishes.filter(function(dish) {
         var found = true;
         if (filter) {
-          found = false;
-          if (dish.name.toLowerCase().indexOf(fiter) != -1)
+          if (dish.name.toLowerCase().indexOf(filter) != -1)
           {
-            found = true;
+            return dish;
           }
-          return dish == type && found;
-        } else {
-          return dish;
         }
       });
-    } */
-
+    }
   }
 
   //function that returns a dish of specific ID

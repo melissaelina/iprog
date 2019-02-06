@@ -6,7 +6,6 @@
    those marked CONFIRMED are in use
 -. add a view for the header
 -. delete dishSearchView.js???
--. dishSearchView.js, searching under the all option doesn't work
--. dishSearchView.js, displaying all starters/mains/desserts doesn't
+-. dishSearchView.js, displaying options all/starters/mains/desserts doesn't
    work unless there's a keyword input
 -. dishSearchView.js, display only that one chosen dish when clicking the dish

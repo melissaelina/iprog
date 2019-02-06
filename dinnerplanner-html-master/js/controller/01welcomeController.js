@@ -29,6 +29,6 @@
 var WelcomeController = function(view, model, app) {
   this.createnew = $(app).find("#createnew"); // create new dinner button
   this.createnew.click(function(e) {
-    app.showSearchDishScreen();
+    app.toMenu();
   });
 }
