@@ -1,6 +1,6 @@
 var StatusController = function(container, model, app) {
 
-  var k = document.getElementById("dinnerOverview");
+  /*var k = document.getElementById("dinnerOverview");
   var y = document.getElementById("dinnerPrintoutView");
   //var y = document.getElementById("dinnerPrintoutView");
   //if one view is shown hide that view nothing on the other if other view is shown
@@ -11,7 +11,7 @@ var StatusController = function(container, model, app) {
   }else {
   k.style.display = "none";
 
-  }
+}*/
 
 
 

@@ -120,6 +120,7 @@ var SearchDishController = function(view, model, app) {
         var dish = model.getDish(e.target.id);
         //console.log(dish.id); // notify model on current dish
         app.provideDishInfo(dish.id);
+        //console.log(dish);
         //this.welcome.find(".show").hide();
         //this.dishesBoxList.find(".column").hide(!dish.id);
         //this.dishesBoxList.find(".column").remove();

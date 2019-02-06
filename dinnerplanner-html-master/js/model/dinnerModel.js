@@ -9,6 +9,7 @@ var DinnerModel = function() {
 
   this.addObservers = function(observer) {
     observers.push(observer);
+    console.log(observer);
   }
 
   this.notifyObservers = function(changeDetails) {

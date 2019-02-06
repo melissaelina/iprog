@@ -25,14 +25,19 @@
 
 /* TESTING */
 var DetailsController = function(view, model, app) {
-  this.backbutton = $(app).find("#backbutton");   // buttons lies under this.dishesDetails and app doesnt go in there
+  /*this.backbutton = $(app).find("#backbutton");
+  this.addtomenu = $(app).find("#addtomenu");
+
   this.backbutton.click(function() {
-    //console.log(this.backbutton);
     app.toMenu();
   });
-  this.addtomenu = $(app).find("#addtomenu");
   this.addtomenu.click(function() {
-    //console.log(app.id);
     model.addDishToMenu(app.id);
+  });*/
+  $("body").on('click',"#backbutton", function() {
+    app.toMenu();
+  });
+  $("body").on('click',"#addtomenu", function() {
+    console.log(123);
   });
 }

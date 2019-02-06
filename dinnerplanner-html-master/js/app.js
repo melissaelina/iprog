@@ -32,44 +32,53 @@ $(function() {
 	//var goprintController = new GoPrintController($(""))  // fix
 
 	/* GENERAL STATE CONTROLLER */
-	var hideAllViews = function() {
-		$("#welcomeView").hide();
+	var currentView = function(view) {
+
+		$(".container").removeClass("show").addClass("hide");
+	  view.removeClass("hide").addClass("show");
+
+		/*$("#welcomeView").hide();
     $("#searchDishView").hide();
     $("#dishDetailsView").hide();
     $("#dinnerOverview").hide();
     $("#dinnerPrintoutView").hide();
     $("#sidebarView").hide();
-    $("#dinnerStatusView").hide();
+    $("#dinnerStatusView").hide();*/
 	}
 
 	this.takeMeHome = function(){		// show welcome screen
-		hideAllViews();
-		$("#welcomeView").show();
+		currentView($("#welcomeView"));
   }
 
   this.toMenu = function(){		// show search dish screen
-		hideAllViews();
-		$("#searchDishView").show();
-		$("#sidebarView").show();
+		currentView($("#searchDishView"));
+		/*$("#searchDishView").show();
+		$("#sidebarView").show();*/
   }
 
   this.provideDishInfo = function(id){		// show dish details screen
-		hideAllViews();
+		currentView($("#dishDetailsView"));
+		dishDetailsView.provideDishDetails(id);
+		/*hideAllViews();
 		$("#dishDetailsView").show();
 		$("#sidebarView").show();
-		dishDetailsView.provideDishDetails(id);
+		console.log(dishDetailsView);
+		*/
   }
 
   this.dinnerConfirmed = function(){		// show dinner overview screen
-		hideAllViews();
+		currentView($("#dinnerOverview"));
+		/*hideAllViews();
 		$("#dinnerOverview").hide();
 		$("#sidebarView").show();
-		$("#dinnerStatusView").hide();
+		$("#dinnerStatusView").hide();*/
   }
 
   this.dinnerPrinted = function(){		// show dinner printout screen
-		hideAllViews();
+		currentView($("#dinnerPrintoutView"));
+		/*hideAllViews();
 		$("#dinnerPrintoutView").hide();
-		$("#dinnerStatusView").hide();
+		$("#dinnerStatusView").hide();*/
   }
+	this.takeMeHome;
 });
