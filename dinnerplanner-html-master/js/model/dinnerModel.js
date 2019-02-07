@@ -140,7 +140,7 @@ var DinnerModel = function() {
   //you can use the filter argument to filter out the dish by name or ingredient (use for search)
   //if you don't pass any filter all the dishes will be returned
   this.getAllDishes = function(type, filter) {
-    /*if (!type && !filter) {
+    if (!type && !filter) {
       return dishes;
     }
     if (type === "starter" || type === "main" || type === "dessert") {
@@ -169,15 +169,16 @@ var DinnerModel = function() {
           }
         }
       });
-    }*/
+    }
 
     /*API*/
-    return fetch("https://spoonacular-recipe-food-nutrition-v1.p.mashape.com/recipes/search") {
+    /*return fetch("https://spoonacular-recipe-food-nutrition-v1.p.mashape.com/recipes/search") {
               headers:{
                   'X-Mashape-Key': API_KEY
               }
         }).then(response => response.json())
           .then(data => data.results)
+          */
   }
 
   //function that returns a dish of specific ID
