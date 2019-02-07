@@ -60,18 +60,10 @@ var DishDetailsView = function(dishDetailsView, model, id) {
       dishDetailsView.find("#total").html('SEK ' + (ingredientsPrice * nbPersons).toFixed(2));
     }
   }
-
   this.provideDishDetails = provideDishDetails;
-  //console.log(provideDishDetails(id));
-  //console.log(id);
   this.update = function() {
-    /*nbPersons = model.getNumberOfGuests();
-    var allDishes = document.getElementById("dishDetailsView");
-    //console.log(allDishes);
-    var ourDish = document.getElementById("dishIngredients");
-    allDishes.removeChild(ourChild);
-    provideDishDetails(ID);*/
+    nbPersons = model.getNumberOfGuests();
+    provideDishDetails(ID);
   }
-
   model.addObservers(this.update);
 }

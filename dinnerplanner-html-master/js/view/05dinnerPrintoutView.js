@@ -1,6 +1,6 @@
 var DinnerPrintoutView = function(container, model) {
     container.append(`
-      <nav class="navbar" id="dinnerStatusView">
+      <nav class="navbar" id="dinnerStatusView-2">
       </nav>
       <div>
         <article id="dishDetails" class="main-2">

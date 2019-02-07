@@ -3,7 +3,7 @@ var DinnerStatus = function (container, model) {
 		<h2>My dinner: <span id="numberOfGuests"></span> people
 		</h2>
 		<div id="buttonplacement">
-			<button class="button" onclick= "StatusController()"><b>Go back and edit dinner</b></button>
+			<button id="editbutton"class="button"<b>Go back and edit dinner</b></button>
 		</div>
 		`);
 }

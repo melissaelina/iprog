@@ -1,63 +1,46 @@
-/*var SidebarView = function (container, model) {
-	var searchFor = model.getDish(2);
-	var nbPersons = model.getNumberOfGuests();
-	var ingredientsPrice = 0;
-	for (var b = 0; b < searchFor.ingredients.length; b++) {
-		ingredientsPrice += searchFor.ingredients[b].price;
-		container.find("#ingredient-" + i).append(searchFor.ingredients[b].quantity +
-			(ingredientsPrice * nbPersons).toFixed(2));
-		}
-	container.append(`
-		<h2>My dinner</h2>
-		<label>People: <span id="numberOfGuests"></span>
-		</label>
-		<div>
-			<button id="minusGuest" class="btn">-</button>
-			<button id="plusGuest" class="btn">+</button>
-		</div>
-		<p>Dish name: <span id="name">${searchFor.name}</span>
-		</p>
-		<p>Cost: <span id="cost">${ingredientsPrice*nbPersons} SEK</span>
-		</p>
-		<button id="confirmButton" class="button" onclick= "(new GeneralStateController()).showDinnerOverviewScreen()">Confirm Dinner</button>
-		`);
-} */
-
-
-/* TESTING 02 */
-
 var SidebarView = function(sidebarView, model) {
-	//this.numberOfGuests = sidebarView.find("#numberOfGuests");
-	//this.plusButton = sidebarView.find("#plusGuest");
-	//this.minusButton = sidebarView.find("#minusGuest");
-	//this.confirmButton = sidebarView.find("#confirmButton");
-	var searchFor = model.getDish(2);
-	var nbPersons = model.getNumberOfGuests();
-	var ingredientsPrice = 0;
-	for (var b = 0; b < searchFor.ingredients.length; b++) {
-		ingredientsPrice += searchFor.ingredients[b].price;
-		sidebarView.find("#ingredient-" + i).append(searchFor.ingredients[b].quantity +
-			(ingredientsPrice * nbPersons).toFixed(2));
-		}
-		sidebarView.append(`
-			<h2>My dinner</h2>
-			<label>People: <span id="numberOfGuests"></span>
-			</label>
-			<div>
-				<button id="minusGuest" class="btn">-</button>
-				<button id="plusGuest" class="btn">+</button>
-			</div>
-			<p>Dish name: <span id="name">${searchFor.name}</span>
-			</p>
-			<p>Cost: <span id="cost">${ingredientsPrice*nbPersons} SEK</span>
-			</p>
-			<button id="confirmButton" class="button">Confirm Dinner</button>
-			`);
+  sidebarView.append(`
+					<h2>My dinner</h2>
+					<label>People: <span id="numberOfGuests"></span>
+					</label>
+					<div>
+						<button id="minusGuest" class="btn">-</button>
+						<button id="plusGuest" class="btn">+</button>
+					</div>
+					<p>Dish name: <span id="name"></span>
+					</p>
+					<p>Cost: <span id="cost"></span>
+					</p>
+					<hr>
+					<p>Total cost: <span id="totcost"></span>
+					</p>
+					<button id="confirmButton" class="button">Confirm Dinner</button>
+	`);
+  var nbPersons = model.getNumberOfGuests();
+  var totalPrice = model.getTotalMenuPrice();
+  totalPrice = model.getTotalMenuPrice();
 
-	this.update = function(model) {
-		var nbPersons = model.getNumberOfGuests();
-		document.getElementById("numberOfGuests").innerHTML = nbPersons;
-	}
+  var displaySidebar = function() {
+    var ourMenu = model.getFullMenu();
+    ourMenu.forEach(function(ourDish) {
+      var ourDishName = ourDish.name;
+      this.dishNameBox = sidebarView.find('#name');
+      this.dishNameBox.append(`<div>${ourDishName}</div>`);
+			this.dishPriceBox = sidebarView.find('#cost');
+      var ingredientsPrice = 0;
+      for (var i = 0; i < ourDish.ingredients.length; i++) {
+        ingredientsPrice += ourDish.ingredients[i].price;
+			}
+			ingredientsPrice = (ingredientsPrice * nbPersons).toFixed(2);
+			this.dishPriceBox.append(`<div>${ingredientsPrice} SEK</div>`)
+    });
+  }
+  displaySidebar();
 
-	model.addObservers(this.update);
+  this.update = function() {
+    var nbPersons = model.getNumberOfGuests();
+    document.getElementById("numberOfGuests").innerHTML = nbPersons;
+    displaySidebar();
+  }
+  model.addObservers(this.update);
 }

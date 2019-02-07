@@ -2,29 +2,28 @@
 var DinnerModel = function() {
 
   /* variables decleared and values assigned */
-  var guests = 3;
+  var guests = 1;
   var menu = [];
   var observers = [];
 
-
   this.addObservers = function(observer) {
     observers.push(observer);
-    console.log(observer);
+    //console.log(observer);
   }
 
-  this.notifyObservers = function(changeDetails) {
-    for(var i = 0; i < this.observers.length; i++) {
-          this.observers[i].update(this, changeDetails);
-        }
+  this.notifyObservers = function() {
+    for (var i = 0; i < observers.length; i++) {
+      observers[i](this);
+    }
   }
 
   //this.removeObserver = fumction(observer) {}
 
-  this.setNumberOfGuests = function(value, type) {      // first DinnerModel object method
-    var a = false;                                      // where "this" refers to the owner of the method
-    if (value && type) {                                // DinnerModel owns the setNumberOfGuests method
+  this.setNumberOfGuests = function(value, type) { // first DinnerModel object method
+    var a = false; // where "this" refers to the owner of the method
+    if (value && type) { // DinnerModel owns the setNumberOfGuests method
       if (type === "plus") {
-        a = parseInt(value) + 1;    // parseInt returns variable as integer
+        a = parseInt(value) + 1; // parseInt returns variable as integer
       } else {
         a = (value >= 1) ? parseInt(value) - 1 : 0;
       }
@@ -32,6 +31,12 @@ var DinnerModel = function() {
     return a;
     this.notifyObservers("changeInNbGuests");
   }
+  /*this.setNumberOfGuests = function(num) {
+    if (num > 0) {
+			nbGuests = num;
+    }
+    this.notifyObservers();
+	}*/
 
   this.getNumberOfGuests = function(value) {
     var resultGuests = (value) ? value : guests;
@@ -39,13 +44,12 @@ var DinnerModel = function() {
   }
 
   //Returns the dish that is on the menu for selected type
-  this.getSelectedDish = function(type) {
-
-  }
+  this.getSelectedDish = function(type) {}
 
   //Returns all the dishes on the menu.
   this.getFullMenu = function() {
     return menu;
+    //console.log(menu);
   }
 
   //Returns all ingredients for all the dishes on the menu.
@@ -63,67 +67,72 @@ var DinnerModel = function() {
   //Returns the total price of the menu (all the ingredients multiplied by number of guests).
   this.getTotalMenuPrice = function() {
     var totalprice = 0;
-    for (i in dishes) {
-      for (j in dishes[i].ingredients) {
-        totalprice += dishes[i].ingredients[j].price;
-      }
-    }
-    return totalprice * guests;
+    menu.forEach(function(dishInMenu) {
+      dishInMenu.ingredients.forEach(function(ingredient) {
+        totalprice += ingredient.price;
+      });
+    });
+    return totalprice * this.getNumberOfGuests;
   }
 
   //Adds the passed dish to the menu. If the dish of that type already exists on the menu
   //it is removed from the menu and the new one added.
   this.addDishToMenu = function(id) {
-		var amount = 0;
-		console.log(id);
-		var duplicate = false;
-		if (!menu) {
-			menu[0] = this.getDish(id);
-		}
+    var quantity = 0;
+    var duplicate = false;
+    let dishType = (this.getDish(id)).type;
+    if (menu === undefined || menu.length == 0) {
+      menu[0] = this.getDish(id);
+    }
     else {
-			menu.forEach(function(theDish)
-			{
-				if (theDish.id == id){
-					duplicate = true;
-				}
-				amount++;
-			});
-			if (duplicate){
-					this.removeDishFromMenu(id);
-					menu.push(this.getDish(id));
-			}
-      else {
-        menu[amount] = this.getDish(id);
-			}
-		}
-		this.notifyObservers();
-	}
+      menu.forEach(function(menuDishes) {
+        if (menuDishes.id == id) {
+          duplicate = true;
+          alert("DISH ALREADY ADDED TO MENU");
+          return;
+        }
+        else if (menuDishes.type == dishType) {
+          duplicate = true;
+          alert("THERE IS ALREADY ONE DISH OF THE SAME TYPE MENU");
+          return;
+        }
+        quantity++;
+      });
+      if (duplicate == true) {
+        return;
+      } else {
+        //console.log(menu);
+        menu.push(this.getDish(id));
+        //console.log(menu);
+      }
+    }
+    this.notifyObservers();
+  }
+
 
   //Removes dish from menu
   this.removeDishFromMenu = function(id) {
-  var amount = 0;
-  var idExists = false;
-  if (menu.length == 1) {
-    if (menu[amount].id == id) {
-      menu.splice(amount, 1);
-    }
-    else {
-      alert("ERROR, no dish like this!");
-    }
-  }
-  else {
-    menu.forEach(function(theDish) {
-      if (theDish.id == id) {
+    var amount = 0;
+    var idExists = false;
+    if (menu.length == 1) {
+      if (menu[amount].id == id) {
         menu.splice(amount, 1);
-        idExists = true;
+      } else {
+        alert("ERROR, no dish like this!");
       }
-      amount++;
-    });
-    if (idExists == false) {
-      alert("ERROR, no dish like this!");
+    } else {
+      menu.forEach(function(theDish) {
+        if (theDish.id == id) {
+          menu.splice(amount, 1);
+          idExists = true;
+        }
+        amount++;
+      });
+      if (idExists == false) {
+        alert("ERROR, no dish like this!");
+      }
     }
   }
-}
 
 
 
@@ -131,23 +140,9 @@ var DinnerModel = function() {
   //you can use the filter argument to filter out the dish by name or ingredient (use for search)
   //if you don't pass any filter all the dishes will be returned
   this.getAllDishes = function(type, filter) {
-    /*return dishes.filter(function(dish) {
-      var found = true;
-      if (filter) {
-        found = false;
-        if (dish.name.toLowerCase().indexOf(filter) != -1) // all dish names in lower case
-        {
-          found = true;
-        }
-        return dish.type == type && found;
-      } else {
-        return dish.type;
-      }
-    });*/
-
-  if (!type && !filter) {
-    return dishes;
-  }
+    /*if (!type && !filter) {
+      return dishes;
+    }
     if (type === "starter" || type === "main" || type === "dessert") {
       return dishes.filter(function(dish) {
         var found = true;
@@ -165,18 +160,24 @@ var DinnerModel = function() {
           return dish.type;
         }
       });
-    }
-    else {
+    } else {
       return dishes.filter(function(dish) {
         var found = true;
         if (filter) {
-          if (dish.name.toLowerCase().indexOf(filter) != -1)
-          {
+          if (dish.name.toLowerCase().indexOf(filter) != -1) {
             return dish;
           }
         }
       });
-    }
+    }*/
+
+    /*API*/
+    return fetch("https://spoonacular-recipe-food-nutrition-v1.p.mashape.com/recipes/search") {
+              headers:{
+                  'X-Mashape-Key': API_KEY
+              }
+        }).then(response => response.json())
+          .then(data => data.results)
   }
 
   //function that returns a dish of specific ID
