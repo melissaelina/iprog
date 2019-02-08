@@ -8,12 +8,8 @@ $(function() {
 	var dishDetailsView = new DishDetailsView($("#dishDetailsView"), model);
 	var dinnerOverview = new DinnerOverview($("#dinnerOverview"), model);
 	var dinnerPrintoutView = new DinnerPrintoutView($("#dinnerPrintoutView"), model);
-
-	// Additional view components
 	var sidebarView = new SidebarView($("#sidebarView,#sidebarView-2"), model);
 	//var sidebarView = new SidebarView($("#sidebarView"), model);	// to use when cortrollers are in place
-	//var dinnerStatus = new DinnerStatus($("#dinnerStatusView"), model);		 // to use when cortrollers are in place
-	var dinnerStatusView = new DinnerStatus($("#dinnerStatusView,#dinnerStatusView-2"), model);			// remove when controller are in place
 
 	// Controllers
 	var welcomeController = new WelcomeController(welcomeView, model, this)  // fix
@@ -22,7 +18,6 @@ $(function() {
 	var overviewController = new OverviewController(dinnerOverview, model, this)   // fix
 	var printoutController = new PrintoutController(dinnerPrintoutView, model, this)  // fix
 	var sidebarController = new SidebarController(sidebarView, model, this);   // to use when cortrollers are in place
-	var statusController = new StatusController(dinnerStatusView, model, this)  // fix
 
 	/* GENERAL STATE CONTROLLER */
 	var currentView = function(view) {

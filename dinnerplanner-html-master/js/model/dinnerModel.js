@@ -2,7 +2,7 @@
 var DinnerModel = function() {
 
   /* variables decleared and values assigned */
-  var guests = 1;
+  var guests = 2;
   var menu = [];
   var observers = [];
 
@@ -19,7 +19,7 @@ var DinnerModel = function() {
 
   //this.removeObserver = fumction(observer) {}
 
-  this.setNumberOfGuests = function(value, type) { // first DinnerModel object method
+/*  this.setNumberOfGuests = function(value, type) { // first DinnerModel object method
     var a = false; // where "this" refers to the owner of the method
     if (value && type) { // DinnerModel owns the setNumberOfGuests method
       if (type === "plus") {
@@ -30,13 +30,15 @@ var DinnerModel = function() {
     }
     return a;
     this.notifyObservers("changeInNbGuests");
-  }
-  /*this.setNumberOfGuests = function(num) {
+  }*/
+  this.setNumberOfGuests = function(num) {
     if (num > 0) {
-			nbGuests = num;
+			guests = num;
     }
-    this.notifyObservers();
-	}*/
+    this.notifyObservers(guests);
+    return guests;
+	}
+
 
   this.getNumberOfGuests = function(value) {
     var resultGuests = (value) ? value : guests;
@@ -68,12 +70,14 @@ var DinnerModel = function() {
   //Returns the total price of the menu (all the ingredients multiplied by number of guests).
   this.getTotalMenuPrice = function() {
     var totalprice = 0;
+    nbPersons = this.getNumberOfGuests();
     menu.forEach(function(dishInMenu) {
       dishInMenu.ingredients.forEach(function(ingredient) {
         totalprice += ingredient.price;
       });
     });
-    return totalprice * this.getNumberOfGuests;
+    //console.log(totalprice * nbPersons);
+    return totalprice * nbPersons;
   }
 
   //Adds the passed dish to the menu. If the dish of that type already exists on the menu
@@ -171,16 +175,41 @@ var DinnerModel = function() {
         }
       });
     }
-
-    /*API*/
-    /*return fetch("https://spoonacular-recipe-food-nutrition-v1.p.mashape.com/recipes/search") {
-              headers:{
-                  'X-Mashape-Key': API_KEY
-              }
-        }).then(response => response.json())
-          .then(data => data.results)
-          */
   }
+
+    /* LAB3 API VERSION */
+    // e.g. https://spoonacular-recipe-food-nutrition-v1.p.mashape.com/recipes/search?type=all&query=pizza
+  /*this.getAllDishes = function(type, filter) {    // run diet instead???
+ 		var SOME_API_URL;
+ 		var API_KEY = "3d2a031b4cmsh5cd4e7b939ada54p19f679jsn9a775627d767";
+ 		if (type) { // if (type) {
+ 			SOME_API_URL = "https://spoonacular-recipe-food-nutrition-v1.p.mashape.com/recipes/search?type="+type;
+    }
+ 		if (filter && type) {  // if (type && filter) {
+      SOME_API_URL = "https://spoonacular-recipe-food-nutrition-v1.p.mashape.com/recipes/search?type="+type+"&query="+filter;
+ 		}
+
+ 		return fetch(SOME_API_URL, {
+      headers: {'X-Mashape-Key': API_KEY}
+    }).then(response => response.json()).then(data => data.results)
+    console.log(data.results);
+  }*/
+
+  /* AJAX VERSION */
+  /*this.getAllDishes = function(type, filter, callback, callBackError) {    // run diet instead of filter???
+    var API_KEY = "3d2a031b4cmsh5cd4e7b939ada54p19f679jsn9a775627d767";
+    $.ajax( {
+      url: "https://spoonacular-recipe-food-nutrition-v1.p.mashape.com/recipes/search?type="+type+"&query="+filter,
+      headers: {'X-Mashape-Key': API_KEY},
+      success: function(data) {
+        callback(data);
+      },
+      error: function(data) {
+        callBackError(error);
+      }
+    });
+  } */
+
 
   //function that returns a dish of specific ID
   this.getDish = function(id) {
@@ -190,6 +219,31 @@ var DinnerModel = function() {
       }
     }
   }
+
+  /* LAB3 API VERSION*/
+  /*this.getDish = function(id) {
+    var SOME_API_URL = "https://spoonacular-recipe-food-nutrition-v1.p.mashape.com/recipes/"+id+"/summary";
+    var API_KEY = "3d2a031b4cmsh5cd4e7b939ada54p19f679jsn9a775627d767";
+    var dish = fetch(SOME_API_URL, {
+      headers: {'X-Mashape-Key': API_KEY}
+    });
+    return dish.then(data => data.json())
+  }*/
+
+  /* AJAX VERSION */
+  /*this.getDish = function(id, callback, callBackError) {
+    var API_KEY = "3d2a031b4cmsh5cd4e7b939ada54p19f679jsn9a775627d767";
+    $.ajax( {
+      url: "https://spoonacular-recipe-food-nutrition-v1.p.mashape.com/recipes/"+id+"/summary",
+      headers: {'X-Mashape-Key': API_KEY},
+      success: function(data) {
+        callback(data);
+      },
+      error: function(error) {
+        callBackError(error);
+      }
+    });
+  }*/
 
 
   // the dishes variable contains an array of all the

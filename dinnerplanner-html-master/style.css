@@ -3,7 +3,8 @@
 }
 
 body {
-  font-family: Courier, Times, serif;
+  /*font-family: Courier, Times, serif;*/
+  font-family: Arial, Helvetica, sans-serif;
   margin: 0;
 }
 
@@ -21,15 +22,6 @@ h1, h2, h3 {
   padding: 1%;
 }
 
-/* Style the footer */
-footer {
-  background-color: #777;
-  padding: 10px;
-  text-align: center;
-  color: white;
-}
-
-
 /* CONFIRMED (tho is it only the color thats being used?) Style the side navigation menu */
 aside {
   -webkit-flex: 1;
@@ -37,10 +29,9 @@ aside {
   flex: 1;
   background: Thistle;
   padding: 20px;
-  font-family: courier;
 }
 
-/* Style the upper navigation menu as in dinnerStatusView */
+/* CONFIRMED Style the upper navigation menu as in dinnerStatusView */
 nav {
   /*float: left;*/
   width: 100%;
@@ -49,28 +40,19 @@ nav {
   padding: 5px;
 }
 
-/* Style the content */
-/*article {
-  -webkit-flex: 3;
-  -ms-flex: 3;
-  flex: 3;
-  background-color: white;
-  padding: 10px;
-}*/
-
-/*giving images borders*/
+/* CONFIRMED giving images borders*/
 img {
   border-style: groove;
-  border-width: thick;
+  border-width: thin;
   border-color: gray;
   /*padding: 1px;*/
   float: center;
 }
 
-/* Labels, such as output, style */
-label {
-  padding-top: 5%;
-  padding-bottom: 5%;
+/* CONFIRMED Guests input in sidebarView */
+#label {
+  padding-top: 4%;
+  padding-bottom: 4%;
 }
 
 /* Style home page text paragraph and button positioning */
@@ -99,6 +81,15 @@ label {
 /* CONFIRMED Styling of preparationstext, applied on view03 and view05 */
 #preparationstext {
   padding: 1%;
+}
+
+#totalPrice {
+  font-weight: bold;
+}
+
+#printbutton {
+  display: flex;
+  margin: auto;
 }
 
 /* CONFIRMED Sidebar column, applied on view02 */
@@ -130,7 +121,7 @@ label {
   flex-wrap: wrap;
 }
 
-/* Style the top navigation bar */
+/* CONFIRMED Style the top navigation bar */
 .navbar {
   display: flex;
 }

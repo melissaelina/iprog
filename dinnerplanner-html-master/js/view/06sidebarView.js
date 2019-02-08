@@ -1,8 +1,8 @@
 var SidebarView = function(sidebarView, model) {
   sidebarView.append(`
 					<h2>My dinner</h2>
-					<label>People: <span id="numberOfGuests"></span>
-					</label>
+					<div id="label">Guests: <span id="numberOfGuests"></span>
+					</div>
 					<div>
 						<button id="minusGuest" class="btn">-</button>
 						<button id="plusGuest" class="btn">+</button>
@@ -12,13 +12,12 @@ var SidebarView = function(sidebarView, model) {
 					<p>Cost: <span id="cost"></span>
 					</p>
 					<hr>
-					<p>Total cost: <span id="totcost"></span>
+					<p id="totalPrice">Total cost: <span id="totalPrice"></span>
 					</p>
 					<button id="confirmButton" class="button">Confirm Dinner</button>
 	`);
   var nbPersons = model.getNumberOfGuests();
   var totalPrice = model.getTotalMenuPrice();
-  totalPrice = model.getTotalMenuPrice();
 
   var displaySidebar = function() {
     var ourMenu = model.getFullMenu();
@@ -37,7 +36,7 @@ var SidebarView = function(sidebarView, model) {
 			this.dishPriceBox.append(`
         <div>${ingredientsPrice} SEK</div>
         `);
-      this.totalPriceBox = sidebarView.find('#totcost');
+      this.totalPriceBox = sidebarView.find('#totalPrice');
       this.totalPriceBox.append(`
         <div>${totalPrice}</div>`)
     });

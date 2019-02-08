@@ -5,7 +5,8 @@
 (-.) dishSearchView.js, displaying options all/starters/mains/desserts doesn't
    work unless there's a keyword input
 -. sidebarView.js buttons not working from second view (dishDetails)
-X. dinnerModel.js duplicate types not working in addDishToMenu
 -. sidebarView.js chosen dishes displaying > menu array is not interchanged, just added on
--. dinnerOverview.js display menu
--. dinnerPrintout.js display menu
+-. dinnerOverview.js chosen dishes displaying > menu array is not interchanged, just added on
+-. dinnerPrintoutView.js chosen dishes displaying > menu array is not interchanged, just added on
+-. getTotalMenuPrice not working
+-. fix setnumberofguests
