@@ -62,7 +62,7 @@ var DishDetailsView = function(dishDetailsView, model, id) {
   }
   this.provideDishDetails = provideDishDetails;
   this.update = function() {
-    nbPersons = model.getNumberOfGuests();
+    //nbPersons = model.getNumberOfGuests();
     provideDishDetails(ID);
   }
   model.addObservers(this.update);

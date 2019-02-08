@@ -25,14 +25,21 @@ var SidebarView = function(sidebarView, model) {
     ourMenu.forEach(function(ourDish) {
       var ourDishName = ourDish.name;
       this.dishNameBox = sidebarView.find('#name');
-      this.dishNameBox.append(`<div>${ourDishName}</div>`);
+      this.dishNameBox.append(`
+        <div>${ourDishName}</div>
+        `);
 			this.dishPriceBox = sidebarView.find('#cost');
       var ingredientsPrice = 0;
       for (var i = 0; i < ourDish.ingredients.length; i++) {
         ingredientsPrice += ourDish.ingredients[i].price;
 			}
 			ingredientsPrice = (ingredientsPrice * nbPersons).toFixed(2);
-			this.dishPriceBox.append(`<div>${ingredientsPrice} SEK</div>`)
+			this.dishPriceBox.append(`
+        <div>${ingredientsPrice} SEK</div>
+        `);
+      this.totalPriceBox = sidebarView.find('#totcost');
+      this.totalPriceBox.append(`
+        <div>${totalPrice}</div>`)
     });
   }
   displaySidebar();

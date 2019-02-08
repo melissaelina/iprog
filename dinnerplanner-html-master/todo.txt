@@ -1,11 +1,11 @@
 %%%%%% TODO LIST %%%%%%
 
--. dishSearchView.js, add listener to searchButton for pressing enter on keyboard
--. clean up files
--. control all classes and id's, are they being used in CSS or elsewhere?
-   those marked CONFIRMED are in use
--. add a view for the header
--. dishSearchView.js, displaying options all/starters/mains/desserts doesn't
+(-.) dishSearchView.js, add listener to searchButton for pressing enter on keyboard
+(-.) add a view for the header
+(-.) dishSearchView.js, displaying options all/starters/mains/desserts doesn't
    work unless there's a keyword input
--. sidebarView.js not working from second view (dishDetails)
--. dinnerModel.js duplicate types not working in addDishToMenu
+-. sidebarView.js buttons not working from second view (dishDetails)
+X. dinnerModel.js duplicate types not working in addDishToMenu
+-. sidebarView.js chosen dishes displaying > menu array is not interchanged, just added on
+-. dinnerOverview.js display menu
+-. dinnerPrintout.js display menu

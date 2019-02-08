@@ -41,6 +41,7 @@ var DinnerModel = function() {
   this.getNumberOfGuests = function(value) {
     var resultGuests = (value) ? value : guests;
     return resultGuests;
+    //this.notifyObservers("changeInNbGuests");
   }
 
   //Returns the dish that is on the menu for selected type
