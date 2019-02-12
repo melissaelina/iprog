@@ -1,4 +1,8 @@
 var SidebarView = function(sidebarView, model) {
+  this.nbPersons = sidebarView.find("#numberOfGuests");   //test
+  this.plusButton = sidebarView.find("#plusGuest");   //test
+  this.minusButton = sidebarView.find("#minusGuest");   //test
+
   sidebarView.append(`
 					<h2>My dinner</h2>
 					<div id="label">Guests: <span id="numberOfGuests"></span>
@@ -17,18 +21,24 @@ var SidebarView = function(sidebarView, model) {
 					<button id="confirmButton" class="button">Confirm Dinner</button>
 	`);
   var nbPersons = model.getNumberOfGuests();
-  var totalPrice = model.getTotalMenuPrice();
+  document.getElementById("numberOfGuests").innerHTML = nbPersons;
 
   var displaySidebar = function() {
+    var nbPersons = model.getNumberOfGuests();
+    var totalPrice = model.getTotalMenuPrice();
     var ourMenu = model.getFullMenu();
+    this.dishNameBox = sidebarView.find('#name');
+    this.dishPriceBox = sidebarView.find('#cost');
+    this.totalPriceBox = sidebarView.find('#totalPrice');
+    this.dishNameBox.html('');
     ourMenu.forEach(function(ourDish) {
+      var ingredientsPrice = 0;
       var ourDishName = ourDish.name;
-      this.dishNameBox = sidebarView.find('#name');
+      this.dishPriceBox.html('');
+      this.totalPriceBox.html('');
       this.dishNameBox.append(`
         <div>${ourDishName}</div>
         `);
-			this.dishPriceBox = sidebarView.find('#cost');
-      var ingredientsPrice = 0;
       for (var i = 0; i < ourDish.ingredients.length; i++) {
         ingredientsPrice += ourDish.ingredients[i].price;
 			}
@@ -36,9 +46,9 @@ var SidebarView = function(sidebarView, model) {
 			this.dishPriceBox.append(`
         <div>${ingredientsPrice} SEK</div>
         `);
-      this.totalPriceBox = sidebarView.find('#totalPrice');
       this.totalPriceBox.append(`
         <div>${totalPrice}</div>`)
+
     });
   }
   displaySidebar();

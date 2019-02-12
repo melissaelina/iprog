@@ -8,7 +8,7 @@ $(function() {
 	var dishDetailsView = new DishDetailsView($("#dishDetailsView"), model);
 	var dinnerOverview = new DinnerOverview($("#dinnerOverview"), model);
 	var dinnerPrintoutView = new DinnerPrintoutView($("#dinnerPrintoutView"), model);
-	var sidebarView = new SidebarView($("#sidebarView,#sidebarView-2"), model);
+	var sidebarView = new SidebarView($(".sidebarView"), model);
 	//var sidebarView = new SidebarView($("#sidebarView"), model);	// to use when cortrollers are in place
 
 	// Controllers

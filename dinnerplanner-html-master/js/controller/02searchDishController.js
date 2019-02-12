@@ -12,7 +12,7 @@ var SearchDishController = function(view, model, app) {
     }
     if (type !== false) {
       this.dishesBoxList.html('');
-      var searchFor = model.getAllDishes(type, keyword);
+      var searchFor = model.getAllDishes(type, keyword);      //add promise
       //console.log(searchFor);
       //console.log(keyword);
       if (typeof searchFor === 'object' && searchFor.length > 0) {

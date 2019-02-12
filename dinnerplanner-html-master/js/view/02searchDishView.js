@@ -2,7 +2,7 @@ var SearchDishView = function(searchDishView, model) {
   searchDishView.append(`
     <div class="parent">
       <div class="side">
-        <aside id="sidebarView">
+        <aside class="sidebarView">
         </aside>
       </div>
       <div class="main">
@@ -29,8 +29,34 @@ var SearchDishView = function(searchDishView, model) {
 
   this.update = function(model) {}
   this.dishesBoxList = searchDishView.find('#dishItemView');
-  var searchFor = model.getAllDishes();
-  if (typeof searchFor === 'object' && searchFor.length > 0) {
+  var searchFor = model.getAllDishes('all','');
+  searchFor.then(response => response.json()).then(data => {
+      if (typeof data.results === 'object' && data.results.length > 0) {
+        this.dishesBoxList.html('');
+        for (var i = 0; i < data.results.length; i++) {
+          //console.log(data.results[i]);
+          /*var price = 0;
+          for (var a = 0; a < data.results[i].ingredients.length; a++) {
+            price += data.results[i].ingredients[a].price;
+          }*/
+          this.dishesBoxList.append(`
+                <div class="column">
+                  <div>
+                    <img id="${data.results[i].id}" class="pickupDishes" src="${data.baseUri}${data.results[i].image}" alt="${data.results[i].title}" style="width:80%">
+                    <p style="padding-right: 4em">${data.results[i].title}</p>
+                  </div>
+                  <p style="padding-right: 4em">0 SEK</p>
+                </div>
+                `);
+        }
+      }
+  }).catch( error => {
+      console.log("ERROR");
+  })
+
+  /* ____________________ LAB 2 ____________________ */
+
+  /*if (typeof searchFor === 'object' && searchFor.length > 0) {
     this.dishesBoxList.html('');
     for (var i = 0; i < searchFor.length; i++) {
       var price = 0;
@@ -47,6 +73,6 @@ var SearchDishView = function(searchDishView, model) {
             </div>
             `);
     }
-  }
+  }*/
   model.addObservers(this.update);
 }

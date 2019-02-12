@@ -1,9 +1,10 @@
 var DinnerPrintoutView = function(dinnerPrintoutView, model) {
-  var nbPersons = model.getNumberOfGuests();
+  this.nbPersons = dinnerPrintoutView.find("#numberOfGuests");   //test
+  //var nbPersons = model.getNumberOfGuests();
   var ourMenu = model.getFullMenu();
   dinnerPrintoutView.append(`
     <nav class="navbar">
-      <h2>My dinner: ${nbPersons} guests</h2>
+      <h2>My dinner: <span id="numberOfGuests"></span> guests</h2>
       <div id="buttonplacement">
         <button id="editmealbutton"class="button"<b>Go back and edit dinner</b></button>
       </div>
@@ -13,6 +14,8 @@ var DinnerPrintoutView = function(dinnerPrintoutView, model) {
       </article>
     </div>
     `);
+  var nbPersons = model.getNumberOfGuests(); //test
+  document.getElementById("numberOfGuests").innerHTML = nbPersons; //test
 
   var currentMenu = function() {
     this.ourMenuBox = dinnerPrintoutView.find('#menuItemForPrint');
@@ -34,6 +37,8 @@ var DinnerPrintoutView = function(dinnerPrintoutView, model) {
 
   this.update = function(model) {
     var ourMenu = model.getFullMenu();
+    var nbPersons = model.getNumberOfGuests(); //test
+    document.getElementById("numberOfGuests").innerHTML = nbPersons; //test
     currentMenu();
   }
   model.addObservers(this.update);

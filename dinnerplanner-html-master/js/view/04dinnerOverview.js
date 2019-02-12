@@ -1,12 +1,12 @@
 var DinnerOverview = function(dinnerOverview, model) {
+  this.nbPersons = dinnerOverview.find("#numberOfGuests");   //test
   var ourMenu = model.getFullMenu();
   var totalCost = model.getTotalMenuPrice();
-  var nbPersons = model.getNumberOfGuests();
 
   dinnerOverview.append(`
     <div class="parent">
       <nav class="navbar">
-        <h2>My dinner: ${nbPersons} guests</h2>
+        <h2>My dinner: <span id="numberOfGuests"></span> guests</h2>
     		<div id="buttonplacement">
     			<button id="editbutton"class="button"<b>Go back and edit dinner</b></button>
     		</div>
@@ -20,6 +20,9 @@ var DinnerOverview = function(dinnerOverview, model) {
     </div>
     <button id="printbutton" class="button">Print full recipe</button>
     `);
+
+    var nbPersons = model.getNumberOfGuests(); //test
+    document.getElementById("numberOfGuests").innerHTML = nbPersons;
 
     var currentMenu = function() {
       this.ourMenuBox = dinnerOverview.find('#menuItemView');
@@ -39,13 +42,13 @@ var DinnerOverview = function(dinnerOverview, model) {
           `);
         });
       }
-
     currentMenu();
 
     this.update = function(model) {
       var ourMenu = model.getFullMenu();
       var totalCost = model.getTotalMenuPrice();
-      var nbPersons = model.getNumberOfGuests();
+      var nbPersons = model.getNumberOfGuests(); //test
+      document.getElementById("numberOfGuests").innerHTML = nbPersons; //test
       currentMenu();
     }
     model.addObservers(this.update);

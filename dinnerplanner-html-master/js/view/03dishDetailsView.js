@@ -1,8 +1,8 @@
-var DishDetailsView = function(dishDetailsView, model, id) {
+var DishDetailsView = function(dishDetailsView, model, id) {    // sidebarView or sidebarView-2
   dishDetailsView.append(`
     <div class="parent">
       <div class="side">
-        <aside id="sidebarView-2">
+        <aside class="sidebarView">
         </aside>
       </div>
       <div class="main">
@@ -10,7 +10,7 @@ var DishDetailsView = function(dishDetailsView, model, id) {
       </div>
     </div>
     `);
-  var nbPersons = model.getNumberOfGuests();
+  this.nbPersons = dishDetailsView.find("#numberOfGuests");   //test
   var ID;
   var provideDishDetails = (id) => {
     this.id = id;
@@ -30,7 +30,7 @@ var DishDetailsView = function(dishDetailsView, model, id) {
             <div class="dishPrepcolumn">
               <article id="ingredientsliststyling">
                 <hr>
-                Ingredients for ${nbPersons}
+                Ingredients for <span id="numberOfGuests"></span>
                 <ul id="ingredient"></ul>
                 <div id="total"></div>
                 <br><br>
@@ -45,15 +45,17 @@ var DishDetailsView = function(dishDetailsView, model, id) {
             </div>
           </article>
       `);
+      var nbPersons = model.getNumberOfGuests();    //test
+      document.getElementById("numberOfGuests").innerHTML = nbPersons; //test
       var ingredientsPrice = 0;
       for (var b = 0; b < ingredients.length; b++) {
         ingredientsPrice += ingredients[b].price;
         dishDetailsView.find("#ingredient").append(`
             <li>
-              ${(ingredients[b].quantity * nbPersons).toFixed(2)}
+              ${(ingredients[b].quantity * nbPersons).toFixed(1)}
               ${ingredients[b].unit}
               ${ingredients[b].name} SEK
-              ${(ingredients[b].price * nbPersons).toFixed(2)}
+              ${(ingredients[b].price * nbPersons).toFixed(1)}
             </li>
             `);
       }
@@ -62,7 +64,8 @@ var DishDetailsView = function(dishDetailsView, model, id) {
   }
   this.provideDishDetails = provideDishDetails;
   this.update = function() {
-    //nbPersons = model.getNumberOfGuests();
+    var nbPersons = model.getNumberOfGuests();
+    document.getElementById("numberOfGuests").innerHTML = nbPersons;
     provideDishDetails(ID);
   }
   model.addObservers(this.update);
