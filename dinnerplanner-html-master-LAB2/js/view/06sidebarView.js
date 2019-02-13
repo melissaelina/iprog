@@ -16,7 +16,7 @@ var SidebarView = function(sidebarView, model) {
 					<p>Cost: <span id="cost"></span>
 					</p>
 					<hr>
-					<p id="totalPrice">Total cost: <span id="totalPrice"></span>
+					<p id="totalCost">Total cost: <span id="totalPrice"></span>
 					</p>
 					<button id="confirmButton" class="button">Confirm Dinner</button>
 	`);
@@ -47,7 +47,7 @@ var SidebarView = function(sidebarView, model) {
         <div>${ingredientsPrice} SEK</div>
         `);
       this.totalPriceBox.append(`
-        <div>${totalPrice}</div>`)
+        <div>${totalPrice} SEK</div>`)
 
     });
   }

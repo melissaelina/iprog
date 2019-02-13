@@ -29,39 +29,6 @@ var SearchDishView = function(searchDishView, model) {
 
   this.update = function(model) {}
   this.dishesBoxList = searchDishView.find('#dishItemView');
-
-  /* ____________________ LAB 3 API ____________________ */
-/*
-  var searchFor = model.getAllDishes('all','');
-  searchFor.then(response => response.json()).then(data => {
-      if (typeof data.results === 'object' && data.results.length > 0) {
-        this.dishesBoxList.html('');
-        for (var i = 0; i < data.results.length; i++) {
-          //console.log(data.results[i]);
-          //var price = 0;
-          //for (var a = 0; a < data.results[i].ingredients.length; a++) {
-          //  price += data.results[i].ingredients[a].price;
-          //}
-          this.dishesBoxList.append(`
-                <div class="column">
-                  <div>
-                    <img id="${data.results[i].id}" class="pickupDishes" src="${data.baseUri}${data.results[i].image}" alt="${data.results[i].title}" style="width:80%">
-                    <p style="padding-right: 4em">${data.results[i].title}</p>
-                  </div>
-                  <p style="padding-right: 4em">0 SEK</p>
-                </div>
-                `);
-        }
-      }
-  }).catch( error => {
-      console.log("ERROR");
-  })
-  model.addObservers(this.update);
-}
-
-*/
-  /* ____________________ LAB 2 ____________________ */
-
   var searchFor = model.getAllDishes();
   if (typeof searchFor === 'object' && searchFor.length > 0) {
     this.dishesBoxList.html('');

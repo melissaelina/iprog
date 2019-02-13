@@ -154,56 +154,8 @@ var DinnerModel = function() {
   //you can use the filter argument to filter out the dish by name or ingredient (use for search)
   //if you don't pass any filter all the dishes will be returned
 
-  /* ____________________ LAB 2 ____________________ */
-
-
-  this.getAllDishes = function(type, filter) {
-    if (!type && !filter) {
-      return dishes;
-    }
-    if (type === "starter" || type === "main" || type === "dessert") {
-      return dishes.filter(function(dish) {
-        var found = true;
-        if (filter) {
-          found = false;
-          if (dish.name.toLowerCase().indexOf(filter) != -1) // all dish names in lower case
-          {
-            found = true;
-          }
-          return dish.type == type && found;
-        } else {
-          return dish.type;
-        }
-        if (!filter) {
-          return dish.type;
-        }
-      });
-    } else {
-      return dishes.filter(function(dish) {
-        var found = true;
-        if (filter) {
-          if (dish.name.toLowerCase().indexOf(filter) != -1) {
-            return dish;
-          }
-        }
-      });
-    }
-  }
-
-
-  //function that returns a dish of specific ID
-  this.getDish = function(id) {
-    for (key in dishes) {
-      if (dishes[key].id == id) {
-        return dishes[key];
-      }
-    }
-  }
-
-
 /* ____________________ LAB 3 API ____________________ */
 
-/*
 this.getAllDishes = function(type, filter) {    // run diet instead???
   //var SOME_API_URL;
   var SOME_API_URL = "https://spoonacular-recipe-food-nutrition-v1.p.mashape.com/recipes/search?type="+type+"&query="+filter;
@@ -228,7 +180,6 @@ this.getDish = function(id) {
     headers: {'X-Mashape-Key': API_KEY}
   }).then(response => response.json());
 }
-*/
 
 
 

@@ -1,7 +1,7 @@
 var DinnerPrintoutView = function(dinnerPrintoutView, model) {
   this.nbPersons = dinnerPrintoutView.find("#numberOfGuests");   //test
-  //var nbPersons = model.getNumberOfGuests();
   var ourMenu = model.getFullMenu();
+
   dinnerPrintoutView.append(`
     <nav class="navbar">
       <h2>My dinner: <span id="numberOfGuests"></span> guests</h2>
@@ -32,7 +32,6 @@ var DinnerPrintoutView = function(dinnerPrintoutView, model) {
         `);
       });
     }
-
   currentMenu();
 
   this.update = function(model) {

@@ -12,32 +12,6 @@ var SearchDishController = function(view, model, app) {
     }
     if (type !== false) {
       this.dishesBoxList.html('');
-
-/* ____________________ LAB 2 ____________________ */
-
-      /*var searchFor = model.getAllDishes(type, keyword);
-      if (typeof searchFor === 'object' && searchFor.length > 0) {
-        for (var i = 0; i < searchFor.length; i++) {
-          var price = 0;
-          for (var a = 0; a < searchFor[i].ingredients.length; a++) {
-            price += searchFor[i].ingredients[a].price;
-          }
-          this.dishesBoxList.append(`
-                <div class="column">
-                  <div>
-                    <im1>
-                      <img id="${searchFor[i].id}" class="pickupDishes" src="images/${searchFor[i].image}" alt="Ice Cream" style="width:80%">
-                    </im1>
-                    <p style="padding-right: 4em">${searchFor[i].name}</p>
-                  </div>
-                  <p style="padding-right: 4em">${price.toFixed(2)} SEK</p>
-                </div>
-                `);
-        }
-      }*/
-
-/* ____________________ LAB 3 API ____________________ */
-
       var searchFor = model.getAllDishes(type, keyword);
       searchFor.then(response => response.json()).then(data => {
           if (typeof data.results === 'object' && data.results.length > 0) {
@@ -64,25 +38,12 @@ var SearchDishController = function(view, model, app) {
       }).catch( error => {
           console.log("ERROR");
       })
-
-/* ____________________ END ____________________ */
-
-
     }
   });
-  /*this.dishesBoxList.click(function() {
-    app.showDishDetailsScreen();
-  });*/
-/* TESTING */
   this.dishesBoxList.click((e) => {
-      if (e.target.nodeName === "IMG") {    // e, short for event
-        var dish = model.getDish(e.target.id);
-        //console.log(dish.id); // notify model on current dish
+      if (e.target.nodeName === "IMG") {
+        var dish = model.getDish(e.target.id);      // getDish promise!
         app.provideDishInfo(dish.id);
-        //console.log(dish);
-        //this.welcome.find(".show").hide();
-        //this.dishesBoxList.find(".column").hide(!dish.id);
-        //this.dishesBoxList.find(".column").remove();
       }
     });
 }
