@@ -1,0 +1,252 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Courier, Times, serif;
+  /*font-family: Arial, Helvetica, sans-serif;*/
+  margin: 0;
+}
+
+/* Style the header */
+header {
+  background-color: #9f9f9f;
+  padding: 30px;
+  text-align: center;
+  font-size: 35px;
+  color: white;
+}
+
+h1, h2, h3 {
+  margin: 0;
+  padding: 1%;
+}
+
+/* CONFIRMED (tho is it only the color thats being used?) Style the side navigation menu */
+aside {
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  background: Thistle;
+  padding: 20px;
+}
+
+/* CONFIRMED Style the upper navigation menu as in dinnerStatusView */
+nav {
+  /*float: left;*/
+  width: 100%;
+  height: 10%;
+  background: #ccc;
+  padding: 5px;
+}
+
+/* CONFIRMED giving images borders*/
+img {
+  border-style: groove;
+  border-width: thin;
+  border-color: gray;
+  /*padding: 1px;*/
+  float: center;
+}
+
+/* CONFIRMED Guests input in sidebarView */
+#label {
+  padding-top: 4%;
+  padding-bottom: 4%;
+}
+
+/* Style home page text paragraph and button positioning */
+#homepagesection {
+  padding: 15%;
+  width: 100%;
+  text-align: center;
+}
+
+/* CONFIRMED Style home page text paragraphg */
+#homepageparagraph {
+  padding: 15%;
+}
+
+/* Positioning of button in dinnerStatusView.js */
+#buttonplacement {
+  margin-left: auto;
+  padding: 1%;
+}
+
+/* CONFIRMED Styling of ingredientslist */
+#ingredientsliststyling {
+  background: Thistle;
+}
+
+/* CONFIRMED Styling of preparationstext, applied on view03 and view05 */
+#preparationstext {
+  padding: 1%;
+}
+
+#totalPrice {
+  font-weight: bold;
+}
+
+#printbutton {
+  display: flex;
+  margin: auto;
+}
+
+/* CONFIRMED Sidebar column, applied on view02 */
+.side {
+  display: flex;
+  flex: 30%;
+  float: left;
+  background-color: #f1f1f1;
+  padding: 20px;
+}
+
+/* CONFIRMED Main column, applied on view02 */
+.main {
+  flex: 70%;
+  background-color: white;
+  padding: 20px;
+}
+
+/* Column class style*/
+.column {
+  float: left;
+  width: 20%;
+  padding: 10px;
+}
+
+/* CONFIRMED Ractive image container, applied on view02 */
+.flex-container {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+/* CONFIRMED Style the top navigation bar */
+.navbar {
+  display: flex;
+}
+
+/* Plus/minus button */
+.btn {
+  background-color: MediumOrchid;
+  border: 2px solid black;
+  color: white;
+  padding: 5px 10px;
+  text-align: center;
+  font-size: 16px;
+}
+
+.btn:hover {
+  background-color: purple;
+}
+
+/* Buttons with text */
+.button {
+  background-color: purple;
+  border: 2px solid black;
+  color: white;
+  padding: 5px 10px;
+  text-align: center;
+  font-size: 16px;
+}
+
+.button:hover {
+  background-color: #4d004d;
+}
+
+/* Buttons for pictures */
+.bname{
+  background-color: grey;
+  border: 2px solid black;
+  color: white;
+  padding: 5px 10px;
+  text-align: center;
+  font-size: 16px;
+}
+
+.vl {
+  border-left: 2px solid black;
+  height: 150px;
+  position: absolute;
+  left: 70%;
+  margin-left: -3px;
+  top: 10;
+}
+
+/* CONFIRMED Centering content */
+.centered {
+  display: flex;
+  justify-content: center;
+}
+
+/* CONFIRMED Parent of main and side classes, applied on view02*/
+.parent {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+/* CONFIRMED Parent preparations view, applied on view05 */
+.prepsparent {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 10%;
+  align-items: center;
+}
+
+/* CONFIRMED Create two equal columns that sits next to each other */
+/* Left column */
+.left {
+  flex: 10%;
+  padding: 20px;
+}
+/* CONFIRMED right column */
+.right {
+  flex: 50%;
+  padding: 20px;
+}
+
+/* CONFIRMED Parent of dishImgcolumn and dishPrepcolumn classes, applied on view03 */
+.dishparent  {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 3%;
+}
+
+/* CONFIRMED Colunms for dish detail in view03 */
+.dishImgcolumn {
+  flex: 30%;
+  background-color: white;
+  padding: 20px;
+}
+.dishPrepcolumn {
+  flex: 70%;
+  background-color: white;
+  padding: 20px;
+}
+
+/* CONFIRMED Responsive layout - makes a two column-layout instead of four columns */
+@media (max-width: 800px) {
+  .column {
+    flex: 50%;
+    max-width: 50%;
+  }
+}
+
+/* CONFIRMED Responsive layout - makes the two columns stack on top of each other instead of next to each other */
+@media (max-width: 600px) {
+  .column {
+    flex: 100%;
+    max-width: 100%;
+  }
+}
+
+/* CONFIRMED Responsive layout - view05 when the screen is less than 700px wide, make the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 700px) {
+  .prepsparent {
+    flex-direction: column;
+  }
+}
+
+/* CONFIRMED Which screens to view */
+.hide {display: none;}
+.show {display: block;}

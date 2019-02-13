@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Dinner Overview</title>
+  <link rel="stylesheet" href="stylemain.css">
+  <script src="https://code.jquery.com/jquery.js"></script>
+
+  <!-- Bootstrap CSS -->
+  <!--<link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css">
+-->
+</head>
+
+<body id="globalPage">
+  <div class="header">
+    <h1>Dinner Planner</h1>
+  </div>
+  <br>
+  <br>
+  <br>
+
+  <div class="row" id="dinnerStatusView">   <!-- add js -->
+    <div class="column">
+    </div>
+    <div class="column">
+      <h2>My Dinner: <span id="numberOfGuests">3</span> people</h2>
+    </div>
+    <div class="column">
+    </div>
+    <div class="column">
+    </div>
+    <div class="column">
+      <button class="button" id="b4">Go back and edit dinner</button>
+    </div>
+  </div>
+
+  <hr>
+
+  <div class="row" id="dishItemView">   <!-- add js -->
+    <div class="column">
+    </div>
+    <div class="column" id="column-right">
+      <div>
+        <img src="images/steak.jpg" alt="steak" style="width:50%;">
+        <p>Steak</p>
+      </div>
+      <p>117.00 SEK</p>
+    </div>
+    <div class="column" id="column-center">
+      <div>
+        <img src="images/Lasagne.jpg" alt="Lasagne" style="width:45%">
+        <p style="padding-right: 4em">Lasagne</p>
+      </div>
+      <p style="padding-right: 4em">99.00 SEK</p>
+    </div>
+    <div class="column">
+      <div>
+        <img src="images/icecream.jpg" alt="icecream" style="width:40%">
+        <p style="padding-right: 8.8em">Ice Cream</p>
+      </div>
+      <p style="padding-right: 8.8em">49.00 SEK</p>
+    </div>
+    <div class="column">
+      <div class="vl"></div>
+      <p>Total <br> SEK</p>
+    </div>
+  </div>
+
+  <hr width="50%">
+  <br><br>
+  <button class="button" id="b3">Print full recipe</button>
+  <br>
+  <br>
+  <br>
+  <br>
+  <div class="footer">
+    <p></p>
+  </div>
+
+  <!-- The application JavaScript code -->
+  <script src="js/app.js"></script>
+  <script src="js/model/dinnerModel.js"></script>
+  <script src="js/view/dinnerStatusView.js"></script>
+  <script src="js/view/sidebarView.js"></script>
+  <script src="js/view/dishSearchView.js"></script>
+
+</body>
+
+</html>

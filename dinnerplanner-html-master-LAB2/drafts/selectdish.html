@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Select dish</title>
+  <link rel="stylesheet" href="stylemain.css">
+  <script src="https://code.jquery.com/jquery.js"></script>
+
+  <!-- Bootstrap CSS -->
+  <!--<link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css">
+-->
+</head>
+
+<body>
+  <div class="header">
+    <h1>Dinner Planner</h1>
+  </div>
+  <br>
+  <br>
+  <br>
+  <section>
+    <nav id="sidebarView"> <!-- js -->
+      <h2>My dinner</h2>
+      <ul>
+        <label>
+          People: <span id="numberOfGuests"></span>
+        </label>
+        <div>
+          <!-- bootstrap script -->
+          <!--<button id="minusGuest" class="btn"><span class="glyphicon glyphicon-minus"></span></button>
+                <button id="plusGuest" class="btn"><span class="glyphicon glyphicon-plus"></span></button>
+              -->
+          <!-- pure css script -->
+          <button id="minusGuest" class="btn">-</button>
+          <button id="plusGuest" class="btn">+</span></button>
+        </div>
+      </ul>
+      <button class="button" id="b1">Confirm Dinner</button>
+    </nav>
+
+    <article id="dishDetailsView">
+      <div> <!-- js -->
+        <section>
+          <h2>JS NAME OF DISH</h2>
+          <input id="searchbarDishes" placeholder="Enter key words">
+          <select id="typeDishes">
+            <!-- SAME HERE -->
+            <option value="starter">starter</option>
+            <option value="main dish">main dish</option>
+            <option value="dessert">dessert</option>
+          </select>
+          <button id="searchButton">search</button>
+        </section>
+      </div>
+      <hr>
+      <div class="row">
+        <nav id="dishItemView" style="width:100%;"> <!-- js -->
+          <!-- finish -->
+          <!-- ALL THE DISHES ARE GOING HERE CALLED BY JS  -->
+        </nav>
+
+      </div>
+
+    </article>
+
+
+  </section>
+
+  <div class="footer">
+    <p></p>
+  </div>
+
+  <!-- The application JavaScript code -->
+  <script src="js/app.js"></script>
+  <script src="js/model/dinnerModel.js"></script>
+  <script src="js/view/sidebarView.js"></script>
+  <script src="js/view/dishSearchView.js"></script>
+
+</body>
+
+</html>
