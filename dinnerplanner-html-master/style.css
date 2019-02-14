@@ -83,8 +83,17 @@ img {
   padding: 1%;
 }
 
-#totalPrice {
+/* CONFIRMED */
+#totalCost {
   font-weight: bold;
+}
+
+/* CONFIRMED */
+#totalMenuCost {
+  font-weight: bold;
+  font-size: 20px;
+  display: flex;
+  justify-content: center;
 }
 
 #printbutton {
@@ -108,7 +117,7 @@ img {
   padding: 20px;
 }
 
-/* Column class style*/
+/* CONFIRMED Column class style*/
 .column {
   float: left;
   width: 20%;
@@ -119,6 +128,13 @@ img {
 .flex-container {
   display: flex;
   flex-wrap: wrap;
+}
+
+/* CONFIRMED Ractive image container, applied on view04 */
+.flexx-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
 /* CONFIRMED Style the top navigation bar */
@@ -204,6 +220,15 @@ img {
   flex: 50%;
   padding: 20px;
 }
+
+/* CONFIRMED Create two equal columns that sits next to each other */
+.sideleft {
+}
+
+.sideright {
+  margin-left: auto;
+}
+
 
 /* CONFIRMED Parent of dishImgcolumn and dishPrepcolumn classes, applied on view03 */
 .dishparent  {

@@ -1,43 +1,44 @@
 var DinnerOverview = function(dinnerOverview, model) {
-  this.nbPersons = dinnerOverview.find("#numberOfGuests");   //test
+  this.nbGuests = dinnerOverview.find("#nbGuests");   //test
+  this.totCost = dinnerOverview.find("#totCost");
   var ourMenu = model.getFullMenu();
-  var totalCost = model.getTotalMenuPrice();
 
   dinnerOverview.append(`
     <div class="parent">
       <nav class="navbar">
-        <h2>My dinner: <span id="numberOfGuests"></span> guests</h2>
+        <h2>My dinner: <span id="nbGuests"></span> guests</h2>
     		<div id="buttonplacement">
     			<button id="editbutton"class="button"<b>Go back and edit dinner</b></button>
     		</div>
       </nav>
       <div class="main">
-        <article id="menuItemView" class="flex-container">
+        <article id="menuItemView" class="flexx-container">
         </article>
-        <div id="totalPrice">Total cost: ${totalCost} SEK
+        <hr>
+        <div id="totalMenuCost">
+          Total cost: <span id="totCost"></span> SEK
         </div>
       </div>
     </div>
     <button id="printbutton" class="button">Print full recipe</button>
     `);
-
-    var nbPersons = model.getNumberOfGuests(); //test
-    document.getElementById("numberOfGuests").innerHTML = nbPersons;
-
     var currentMenu = function() {
-      this.ourMenuBox = dinnerOverview.find('#menuItemView');
+      this.ourDishes = dinnerOverview.find('#menuItemView');
+      this.ourDishes.html('');
       ourMenu.forEach(function(dish) {
         var ingredientsPrice = 0;
         for (var i = 0; i < dish.ingredients.length; i++) {
           ingredientsPrice += dish.ingredients[i].price;
         }
-        this.ourMenuBox.append(`
+        var nbGuests = model.getNumberOfGuests(); //test
+        document.getElementById("nbGuests").innerHTML = nbPersons;
+        var totCost = model.getTotalMenuPrice();
+        document.getElementById("totCost").innerHTML = totCost;
+        this.ourDishes.append(`
           <div class="column">
-            <div>
-              <img id="${dish.id}" class="pickupDishes" src="images/${dish.image}" alt="Lasagne" style="width:80%">
-              <p style="padding-right: 4em">${dish.name}</p>
-            </div>
-            <p style="padding-right: 4em">${(ingredientsPrice * nbPersons).toFixed(2)} SEK</p>
+            <img id="${dish.id}" class="pickupDishes" src="images/${dish.image}" alt="Lasagne">
+            <p>${dish.name}</p>
+            <p>${(ingredientsPrice * nbGuests).toFixed(2)} SEK</p>
           </div>
           `);
         });
@@ -47,8 +48,8 @@ var DinnerOverview = function(dinnerOverview, model) {
     this.update = function(model) {
       var ourMenu = model.getFullMenu();
       var totalCost = model.getTotalMenuPrice();
-      var nbPersons = model.getNumberOfGuests(); //test
-      document.getElementById("numberOfGuests").innerHTML = nbPersons; //test
+      var nbGuests = model.getNumberOfGuests(); //test
+      document.getElementById("nbGuests").innerHTML = nbGuests; //test
       currentMenu();
     }
     model.addObservers(this.update);

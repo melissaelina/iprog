@@ -1,4 +1,4 @@
-var DishDetailsView = function(dishDetailsView, model, id) {    // sidebarView or sidebarView-2
+var DishDetailsView = function(dishDetailsView, model, id) {
   dishDetailsView.append(`
     <div class="parent">
       <div class="side">
@@ -10,7 +10,6 @@ var DishDetailsView = function(dishDetailsView, model, id) {    // sidebarView o
       </div>
     </div>
     `);
-  this.nbPersons = dishDetailsView.find("#numberOfGuests");   //test
   var ID;
   var provideDishDetails = (id) => {
     this.id = id;
@@ -18,6 +17,8 @@ var DishDetailsView = function(dishDetailsView, model, id) {    // sidebarView o
     this.dishesDetails = dishDetailsView.find("#dishDetails");
     var searchFor = model.getDish(id);
     if (typeof searchFor === 'object') {
+      //this.nbPersons = dishDetailsView.find("#numberOfGuests");
+      var numbPersons = model.getNumberOfGuests();    //test
       this.dishesDetails.html('');
       var ingredients = model.getAllIngredients(searchFor.ingredients);
       this.dishesDetails.append(`
@@ -30,7 +31,7 @@ var DishDetailsView = function(dishDetailsView, model, id) {    // sidebarView o
             <div class="dishPrepcolumn">
               <article id="ingredientsliststyling">
                 <hr>
-                Ingredients for <span id="numberOfGuests"></span>
+                Ingredients for ${numbPersons}
                 <ul id="ingredient"></ul>
                 <div id="total"></div>
                 <br><br>
@@ -45,27 +46,27 @@ var DishDetailsView = function(dishDetailsView, model, id) {    // sidebarView o
             </div>
           </article>
       `);
-      var nbPersons = model.getNumberOfGuests();    //test
-      document.getElementById("numberOfGuests").innerHTML = nbPersons; //test
+      //var nbPersons = model.getNumberOfGuests();    //test
+      //document.getElementById("numberOfGuests").innerHTML = nbPersons; //test
       var ingredientsPrice = 0;
       for (var b = 0; b < ingredients.length; b++) {
         ingredientsPrice += ingredients[b].price;
         dishDetailsView.find("#ingredient").append(`
             <li>
-              ${(ingredients[b].quantity * nbPersons).toFixed(1)}
+              ${(ingredients[b].quantity * numbPersons).toFixed(1)}
               ${ingredients[b].unit}
               ${ingredients[b].name} SEK
-              ${(ingredients[b].price * nbPersons).toFixed(1)}
+              ${(ingredients[b].price * numbPersons).toFixed(1)}
             </li>
             `);
       }
-      dishDetailsView.find("#total").html('SEK ' + (ingredientsPrice * nbPersons).toFixed(2));
+      dishDetailsView.find("#total").html('SEK ' + (ingredientsPrice * numbPersons).toFixed(2));
     }
   }
   this.provideDishDetails = provideDishDetails;
   this.update = function() {
-    var nbPersons = model.getNumberOfGuests();
-    document.getElementById("numberOfGuests").innerHTML = nbPersons;
+    var numbPersons = model.getNumberOfGuests();
+    //document.getElementById("numberOfGuests").innerHTML = nbPersons;
     provideDishDetails(ID);
   }
   model.addObservers(this.update);

@@ -1,6 +1,3 @@
 %%%%%% TODO LIST %%%%%%
 
--. getTotalMenuPrice not working
--. sidebarView.js buttons not working from second view (dishDetails) and dish price is bugged
--. number of guests not updating on dinnerOverview, dinnerPrintoutView and dishDetailsView
--. array is repeating on dinnerOverview and DinnerPrintoutView
+-. sidebarView.js buttons and numberOfGuests not working from second view (dishDetails)
