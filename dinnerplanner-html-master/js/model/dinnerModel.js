@@ -158,14 +158,14 @@ var DinnerModel = function() {
 
 this.getAllDishes = function(type, filter) {    // run diet instead???
   //var SOME_API_URL;
-  var SOME_API_URL = "https://spoonacular-recipe-food-nutrition-v1.p.mashape.com/recipes/search?type="+type+"&query="+filter;
+  var SOME_API_URL = "http://sunset.nada.kth.se:8080/iprog/group/52/recipes/search?type="+type+"&query="+filter;
   if (type && !filter) {
     //console.log(type);
-    SOME_API_URL = "https://spoonacular-recipe-food-nutrition-v1.p.mashape.com/recipes/search?type="+type;
+    SOME_API_URL = "http://sunset.nada.kth.se:8080/iprog/group/52/recipes/search?type="+type;
   }
   else if (filter && type) {
     //console.log(filter);
-    SOME_API_URL = "https://spoonacular-recipe-food-nutrition-v1.p.mashape.com/recipes/search?type="+type+"&query="+filter;
+    SOME_API_URL = "https://http://sunset.nada.kth.se:8080/iprog/group/52/recipes/search?type="+type+"&query="+filter;
   }
   return fetch(SOME_API_URL, {
     headers: {'X-Mashape-Key': API_KEY}
@@ -173,7 +173,7 @@ this.getAllDishes = function(type, filter) {    // run diet instead???
 }
 
 this.getDish = function(id) {
-  var SOME_API_URL = "https://spoonacular-recipe-food-nutrition-v1.p.mashape.com/recipes/"+id+"/summary";   // test +id+/"information" instead?
+  var SOME_API_URL = "http://sunset.nada.kth.se:8080/iprog/group/52/recipes/"+id+"/summary";   // test +id+/"information" instead?
   return fetch(SOME_API_URL, {
     headers: {'X-Mashape-Key': API_KEY}
   }).then(response => response.json());

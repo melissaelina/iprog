@@ -12,9 +12,9 @@ var SidebarView = function(sidebarView, model) {
 						<button id="plusGuest" class="btn">+</button>
 					</div>
           <div class="parent">
-  					<p class="sideleft">Dish name: <span id="name"></span>
+  					<p class="sideleft" style="text-decoration: underline;">Dish name <span id="name"></span>
   					</p>
-  					<p class="sideright">Cost: <span id="cost"></span>
+  					<p class="sideright" style="text-decoration: underline;">Cost <span id="cost"></span>
   					</p>
           </div>
           <div>
