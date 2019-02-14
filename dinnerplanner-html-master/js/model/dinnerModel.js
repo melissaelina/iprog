@@ -159,7 +159,7 @@ var DinnerModel = function() {
 this.getAllDishes = function(type, filter) {    // run diet instead???
   //var SOME_API_URL;
   var SOME_API_URL = "https://spoonacular-recipe-food-nutrition-v1.p.mashape.com/recipes/search?type="+type+"&query="+filter;
-  var API_KEY = "3d2a031b4cmsh5cd4e7b939ada54p19f679jsn9a775627d767";
+  //var API_KEY = "3d2a031b4cmsh5cd4e7b939ada54p19f679jsn9a775627d767";
   if (type && !filter) {
     //console.log(type);
     SOME_API_URL = "https://spoonacular-recipe-food-nutrition-v1.p.mashape.com/recipes/search?type="+type;
@@ -174,7 +174,7 @@ this.getAllDishes = function(type, filter) {    // run diet instead???
 }
 
 this.getDish = function(id) {
-  var API_KEY = "3d2a031b4cmsh5cd4e7b939ada54p19f679jsn9a775627d767";
+  //var API_KEY = "3d2a031b4cmsh5cd4e7b939ada54p19f679jsn9a775627d767";
   var SOME_API_URL = "https://spoonacular-recipe-food-nutrition-v1.p.mashape.com/recipes/"+id+"/summary";   // test +id+/"information" instead?
   return fetch(SOME_API_URL, {
     headers: {'X-Mashape-Key': API_KEY}

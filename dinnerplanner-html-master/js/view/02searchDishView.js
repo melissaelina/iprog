@@ -30,6 +30,7 @@ var SearchDishView = function(searchDishView, model) {
   this.update = function(model) {}
   this.dishesBoxList = searchDishView.find('#dishItemView');
   var searchFor = model.getAllDishes('all','');
+  console.log(searchFor);
   searchFor.then(response => response.json()).then(data => {
       if (typeof data.results === 'object' && data.results.length > 0) {
         this.dishesBoxList.html('');
