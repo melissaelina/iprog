@@ -210,7 +210,10 @@ img {
 .prepsparent {
   display: flex;
   flex-wrap: wrap;
-  padding: 10%;
+  padding-left: 15%;
+  padding-right: 15%;
+  padding-top: 5%;
+  padding-bottom: 5%;
   align-items: center;
 }
 
