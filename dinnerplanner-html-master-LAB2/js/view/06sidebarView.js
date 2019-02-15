@@ -12,17 +12,23 @@ var SidebarView = function(sidebarView, model) {
 						<button id="plusGuest" class="btn">+</button>
 					</div>
           <div class="parent">
-  					<p class="sideleft" style="text-decoration: underline;">Dish name <span id="name"></span>
-  					</p>
-  					<p class="sideright" style="text-decoration: underline;">Cost <span id="cost"></span>
-  					</p>
+  					<div class="sideleft">
+              <p id="underlined">Dish name</p><span id="name"></span>
+  					</div>
+  					<div class="sideright">
+              <p id="underlined">Cost</p><span id="cost"></span>
+  					</div>
           </div>
           <div>
 					  <hr>
           </div>
-          <div>
-					  <p id="totalCost">Total cost: <span id="totalPrice"></span>
-					  </p>
+          <div class="parent">
+            <div class="sideleft">
+					       <p class="bold">Total cost</p>
+            </div>
+            <div class="sideright">
+              <p class="bold"><span id="totalPrice"></span></p>
+            </div>
           </div>
 					<button id="confirmButton" class="button">Confirm Dinner</button>
 	`);
@@ -48,7 +54,7 @@ var SidebarView = function(sidebarView, model) {
       for (var i = 0; i < ourDish.ingredients.length; i++) {
         ingredientsPrice += ourDish.ingredients[i].price;
 			}
-			ingredientsPrice = (ingredientsPrice * nbPersons).toFixed(2);
+			ingredientsPrice = ingredientsPrice * nbPersons;
 			this.dishPriceBox.append(`
         <div>${ingredientsPrice} SEK</div>
         `);

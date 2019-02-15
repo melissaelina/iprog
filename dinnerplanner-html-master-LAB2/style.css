@@ -84,8 +84,8 @@ img {
 }
 
 /* CONFIRMED */
-#totalCost {
-  font-weight: bold;
+#underlined {
+  text-decoration: underline;
 }
 
 /* CONFIRMED */
@@ -99,6 +99,11 @@ img {
 #printbutton {
   display: flex;
   margin: auto;
+}
+
+/* CONFIRMED */
+.bold {
+  font-weight: bold;
 }
 
 /* CONFIRMED Sidebar column, applied on view02 */

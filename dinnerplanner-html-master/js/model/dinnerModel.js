@@ -76,6 +76,14 @@ var DinnerModel = function() {
     return ingredients;
   }
 
+  this.getDishPrice = function(ingredients){
+    var price = 0;
+    for(i in ingredients){
+      price += 1;     // No price info in API, 1 SEK per ingredient
+    }
+    return price;
+  }
+
   //Returns the total price of the menu (all the ingredients multiplied by number of guests).
   this.getTotalMenuPrice = function() {
     var totalprice = 0;
@@ -156,7 +164,7 @@ var DinnerModel = function() {
 
 /* ____________________ LAB 3 API ____________________ */
 
-this.getAllDishes = function(type, filter) {    // run diet instead???
+this.getAllDishes = function(type, filter) {    // run diet or cuisine instead???
   //var SOME_API_URL;
   var SOME_API_URL = "http://sunset.nada.kth.se:8080/iprog/group/52/recipes/search?type="+type+"&query="+filter;
   if (type && !filter) {
