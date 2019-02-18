@@ -42,8 +42,8 @@ var SearchDishController = function(view, model, app) {
   });
   this.dishesBoxList.click((e) => {
       if (e.target.nodeName === "IMG") {
-        var dish = model.getDish(e.target.id);      // getDish promise!
-        app.provideDishInfo(dish.id);
+        //var dish = model.getDish(e.target.id);      // getDish promise!
+        app.provideDishInfo(e.target.id);
       }
     });
 }

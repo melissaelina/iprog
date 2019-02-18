@@ -1,7 +1,7 @@
 var SidebarController = function(view, model, app) {
-  this.plusButton = $(app).find("#plusGuest");
-  this.minusButton = $(app).find("#minusGuest");
-  this.confirmButton = $(app).find("#confirmButton");
+  this.plusButton = $(app).find(".sidebarView").find("#plusGuest");
+  this.minusButton = $(app).find(".sidebarView").find("#minusGuest");
+  this.confirmButton = $(app).find(".sidebarView").find("#confirmButton");
   this.confirmButton.click(function() {
     app.dinnerConfirmed();
   });

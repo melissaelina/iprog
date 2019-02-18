@@ -181,10 +181,10 @@ this.getAllDishes = function(type, filter) {    // run diet or cuisine instead??
 }
 
 this.getDish = function(id) {
-  var SOME_API_URL = "http://sunset.nada.kth.se:8080/iprog/group/52/recipes/"+id+"/summary";   // test +id+/"information" instead?
+  var SOME_API_URL = "http://sunset.nada.kth.se:8080/iprog/group/52/recipes/"+id+"/information";   // test +id+/"information" instead?
   return fetch(SOME_API_URL, {
     headers: {'X-Mashape-Key': API_KEY}
-  }).then(response => response.json());
+  });
 }
 
 

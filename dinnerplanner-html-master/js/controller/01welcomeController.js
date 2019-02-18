@@ -1,5 +1,4 @@
 var WelcomeController = function(view, model, app) {
-
   $(".container").addClass("hide");
   $("#welcomeView").removeClass("hide").addClass("show");
 

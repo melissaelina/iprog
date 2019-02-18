@@ -8,8 +8,7 @@ $(function() {
 	var dishDetailsView = new DishDetailsView($("#dishDetailsView"), model);
 	var dinnerOverview = new DinnerOverview($("#dinnerOverview"), model);
 	var dinnerPrintoutView = new DinnerPrintoutView($("#dinnerPrintoutView"), model);
-	var sidebarView = new SidebarView($(".sidebarView"), model);		// class in dynamic html, searchDishView and dishDetailsView
-	//var sidebarView = new SidebarView($("#sidebarView"), model);
+	var sidebarView = new SidebarView($("body"), model);		// class in dynamic html, searchDishView and dishDetailsView
 
 	// Controllers
 	var welcomeController = new WelcomeController(welcomeView, model, this)  // fix
