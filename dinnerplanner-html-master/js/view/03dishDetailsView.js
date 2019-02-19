@@ -53,14 +53,14 @@ var DishDetailsView = function(dishDetailsView, model, id) {
         for (var b = 0; b < ingredients.length; b++) {
           dishDetailsView.find("#ingredient").append(`
                 <li>
-                  ${(ingredients[b].amount * numbPersons).toFixed(1)}
+                  ${(ingredients[b].amount * numbPersons)}
                   ${ingredients[b].unit}
                   ${ingredients[b].name} SEK
-                  ${(1 * numbPersons).toFixed(1)}
+                  ${(1 * numbPersons)}
                 </li>
                 `);
         }
-        dishDetailsView.find("#total").html('SEK ' + (ingredientsPrice * numbPersons).toFixed(2));
+        dishDetailsView.find("#total").html('SEK ' + (ingredientsPrice * numbPersons));
       }
     }).catch(error => {
       console.log(error);

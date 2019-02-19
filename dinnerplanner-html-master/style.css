@@ -3,8 +3,8 @@
 }
 
 body {
-  font-family: Courier, Times, serif;
-  /*font-family: Arial, Helvetica, sans-serif;*/
+  /*font-family: Courier, Times, serif;*/
+  font-family: Arial, Helvetica, sans-serif;
   margin: 0;
 }
 
@@ -27,7 +27,7 @@ aside {
   -webkit-flex: 1;
   -ms-flex: 1;
   flex: 1;
-  background: Thistle;
+  background: #D8D8D8;
   padding: 20px;
 }
 
@@ -75,7 +75,7 @@ img {
 
 /* CONFIRMED Styling of ingredientslist */
 #ingredientsliststyling {
-  background: Thistle;
+  background: #D8D8D8;
 }
 
 /* CONFIRMED Styling of preparationstext, applied on view03 and view05 */
@@ -149,7 +149,7 @@ img {
 
 /* Plus/minus button */
 .btn {
-  background-color: MediumOrchid;
+  background-color: #6E6E6E;
   border: 2px solid black;
   color: white;
   padding: 5px 10px;
@@ -158,12 +158,12 @@ img {
 }
 
 .btn:hover {
-  background-color: purple;
+  background-color: #071418;
 }
 
 /* Buttons with text */
 .button {
-  background-color: purple;
+  background-color: #424242;
   border: 2px solid black;
   color: white;
   padding: 5px 10px;
@@ -172,7 +172,7 @@ img {
 }
 
 .button:hover {
-  background-color: #4d004d;
+  background-color: #071019;
 }
 
 /* Buttons for pictures */
@@ -210,8 +210,8 @@ img {
 .prepsparent {
   display: flex;
   flex-wrap: wrap;
-  padding-left: 15%;
-  padding-right: 15%;
+  padding-left: 10%;
+  padding-right: 10%;
   padding-top: 5%;
   padding-bottom: 5%;
   align-items: center;
@@ -220,7 +220,7 @@ img {
 /* CONFIRMED Create two equal columns that sits next to each other */
 /* Left column */
 .left {
-  flex: 10%;
+  flex: 30%;
   padding: 20px;
 }
 /* CONFIRMED right column */

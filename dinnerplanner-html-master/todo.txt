@@ -2,4 +2,5 @@
 
 -. not displaying price on searchDishView.
   Search function, getAllDishes fetches different API
--. issue when displaying searched dishes on searchDishView
+-. searchDishView, searching displays undefined, cause API not updating...?
+  Add function update

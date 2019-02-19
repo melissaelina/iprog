@@ -16,7 +16,7 @@ var DinnerOverview = function(dinnerOverview, model) {
         </article>
         <hr>
         <div id="totalMenuCost">
-          Total cost: <span id="totCost"></span> SEK
+          <p>Total cost: <span id="totCost"></span> SEK</p>
         </div>
       </div>
     </div>
@@ -37,7 +37,7 @@ var DinnerOverview = function(dinnerOverview, model) {
           <div class="column">
             <img id="${dish.id}" class="pickupDishes" src="${dish.image}" alt="${dish.title}">
             <p>${dish.title}</p>
-            <p>${(model.getDishPrice(dish.extendedIngredients) * nbGuests).toFixed(2)} SEK</p>
+            <p>${(model.getDishPrice(dish.extendedIngredients) * nbGuests)} SEK</p>
           </div>
           `);
         });
