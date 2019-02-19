@@ -20,14 +20,14 @@ var DinnerPrintoutView = function(dinnerPrintoutView, model) {
     this.ourMenuBox = dinnerPrintoutView.find('#menuItemsForPrint');
     this.ourMenuBox.html('');
     ourMenu.forEach(function(dish) {
-      dishDisc = dish.description;
+      dishDiscription = dish.instructions;
       this.ourMenuBox.append(`
         <div class="prepsparent">
           <div class="left">
-            <img src="images/${dish.image}" alt="${dish.name}">
+            <img src="${dish.image}" alt="${dish.title}">
           </div>
           <div class="right">
-            ${dishDisc}
+            ${dishDiscription}
           </div>
         </div>
         `);

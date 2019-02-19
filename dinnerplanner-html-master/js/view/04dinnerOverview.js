@@ -26,19 +26,18 @@ var DinnerOverview = function(dinnerOverview, model) {
       this.ourDishes = dinnerOverview.find('#menuItemView');
       this.ourDishes.html('');
       ourMenu.forEach(function(dish) {
-        var ingredientsPrice = 0;
-        for (var i = 0; i < dish.ingredients.length; i++) {
-          ingredientsPrice += dish.ingredients[i].price;
-        }
+        //for (var i = 0; i < dish.ingredients.length; i++) {
+        //  ingredientsPrice += dish.ingredients[i].price;
+        //}
         var nbGuests = model.getNumberOfGuests(); //test
-        document.getElementById("nbGuests").innerHTML = nbPersons;
-        var totCost = model.getTotalMenuPrice();
+        document.getElementById("nbGuests").innerHTML = nbGuests;
+        var totCost = model.getTotalMenuPrice(ourMenu);
         document.getElementById("totCost").innerHTML = totCost;
         this.ourDishes.append(`
           <div class="column">
-            <img id="${dish.id}" class="pickupDishes" src="images/${dish.image}" alt="Lasagne">
-            <p>${dish.name}</p>
-            <p>${(ingredientsPrice * nbGuests).toFixed(2)} SEK</p>
+            <img id="${dish.id}" class="pickupDishes" src="${dish.image}" alt="${dish.title}">
+            <p>${dish.title}</p>
+            <p>${(model.getDishPrice(dish.extendedIngredients) * nbGuests).toFixed(2)} SEK</p>
           </div>
           `);
         });

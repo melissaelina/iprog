@@ -30,7 +30,7 @@ var SearchDishController = function(view, model, app) {
                         </im1>
                         <p style="padding-right: 4em">${data.results[i].name}</p>
                       </div>
-                      <p style="padding-right: 4em">0 SEK</p>
+                      <p style="padding-right: 4em">blabla SEK</p>
                     </div>
                     `);
             }

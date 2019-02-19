@@ -36,7 +36,7 @@ nav {
   /*float: left;*/
   width: 100%;
   height: 10%;
-  background: #ccc;
+  background: #F2F2F2;
   padding: 5px;
 }
 
@@ -45,7 +45,7 @@ img {
   border-style: groove;
   border-width: thin;
   border-color: gray;
-  /*padding: 1px;*/
+  width: 100%;
   float: center;
 }
 

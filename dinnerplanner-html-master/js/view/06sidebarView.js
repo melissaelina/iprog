@@ -35,30 +35,28 @@ var SidebarView = function(body, model) {
 
   var displaySidebar = function() {
     let numberPersons = model.getNumberOfGuests();
-    var totalPrice = model.getTotalMenuPrice();
     var ourMenu = model.getFullMenu();
+    var totalPrice = model.getTotalMenuPrice(ourMenu);
     this.dishNameBox = body.find("article.container").find('#name');
     this.dishPriceBox = body.find("article.container").find('#cost');
     this.totalPriceBox = body.find("article.container").find('#totalPrice');
     this.dishNameBox.html('');
     this.dishPriceBox.html('');
     ourMenu.forEach(function(ourDish) {
-      var ingredientsPrice = 0;
-      var ourDishName = ourDish.name;
+      var ingredients = model.getAllIngredients(ourDish.extendedIngredients);
+      var ingredientsPrice = model.getDishPrice(ingredients);
+      //var totalPrice = model.getTotalMenuPrice(ingredientsPrice);
+      var ourDishName = ourDish.title;
       this.totalPriceBox.html('');
       this.dishNameBox.append(`
         <div>${ourDishName}</div>
         `);
-      for (var i = 0; i < ourDish.ingredients.length; i++) {
-        ingredientsPrice += ourDish.ingredients[i].price;
-			}
-			ingredientsPrice = ingredientsPrice * numberPersons;
-			this.dishPriceBox.append(`
-        <div>${ingredientsPrice} SEK</div>
+      this.dishPriceBox.append(`
+        <div>${ingredientsPrice * numberPersons} SEK</div>
         `);
       this.totalPriceBox.append(`
-        <div>${totalPrice} SEK</div>`)
-
+        <div>${totalPrice} SEK</div>
+        `);
     });
   }
   displaySidebar();

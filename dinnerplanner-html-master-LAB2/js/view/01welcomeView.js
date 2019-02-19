@@ -7,7 +7,6 @@ var WelcomeView = function(welcomeView, model) {
       <button id="createnew" class="button">Create new dinner</button>
     </div>
   `);
-  this.update = function(model) {
-  }
+  this.update = function(model) {}
   model.addObservers(this.update);
 }

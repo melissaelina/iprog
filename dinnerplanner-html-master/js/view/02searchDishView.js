@@ -27,29 +27,33 @@ var SearchDishView = function(searchDishView, model) {
     </div>
     `);
 
-  this.update = function(model) {}
   this.dishesBoxList = searchDishView.find('#dishItemView');
-  var searchFor = model.getAllDishes('all','');
-  searchFor.then(response => response.json()).then(data => {
+  var searchForPromise = model.getAllDishes();
+  searchForPromise.then(response => response.json()).then(data => {
       if (typeof data.results === 'object' && data.results.length > 0) {
         this.dishesBoxList.html('');
-        var dishPrice = model.getDishPrice()      // ingredients input
         for (var i = 0; i < data.results.length; i++) {
-          //console.log(data.results[i]);
-          //console.log(dishPrice);
           this.dishesBoxList.append(`
                 <div class="column">
                   <div>
                     <img id="${data.results[i].id}" class="pickupDishes" src="${data.baseUri}${data.results[i].image}" alt="${data.results[i].title}" style="width:80%">
                     <p style="padding-right: 4em">${data.results[i].title}</p>
                   </div>
-                  <p style="padding-right: 4em">${dishPrice[i]} SEK</p>
+                  <p style="padding-right: 4em"><span id="ingredientsPrice"></span></p>
                 </div>
                 `);
+          /*this.ingredientsPriceBox = searchDishView.find('#ingredientsPrice');  // might not work...
+          var dishId = data.results[i].id;
+          var dishInfo = getDish(dishId);
+          console.log(dishInfo);
+          var ingredients = model.getAllIngredients(data.extendedIngredients);
+          var ingredientsPrice = model.getDishPrice(ingredients);*/
+          }
         }
-      }
   }).catch( error => {
       console.log("ERROR");
   })
+
+  this.update = function(model) {}
   model.addObservers(this.update);
 }

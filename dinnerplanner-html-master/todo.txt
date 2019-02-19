@@ -1,12 +1,5 @@
 %%%%%% TODO LIST %%%%%%
 
-(-.) dishSearchView.js, add listener to searchButton for pressing enter on keyboard
-(-.) add a view for the header
-(-.) dishSearchView.js, displaying options all/starters/mains/desserts doesn't
-   work unless there's a keyword input
--. sidebarView.js buttons not working from second view (dishDetails)
--. sidebarView.js chosen dishes displaying > menu array is not interchanged, just added on
--. dinnerOverview.js chosen dishes displaying > menu array is not interchanged, just added on
--. dinnerPrintoutView.js chosen dishes displaying > menu array is not interchanged, just added on
--. getTotalMenuPrice not working
--. fix setnumberofguests
+-. not displaying price on searchDishView.
+  Search function, getAllDishes fetches different API
+-. issue when displaying searched dishes on searchDishView

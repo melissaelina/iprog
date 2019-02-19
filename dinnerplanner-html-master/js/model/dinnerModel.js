@@ -36,14 +36,8 @@ var DinnerModel = function() {
 			guests = num;
     }
     this.notifyObservers(guests);
-    //return guests;
 	}
 
-  /*this.getNumberOfGuests = function(value) {
-    var resultGuests = (value) ? value : guests;
-    return resultGuests;
-    //this.notifyObservers("changeInNbGuests");
-  }*/
   this.getNumberOfGuests = function() {
     return guests;
   }
@@ -76,59 +70,60 @@ var DinnerModel = function() {
     return ingredients;
   }
 
-  this.getDishPrice = function(ingredients){
-    var price = 0;
-    for(i in ingredients){
-      price += 1;     // No price info in API, 1 SEK per ingredient
+  this.getDishPrice = function(ingredients) {
+    var ingredientsPrice = 0;
+    for (i in ingredients) {
+      ingredientsPrice += 1;
     }
-    return price;
+    return ingredientsPrice;
   }
 
   //Returns the total price of the menu (all the ingredients multiplied by number of guests).
-  this.getTotalMenuPrice = function() {
+  /*this.getTotalMenuPrice = function(dishPrice) {
     var totalprice = 0;
     nbPersons = this.getNumberOfGuests();
     menu.forEach(function(dishInMenu) {
-      dishInMenu.ingredients.forEach(function(ingredient) {
-        totalprice += ingredient.price;
-      });
+      totalprice += dishPrice;
     });
-    //console.log(totalprice * nbPersons);
     return totalprice * nbPersons;
+  }*/
+  this.getTotalMenuPrice = function(ourMenu) {
+    var totalprice = 0;
+    for (i in ourMenu) {
+      totalprice += this.getDishPrice(ourMenu[i].extendedIngredients);
+    }
+    return totalprice * this.getNumberOfGuests()
   }
 
   //Adds the passed dish to the menu. If the dish of that type already exists on the menu
   //it is removed from the menu and the new one added.
   this.addDishToMenu = function(id) {
-    var quantity = 0;
     var duplicate = false;
-    let dishType = (this.getDish(id)).type;
-    if (menu === undefined || menu.length == 0) {
-      menu[0] = this.getDish(id);
-    }
-    else {
-      menu.forEach(function(menuDishes) {
-        if (menuDishes.id == id) {
-          duplicate = true;
-          alert("DISH ALREADY ADDED TO MENU");
-          return;
-        }
-        else if (menuDishes.type == dishType) {
-          duplicate = true;
-          alert("THERE IS ALREADY ONE DISH OF THE SAME TYPE MENU");
-          return;
-        }
-        quantity++;
-      });
-      if (duplicate == true) {
-        return;
-      } else {
-        //console.log(menu);
-        menu.push(this.getDish(id));
-        //console.log(menu);
+    var quantity = 0;
+    var ourdish = this.getDish(id);
+    ourdish.then(response => response.json()).then(data => {
+			if (menu === undefined || menu.length == 0) {
+        menu[0] = data;
       }
-    }
-    this.notifyObservers();
+      else {
+        menu.forEach(function(menuDishes) {
+          if (menuDishes.id == data.id) {
+            duplicate = true;
+            alert("DISH ALREADY ADDED TO MENU");
+            return;
+          }
+          quantity++;
+        });
+        if (duplicate == true) {
+          return;
+        } else {
+          menu.push(data);
+        }
+      }
+      this.notifyObservers();
+    }).catch(error => {
+      console.log(error);
+    });
   }
 
 
@@ -165,15 +160,16 @@ var DinnerModel = function() {
 /* ____________________ LAB 3 API ____________________ */
 
 this.getAllDishes = function(type, filter) {    // run diet or cuisine instead???
-  //var SOME_API_URL;
-  var SOME_API_URL = "http://sunset.nada.kth.se:8080/iprog/group/52/recipes/search?type="+type+"&query="+filter;
-  if (type && !filter) {
+  if (!type && !filter) {
+    SOME_API_URL = "http://sunset.nada.kth.se:8080/iprog/group/52/recipes/search?";
+  }
+  else if (type && !filter) {
     //console.log(type);
     SOME_API_URL = "http://sunset.nada.kth.se:8080/iprog/group/52/recipes/search?type="+type;
   }
   else if (filter && type) {
     //console.log(filter);
-    SOME_API_URL = "https://http://sunset.nada.kth.se:8080/iprog/group/52/recipes/search?type="+type+"&query="+filter;
+    SOME_API_URL = "http://sunset.nada.kth.se:8080/iprog/group/52/recipes/search?type="+type+"&query="+filter;
   }
   return fetch(SOME_API_URL, {
     headers: {'X-Mashape-Key': API_KEY}
@@ -181,7 +177,7 @@ this.getAllDishes = function(type, filter) {    // run diet or cuisine instead??
 }
 
 this.getDish = function(id) {
-  var SOME_API_URL = "http://sunset.nada.kth.se:8080/iprog/group/52/recipes/"+id+"/information";   // test +id+/"information" instead?
+  var SOME_API_URL = "http://sunset.nada.kth.se:8080/iprog/group/52/recipes/"+id+"/information";
   return fetch(SOME_API_URL, {
     headers: {'X-Mashape-Key': API_KEY}
   });
