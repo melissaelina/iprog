@@ -4,7 +4,6 @@
 
 body {
   font-family: Courier, Times, serif;
-  /*font-family: Arial, Helvetica, sans-serif;*/
   margin: 0;
 }
 
@@ -45,7 +44,7 @@ img {
   border-style: groove;
   border-width: thin;
   border-color: gray;
-  /*padding: 1px;*/
+  width: 100%;
   float: center;
 }
 
@@ -210,8 +209,8 @@ img {
 .prepsparent {
   display: flex;
   flex-wrap: wrap;
-  padding-left: 15%;
-  padding-right: 15%;
+  padding-left: 10%;
+  padding-right: 10%;
   padding-top: 5%;
   padding-bottom: 5%;
   align-items: center;
@@ -220,7 +219,7 @@ img {
 /* CONFIRMED Create two equal columns that sits next to each other */
 /* Left column */
 .left {
-  flex: 10%;
+  flex: 30%;
   padding: 20px;
 }
 /* CONFIRMED right column */
